@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ital Travel Partners</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta property="og:site_name" content="Ital Travel">
+<meta property="og:title" content="Ital Travel · տուրեր իտալիայում">
+<meta property="og:description" content="Cultural and gastro tours in Italy, led by Armenian-speaking guides.">
+<meta property="og:image" content="https://italtravel.am/img/share.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Outfit:wght@400;500;600;700;800&family=Noto+Serif+Armenian:wght@500;600;700&family=Noto+Sans+Armenian:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="footer.css">
+<style>
+/* Partner page: Riviera palette, one column of steps → terms → form; the private area is tiles, link, then a list. */
+:root {
+  color-scheme: light;
+  --sand: #FAFAF6; --white: #FFFFFF; --ink: #142019; --muted: #56625B; --line: #E2E6DF;
+  --sea: #4E7D63; --sea-d: #3A5F4A; --mint: #E3ECE6; --coral: #8A4A4D;
+  --st-requested: #B86E00; --st-confirmed: #4E7D63; --st-done: #2F6DB5; --st-cancelled: #C42630;
+  --display: "Noto Serif Armenian", Georgia, serif;
+  --body: "Outfit", "Noto Sans Armenian", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--sand); color: var(--ink); font-family: var(--body); font-size: .98rem; line-height: 1.6; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+[hidden] { display: none !important; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; margin: 0; line-height: 1.12; text-wrap: balance; }
+html[lang="hy"] h1, html[lang="hy"] h2, html[lang="hy"] h3 { font-weight: 600; line-height: 1.25; }
+p { margin: 0; }
+a { color: inherit; }
+button, input, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; border-radius: 6px; }
+.tricolore { height: 5px; background: linear-gradient(90deg, #4E7D63 0 33.34%, #FFFFFF 0 66.67%, #8A4A4D 0); }
+.wrap { max-width: 980px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.top { background: rgba(250,250,246,.96); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; gap: 14px; min-height: 60px; }
+.logo { margin-right: auto; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.logo i { width: 28px; height: 20px; border-radius: 3px; background: linear-gradient(90deg, #4E7D63 0 33.34%, #FFFFFF 0 66.67%, #8A4A4D 0); box-shadow: 0 1px 2px rgba(0,0,0,.25); }
+.logo b { font-family: "Young Serif", Georgia, serif; font-weight: 400; font-size: 1.3rem; }
+.lang { display: flex; padding: 3px; background: var(--white); border-radius: 999px; box-shadow: 0 4px 12px -8px rgba(20,32,25,.4); }
+.lang button { border: 0; background: transparent; border-radius: 999px; padding: 4px 12px; min-height: 32px; font-weight: 700; font-size: .82rem; color: var(--sea); cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--sea); color: var(--white); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 46px; padding: 10px 22px; border-radius: 999px; border: 2px solid transparent; font-weight: 700; cursor: pointer; text-decoration: none; }
+.btn-sea { background: var(--sea); color: var(--white); }
+.btn-sea:hover { background: var(--sea-d); }
+.btn-line { background: var(--white); border-color: var(--line); color: var(--ink); }
+.btn:disabled { opacity: .55; cursor: default; }
+.pill { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; background: var(--white); color: var(--sea); box-shadow: 0 6px 16px -10px rgba(16,42,58,.4); }
+.pill::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--coral); }
+main { padding-block: 34px 70px; display: grid; gap: 34px; }
+.hero { display: grid; gap: 14px; }
+.hero h1 { font-size: clamp(2rem, 1.3rem + 3vw, 3.3rem); }
+.hero h1 em { font-style: normal; color: var(--sea); }
+.lead { color: var(--muted); font-size: 1.05rem; max-width: 62ch; }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; counter-reset: s; }
+@media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+.steps li { counter-increment: s; background: var(--white); border-radius: 20px; padding: 18px; display: grid; gap: 6px; }
+.steps li::before { content: counter(s); width: 38px; height: 38px; border-radius: 50%; background: var(--mint); color: var(--sea-d); display: grid; place-items: center; font-weight: 800; }
+.steps h3 { font-size: 1.2rem; }
+.steps p { color: var(--muted); font-size: .92rem; }
+.card { background: var(--white); border-radius: 22px; padding: clamp(18px, 3vw, 28px); display: grid; gap: 14px; min-width: 0; }
+.card h2 { font-size: 1.5rem; }
+.terms { margin: 0; padding-left: 1.2em; display: grid; gap: 8px; color: var(--muted); }
+.form { display: grid; gap: 12px; }
+.r2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 560px) { .r2 { grid-template-columns: 1fr; } }
+.f { display: grid; gap: 5px; font-weight: 600; font-size: .86rem; min-width: 0; }
+.f input, .f textarea { font-weight: 400; font-size: .98rem; background: var(--sand); border: 2px solid transparent; border-radius: 12px; padding: 9px 12px; min-height: 46px; width: 100%; }
+.f textarea { min-height: 90px; resize: vertical; }
+.f input:focus, .f textarea:focus { outline: none; border-color: var(--sea); background: var(--white); }
+.f input[aria-invalid="true"] { border-color: var(--coral); }
+.check { display: flex; gap: 10px; align-items: flex-start; font-size: .9rem; }
+.check input { width: 20px; height: 20px; accent-color: var(--sea); margin-top: 2px; flex: none; }
+.msg { font-weight: 600; font-size: .92rem; border-radius: 12px; padding: 10px 12px; }
+.msg.bad { background: #FDF0F0; color: var(--coral); } .msg.good { background: var(--mint); color: var(--sea-d); }
+/* Private area */
+.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 760px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.tile { background: var(--white); border-radius: 18px; padding: 14px 16px; display: grid; gap: 2px; min-width: 0; }
+.tile span { font-size: .8rem; font-weight: 600; color: var(--muted); }
+.tile b { font-size: 1.7rem; font-weight: 700; line-height: 1.15; }
+.tile small { font-size: .76rem; color: var(--muted); }
+.tile.hl { background: var(--sea); color: var(--white); } .tile.hl span, .tile.hl small { color: #E3ECE6; }
+.linkbox { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; background: var(--mint); border-radius: 16px; padding: 12px; }
+.linkbox code { flex: 1 1 260px; font-size: .95rem; background: var(--white); padding: 9px 12px; border-radius: 10px; overflow-wrap: anywhere; user-select: all; }
+.tablewrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 520px; font-size: .9rem; }
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); }
+th { font-size: .72rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.st { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; font-size: .8rem; color: var(--c); }
+.st::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--c); }
+.empty { color: var(--muted); text-align: center; padding: 18px; }
+.note { color: var(--muted); font-size: .84rem; }
+footer { border-top: 1px solid var(--line); }
+footer .wrap { padding-block: 22px; display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; color: var(--muted); font-size: .88rem; }
+</style>
+<link rel="stylesheet" href="newlook.css">
+</head>
+<body>
+<div class="tricolore"></div>
+<header class="top"><div class="wrap">
+  <a class="brand" href="./" aria-label="Ital Travel"><b>Ital<span>·</span>Travel</b><i></i><small>տուրեր իտալիայում</small></a>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="hy" aria-pressed="true">ՀԱՅ</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+</div></header>
+
+<main class="wrap" id="main">
+  <!-- Without a personal link: a short note only (partners are added by Ital Travel) -->
+  <section id="program" class="card"><h2 data-t="privateH"></h2><p class="lead" data-t="privateP"></p></section>
+
+  <!-- Private partner area -->
+  <div id="area" hidden style="display:grid;gap:22px"></div>
+</main>
+
+<footer><div class="wrap"><span>Ital·Travel · +374 99 515169 · +39 328 177 0199 · <a href="https://www.instagram.com/ital_travel_/" target="_blank" rel="noopener">Instagram @ital_travel_</a></span><a href="./" data-t="back"></a></div></footer>
+
+<script src="config.js"></script>
+<script>
+(function () {
+  var API = (window.ITAL_CONFIG || {}).API_URL || "";
+  var TOURS = {
+    t1: { en: "Florence cultural tour", hy: "Մշակութային տուր Ֆլորենցիայով" }, t2: { en: "Florence cultural tour + extra destinations", hy: "Մշակութային տուր Ֆլորենցիայով + լրացուցիչ վայրեր" },
+    t5: { en: "Cooking class in Florence", hy: "Խոհարարական դասընթաց Ֆլորենցիայում" }, t6: { en: "Private tours in Tuscany", hy: "Անհատական տուրեր Տոսկանայում" },
+    t3: { en: "City tour in Rome", hy: "Քաղաքային տուր Հռոմում" }, t4: { en: "Walk in Venice", hy: "Զբոսանք Վենետիկում" },
+    t7: { en: "Vatican tour", hy: "Տուր Վատիկանում" }, t19: { en: "Vatican tour with the Vatican Museums", hy: "Տուր Վատիկանում՝ Վատիկանի թանգարաններով" }, t17: { en: "Rome and the Vatican", hy: "Հռոմ և Վատիկան" },
+    t15: { en: "Private car tour: Florence & San Gimignano", hy: "Մեքենայով անհատական տուր՝ Ֆլորենցիա և Սան Ջիմինյանո" }, t16: { en: "Fiat 500 cabrio tour of Florence", hy: "Fiat 500 կաբրիոլետով տուր Ֆլորենցիայում" },
+    t9: { en: "Siena, San Gimignano & Chianti", hy: "Սիենա, Սան Ջիմինյանո և Կյանտի" }, t18: { en: "San Gimignano, Monteriggioni & Chianti", hy: "Սան Ջիմինյանո, Մոնտերիջոնի և Կյանտի" }, t10: { en: "San Gimignano & Chianti, half day", hy: "Սան Ջիմինյանո և Կյանտի՝ կես օր" },
+    t11: { en: "Val d'Orcia", hy: "Վալ դ'Օրչա" }, t12: { en: "Pisa & Lucca", hy: "Պիզա և Լուկկա" }, t13: { en: "Cinque Terre & Pisa", hy: "Չինկվե Տերե և Պիզա" }, t14: { en: "Cinque Terre", hy: "Չինկվե Տերե" }, t8: { en: "San Lazzaro island", hy: "Սուրբ Ղազար կղզի" }, tr1: { en: "Rome airport transfer", hy: "Տրանսֆեր Հռոմի օդանավակայանից" }
+  };
+  var S = {
+    en: {
+      tag: "Partner program", h1a: "Recommend Italy in Armenian.", h1b: "Earn 10%.",
+      lead: "Do you know people travelling to Italy? Share your personal Ital Travel link. When someone books a tour through it and the tour takes place, you get 10% of the tour price.",
+      cta: "Apply now",
+      s1t: "Apply", s1d: "Fill in the short form below. We'll check it and reply by email with your personal link.",
+      s2t: "Share your link", s2d: "Post it on Instagram, in groups, or send it to friends and family. A click counts for 60 days.",
+      s3t: "Earn", s3d: "After each tour takes place you earn 10% of its price. Follow your clicks, bookings and earnings on your private partner page.",
+      termsH: "Partner terms",
+      t1: "Commission: 10% of the tour price, unless we agree a different rate with you.",
+      t2: "A booking counts if it is made within 60 days after clicking your link. If several partner links were clicked, the last one counts.",
+      t3: "Commission is earned when the tour has taken place. Cancelled bookings don't earn commission.",
+      t4: "We pay once a month by bank transfer, Idram or cash, when your balance is €20 or more.",
+      t5: "You can't earn commission on your own bookings.",
+      t6: "Please don't use spam or paid ads with our brand name. We can end a partnership if these rules are broken.",
+      applyH: "Apply to become a partner", fName: "Name and surname", fPhone: "Phone", fEmail: "Email", fLink: "Instagram or website (optional)",
+      fShare: "How will you share our tours?", fAgree: "I agree to the partner terms above.", send: "Send application", sending: "Sending…",
+      okApply: "Thank you! We've received your application and will reply by email.", already: "You've already applied with this email. We'll reply soon.",
+      errFields: "Please fill in your name, a phone number with country code and a valid email.", errAgree: "Please tick that you agree to the partner terms.",
+      errNet: "We couldn't send your application. Check your connection and try again.", errSetup: "Applications aren't connected yet. Please write to us on WhatsApp: +39 328 177 0199.",
+      back: "← Back to the website", privateH: "Ital Travel partner page", privateP: "This page is for Ital Travel partners. Open it with the personal link we sent you. To become a partner, contact us on WhatsApp: +39 328 177 0199.",
+      hello: "Hello, {name}", yourLink: "Your partner link", copy: "Copy link", copied: "Copied", shareWa: "Share on WhatsApp",
+      linkNote: "Anyone who opens this link and books within 60 days counts as your booking.",
+      clicks: "Clicks", bookings: "Bookings", done: "Tours completed", earned: "Earned", paid: "Paid to you", balance: "Balance to be paid", pending: "Expected", pendingNote: "From upcoming tours",
+      rate: "Your commission: {p}%", listH: "Your bookings", privacy: "Bookings are shown without customer names or contacts.",
+      thBooked: "Booked on", thTour: "Tour", thDate: "Tour date", thStatus: "Status", thComm: "Commission", noPrice: "Price not set yet",
+      st: { requested: "Waiting for confirmation", confirmed: "Confirmed", done: "Completed", cancelled: "Cancelled" },
+      payH: "Payments to you", noPay: "No payments yet.", noBook: "No bookings through your link yet. Share it to get started!",
+      pendingH: "Your application is being reviewed", pendingP: "We'll email you when it's approved.",
+      badLink: "This partner page link isn't valid. Check the link in your email or contact us on WhatsApp: +39 328 177 0199.", loading: "Loading your numbers…"
+    },
+    hy: {
+      tag: "Գործընկերային ծրագիր", h1a: "Խորհուրդ տվեք Իտալիան հայերենով։", h1b: "Վաստակեք 10%։",
+      lead: "Ճանաչո՞ւմ եք մարդկանց, ովքեր մեկնում են Իտալիա։ Կիսվեք ձեր անձնական Ital Travel հղումով։ Երբ որևէ մեկն այդ հղումով տուր ամրագրի, և այն կայանա, դուք կստանաք տուրի գնի 10%-ը։",
+      cta: "Դիմել հիմա",
+      s1t: "Դիմեք", s1d: "Լրացրեք ստորև նշված կարճ ձևը։ Մենք կուսումնասիրենք այն և էլ. փոստով կուղարկենք ձեր անձնական հղումը։",
+      s2t: "Կիսվեք ձեր հղումով", s2d: "Տեղադրեք Instagram-ում, խմբերում կամ ուղարկեք ընկերներին և հարազատներին։ Սեղմումը գործում է 60 օր։",
+      s3t: "Վաստակեք", s3d: "Յուրաքանչյուր կայացած տուրից դուք ստանում եք դրա գնի 10%-ը։ Հետևեք ձեր սեղմումներին, ամրագրումներին և եկամուտին ձեր անձնական էջում։",
+      termsH: "Գործընկերության պայմանները",
+      t1: "Միջնորդավճար՝ տուրի գնի 10%, եթե ձեզ հետ այլ տոկոս չենք համաձայնեցրել։",
+      t2: "Ամրագրումը հաշվվում է, եթե կատարվել է ձեր հղումը սեղմելուց հետո 60 օրվա ընթացքում։ Եթե սեղմվել են մի քանի գործընկերների հղումներ, հաշվվում է վերջինը։",
+      t3: "Միջնորդավճարը վաստակվում է տուրը կայանալուց հետո։ Չեղարկված ամրագրումները միջնորդավճար չեն բերում։",
+      t4: "Վճարում ենք ամիսը մեկ անգամ՝ բանկային փոխանցումով, Idram-ով կամ կանխիկ, երբ ձեր մնացորդը €20 կամ ավելի է։",
+      t5: "Ձեր սեփական ամրագրումների համար միջնորդավճար չի հաշվարկվում։",
+      t6: "Խնդրում ենք չօգտագործել սպամ կամ վճարովի գովազդ մեր անվամբ։ Այս կանոնները խախտելու դեպքում կարող ենք դադարեցնել գործընկերությունը։",
+      applyH: "Դիմել գործընկեր դառնալու համար", fName: "Անուն ազգանուն", fPhone: "Հեռախոս", fEmail: "Էլ. փոստ", fLink: "Instagram կամ կայք (ըստ ցանկության)",
+      fShare: "Ինչպե՞ս եք կիսվելու մեր տուրերով", fAgree: "Համաձայն եմ վերը նշված պայմաններին։", send: "Ուղարկել դիմումը", sending: "Ուղարկվում է…",
+      okApply: "Շնորհակալություն։ Ստացել ենք ձեր դիմումը և կպատասխանենք էլ. փոստով։", already: "Դուք արդեն դիմել եք այս էլ. հասցեով։ Շուտով կպատասխանենք։",
+      errFields: "Խնդրում ենք լրացնել անունը, հեռախոսահամարը երկրի կոդով և ճիշտ էլ. հասցե։", errAgree: "Խնդրում ենք նշել, որ համաձայն եք պայմաններին։",
+      errNet: "Չհաջողվեց ուղարկել դիմումը։ Ստուգեք կապը և կրկին փորձեք։", errSetup: "Դիմումները դեռ միացված չեն։ Խնդրում ենք գրել մեզ WhatsApp-ով՝ +39 328 177 0199։",
+      back: "← Վերադառնալ կայք", privateH: "Ital Travel-ի գործընկերների էջ", privateP: "Այս էջը Ital Travel-ի գործընկերների համար է։ Բացեք այն ձեզ ուղարկված անձնական հղումով։ Գործընկեր դառնալու համար գրեք մեզ WhatsApp-ով՝ +39 328 177 0199։",
+      hello: "Բարև, {name}", yourLink: "Ձեր գործընկերային հղումը", copy: "Պատճենել հղումը", copied: "Պատճենված է", shareWa: "Կիսվել WhatsApp-ով",
+      linkNote: "Յուրաքանչյուր ոք, ով բացի այս հղումը և ամրագրի 60 օրվա ընթացքում, կհաշվվի որպես ձեր ամրագրում։",
+      clicks: "Սեղմումներ", bookings: "Ամրագրումներ", done: "Կայացած տուրեր", earned: "Վաստակած", paid: "Վճարված ձեզ", balance: "Վճարման ենթակա մնացորդ", pending: "Սպասվող", pendingNote: "Առաջիկա տուրերից",
+      rate: "Ձեր միջնորդավճարը՝ {p}%", listH: "Ձեր ամրագրումները", privacy: "Ամրագրումները ցուցադրվում են առանց հաճախորդների անունների կամ կոնտակտների։",
+      thBooked: "Ամրագրման օր", thTour: "Տուր", thDate: "Տուրի օր", thStatus: "Կարգավիճակ", thComm: "Միջնորդավճար", noPrice: "Գինը դեռ սահմանված չէ",
+      st: { requested: "Սպասում է հաստատման", confirmed: "Հաստատված", done: "Կայացած", cancelled: "Չեղարկված" },
+      payH: "Վճարումներ ձեզ", noPay: "Դեռ վճարումներ չկան։", noBook: "Ձեր հղումով դեռ ամրագրումներ չկան։ Կիսվեք դրանով՝ սկսելու համար։",
+      pendingH: "Ձեր դիմումը քննարկվում է", pendingP: "Կտեղեկացնենք էլ. փոստով, երբ այն հաստատվի։",
+      badLink: "Գործընկերային էջի այս հղումը վավեր չէ։ Ստուգեք էլ. նամակում ստացված հղումը կամ գրեք մեզ WhatsApp-ով՝ +39 328 177 0199։", loading: "Բեռնվում են ձեր տվյալները…"
+    }
+  };
+  var lang = "hy";
+  try { var sl = localStorage.getItem("ital-lang"); if (sl === "en" || sl === "hy") lang = sl; } catch (e) {}
+  var q = new URLSearchParams(location.search), P = q.get("p"), K = q.get("k"), data = null;
+  function $(id) { return document.getElementById(id); }
+  function esc(v) { return String(v == null ? "" : v).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function t() { return S[lang]; }
+  function eur(n) { return "€" + (Math.round(n * 100) / 100).toLocaleString("en-US"); }
+  function api(payload) { return fetch(API, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(payload) }).then(function (r) { return r.json(); }); }
+  function fmtDate(s) { if (!s) return ""; var p = s.split("-"); return p[2] + "." + p[1] + "." + p[0]; }
+
+  function renderStatic() {
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-t]").forEach(function (el) { var v = t()[el.dataset.t]; if (typeof v === "string") el.textContent = v; });
+    document.querySelectorAll("[data-lang]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
+    document.title = (P ? "" : "") + "Ital Travel " + (lang === "hy" ? "գործընկերներ" : "Partners");
+  }
+
+  /* ----- Private partner area ----- */
+  function renderArea() {
+    var a = $("area"), x = t();
+    if (!data) { a.innerHTML = '<p class="empty">' + esc(x.loading) + "</p>"; return; }
+    if (data.error) { a.innerHTML = '<section class="card"><p>' + esc(x.badLink) + "</p></section>"; return; }
+    if (data.pending) { a.innerHTML = '<section class="card"><h2>' + esc(x.pendingH) + "</h2><p class=\"lead\">" + esc(x.pendingP) + "</p></section>"; return; }
+    var s = data.summary;
+    var shareText = (lang === "hy" ? "Իտալիա՝ հայախոս էքսկուրսավարների հետ 🇮🇹 " : "Tours in Italy with Armenian-speaking guides 🇮🇹 ") + data.link;
+    a.innerHTML = '<section class="hero"><span class="pill">' + esc(x.rate.replace("{p}", data.pct)) + "</span><h1>" + esc(x.hello.replace("{name}", data.name)) + "</h1></section>" +
+      '<section class="card"><h2 style="font-size:1.2rem">' + esc(x.yourLink) + '</h2><div class="linkbox"><code id="reflink">' + esc(data.link) + '</code><button type="button" class="btn btn-sea" id="copy" style="min-height:42px">' + esc(x.copy) + '</button><a class="btn btn-line" style="min-height:42px" target="_blank" rel="noopener" href="https://wa.me/?text=' + encodeURIComponent(shareText) + '">' + esc(x.shareWa) + '</a></div><p class="note">' + esc(x.linkNote) + "</p></section>" +
+      '<div class="tiles">' +
+        '<div class="tile"><span>' + esc(x.clicks) + "</span><b>" + s.clicks + "</b></div>" +
+        '<div class="tile"><span>' + esc(x.bookings) + "</span><b>" + s.bookings + "</b></div>" +
+        '<div class="tile"><span>' + esc(x.done) + "</span><b>" + s.done + "</b></div>" +
+        '<div class="tile"><span>' + esc(x.earned) + "</span><b>" + eur(s.earned) + "</b></div>" +
+        '<div class="tile"><span>' + esc(x.paid) + "</span><b>" + eur(s.paid) + "</b></div>" +
+        '<div class="tile hl"><span>' + esc(x.balance) + "</span><b>" + eur(Math.max(0, s.owed)) + "</b>" + (s.pending ? "<small>" + esc(x.pending) + ": " + eur(s.pending) + " · " + esc(x.pendingNote) + "</small>" : "") + "</div>" +
+      "</div>" +
+      '<section class="card"><h2 style="font-size:1.2rem">' + esc(x.listH) + '</h2><p class="note">' + esc(x.privacy) + "</p>" +
+      (data.bookings.length ? '<div class="tablewrap"><table><thead><tr><th>' + esc(x.thBooked) + "</th><th>" + esc(x.thTour) + "</th><th>" + esc(x.thDate) + "</th><th>" + esc(x.thStatus) + "</th><th>" + esc(x.thComm) + "</th></tr></thead><tbody>" +
+        data.bookings.map(function (b) {
+          var tn = TOURS[b.tourId] ? TOURS[b.tourId][lang] : b.tour, priced = b.total !== "" && b.total != null;
+          return '<tr><td class="n">' + esc(fmtDate(b.booked)) + "</td><td>" + esc(tn) + '</td><td class="n">' + esc(fmtDate(b.date)) + '</td><td><span class="st" style="--c:var(--st-' + esc(b.status) + ')">' + esc(x.st[b.status] || b.status) + '</span></td><td class="n">' +
+            (b.status === "cancelled" ? "–" : priced ? eur(b.commission) : '<span class="note">' + esc(x.noPrice) + "</span>") + "</td></tr>";
+        }).join("") + "</tbody></table></div>" : '<p class="empty">' + esc(x.noBook) + "</p>") + "</section>" +
+      '<section class="card"><h2 style="font-size:1.2rem">' + esc(x.payH) + "</h2>" +
+      (data.payouts.length ? '<div class="tablewrap"><table style="min-width:0"><tbody>' + data.payouts.map(function (p) { return '<tr><td class="n">' + esc(fmtDate(p.time.slice(0, 10))) + '</td><td class="n"><b>' + eur(p.amount) + "</b></td><td>" + esc(p.note) + "</td></tr>"; }).join("") + "</tbody></table></div>" : '<p class="note">' + esc(x.noPay) + "</p>") + "</section>";
+    $("copy").onclick = function () {
+      var b = this;
+      try { navigator.clipboard.writeText(data.link).then(function () { b.textContent = t().copied; setTimeout(function () { b.textContent = t().copy; }, 1600); }, sel); } catch (e) { sel(); }
+      function sel() { var r = document.createRange(); r.selectNodeContents($("reflink")); var s2 = getSelection(); s2.removeAllRanges(); s2.addRange(r); }
+    };
+  }
+
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-lang]"); if (!b) return;
+    lang = b.dataset.lang; try { localStorage.setItem("ital-lang", lang); } catch (err) {}
+    renderStatic(); if (P) renderArea();
+  });
+
+  renderStatic();
+  if (P && K) {
+    $("program").hidden = true; $("area").hidden = false; renderArea();
+    if (!API) { data = { error: true }; renderArea(); }
+    else api({ action: "partner_stats", p: P, k: K }).then(function (r) { data = r && r.ok ? r : { error: true }; renderArea(); }).catch(function () { data = { error: true }; renderArea(); });
+  }
+})();
+</script>
+<script src="newlook.js"></script>
+</body>
+</html>

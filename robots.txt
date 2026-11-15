@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /admin.html
+Disallow: /partner.html
+Disallow: /old-home.html
+Disallow: /v2.html
+Disallow: /v3.html
+
+Sitemap: https://italtravel.am/sitemap.xml

@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ital Travel</title>
+<!-- Version 2 of the home page. While it is on trial it stays out of Google; remove this line if it becomes the main page. -->
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta property="og:site_name" content="Ital Travel">
+<meta property="og:title" content="Ital Travel · տուրեր իտալիայում">
+<meta property="og:description" content="Cultural and gastro tours in Italy, led by Armenian-speaking guides.">
+<meta property="og:image" content="https://italtravel.am/img/share.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Young+Serif&family=Outfit:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600&family=Noto+Serif+Armenian:wght@400;500&family=Noto+Sans+Armenian:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="footer.css">
+<style>
+/* Version 2: a dark page led by a 3D fan of tour cards. Same data, languages, prices and bookings as the main site. */
+:root {
+  color-scheme: dark;
+  --night: #0C1510; --panel: #141F19; --text: #FFFFFF; --soft: #CDD5CF; --edge: rgba(255,255,255,.24); --glass: rgba(14,22,17,.6); --rosso: #CD212A;
+  --serif: "Instrument Serif", "Noto Serif Armenian", Georgia, serif;
+  --sans: "Hanken Grotesk", "Noto Sans Armenian", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --e: cubic-bezier(.2,.75,.2,1);
+  --gl: max(16px, env(safe-area-inset-left, 0px)); --gr: max(16px, env(safe-area-inset-right, 0px));
+}
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 72px; }
+body { margin: 0; background: var(--night); color: var(--text); font: 400 1.03rem/1.5 var(--sans); overflow-x: hidden; padding-top: env(safe-area-inset-top, 0px); }
+body.lock { overflow: hidden; }
+h1, h2, h3, p, ul, figure { margin: 0; }
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+a { color: inherit; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.wrap { max-width: 1180px; margin-inline: auto; padding-left: var(--gl); padding-right: var(--gr); }
+
+/* Top bar */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 12; background: rgba(12,21,16,.94); }
+.bar .wrap { display: flex; align-items: center; gap: 12px; min-height: 62px; }
+.bar a.brand { color: #fff; margin-right: auto; }
+.bar a.brand small { color: #7FD4A2; }
+.bar a.brand i { box-shadow: none; }
+.links { display: flex; gap: 20px; font-size: .95rem; margin-right: 8px; }
+.links a { text-decoration: none; color: var(--soft); }
+.links a:hover { color: #fff; }
+.sw { display: flex; }
+.sw button { min-width: 38px; min-height: 44px; padding: 0 5px; font-size: .9rem; color: var(--soft); }
+.sw button[aria-pressed="true"] { color: #fff; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+
+/* Hero with the fan */
+.hero { position: relative; isolation: isolate; overflow: hidden; padding: clamp(10px, 2vh, 24px) 0 10px; display: grid; grid-template-rows: auto auto minmax(340px, 1fr) auto auto; height: calc(100vh - 62px); height: calc(100svh - 62px); min-height: 620px; max-height: 980px; }
+.bg { position: absolute; inset: -40px; z-index: -1; }
+.bg img { position: absolute; inset: 0; filter: blur(30px) brightness(.34) saturate(1.1); opacity: 0; transition: opacity .8s; }
+.bg img.on { opacity: 1; }
+.h-top { text-align: center; display: grid; gap: 6px; justify-items: center; }
+.hero h1 { font: 400 clamp(1.7rem, 4.6vh, 3rem)/1.1 var(--serif); text-wrap: balance; }
+.hero h1 em { font-style: normal; color: var(--soft); }
+.lead { color: var(--soft); max-width: 70ch; font-size: .98rem; }
+.chips { display: flex; gap: 8px; margin: 10px 0 12px; padding-inline: var(--gl) var(--gr); overflow-x: auto; scrollbar-width: none; justify-content: safe center; }
+.chips::-webkit-scrollbar { display: none; }
+.chip { flex: none; min-height: 42px; padding: 8px 16px; border-radius: 99px; border: 1px solid var(--edge); background: var(--glass); font-size: .95rem; transition: background .2s, color .2s; }
+.chip:hover { background: rgba(255,255,255,.14); }
+.chip[aria-pressed="true"] { background: #fff; color: var(--night); font-weight: 600; }
+
+.fan { position: relative; min-height: 0; perspective: 1500px; touch-action: pan-y; user-select: none; cursor: grab; --w: clamp(300px, 48vh, 400px); outline-offset: 6px; }
+.fan.drag { cursor: grabbing; }
+.card { position: absolute; left: 50%; top: 0; bottom: 0; width: var(--w); margin-left: calc(var(--w) / -2); border-radius: 26px; overflow: hidden; border: 1px solid var(--edge); text-align: left; background: #182019; transform: translateX(var(--x, 0)) rotateY(var(--r, 0deg)) scale(var(--s, 1)); opacity: var(--o, 1); transition: transform .8s var(--e), opacity .5s; z-index: var(--z, 1); box-shadow: 0 30px 50px -28px rgba(0,0,0,.9); cursor: pointer; }
+.card > img { position: absolute; inset: 0; pointer-events: none; -webkit-user-drag: none; }
+.card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,12,10,0) 34%, rgba(8,12,10,.6) 58%, rgba(8,12,10,.93)); }
+.card[data-p="0"] { --z: 5; }
+.card[data-p="-1"] { --x: -74%; --r: 24deg; --s: .84; --z: 4; }
+.card[data-p="1"] { --x: 74%; --r: -24deg; --s: .84; --z: 4; }
+.card[data-p="-2"] { --x: -130%; --r: 34deg; --s: .7; --z: 3; }
+.card[data-p="2"] { --x: 130%; --r: -34deg; --s: .7; --z: 3; }
+.card[data-p="-3"] { --x: -160%; --r: 40deg; --s: .55; --o: 0; pointer-events: none; }
+.card[data-p="3"] { --x: 160%; --r: -40deg; --s: .55; --o: 0; pointer-events: none; }
+.c-exp { position: absolute; z-index: 2; left: 50%; top: 14px; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 6px; min-height: 38px; padding: 0 14px; border-radius: 99px; background: var(--glass); border: 1px solid var(--edge); font-size: .9rem; white-space: nowrap; }
+.c-exp svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
+.c-txt { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; padding: 18px; display: grid; gap: 6px; }
+.c-top { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.c-txt h3 { font: 400 1.7rem/1.12 var(--serif); }
+.c-n { font-size: .9rem; color: var(--soft); font-variant-numeric: tabular-nums; flex: none; }
+.c-city { font-size: .9rem; color: var(--soft); }
+.c-txt p { font-size: .95rem; color: #E9ECE9; line-height: 1.4; }
+.c-price { font-weight: 500; }
+.card:not([data-p="0"]) .c-exp, .card:not([data-p="0"]) .c-more, .card:not([data-p="0"]) .c-n { display: none; }
+.card:not([data-p="0"]) h3 { font-size: 1.25rem; }
+.card[data-p="1"] .c-txt, .card[data-p="2"] .c-txt { padding-left: 36%; text-align: right; }
+.card[data-p="-1"] .c-txt, .card[data-p="-2"] .c-txt { padding-right: 36%; }
+
+.pill { margin: 10px auto 0; width: min(480px, calc(100% - 32px)); display: grid; grid-template-columns: auto auto minmax(0, 1fr) auto; align-items: center; gap: 10px; border-radius: 28px; padding: 8px 10px; background: var(--glass); border: 1px solid var(--edge); }
+.rnd { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; flex: none; transition: background .25s; }
+.rnd:hover { background: rgba(255,255,255,.14); }
+.p-thumb { width: 56px; height: 56px; border-radius: 50%; overflow: hidden; }
+.pill b { display: block; font-weight: 500; line-height: 1.2; }
+.pill span { font-size: .9rem; color: var(--soft); }
+.dots { display: flex; justify-content: center; gap: 2px; margin-top: 4px; min-height: 24px; }
+.dots button { width: 20px; height: 24px; display: grid; place-items: center; }
+.dots i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.4); transition: width .3s, background .3s; }
+.dots button[aria-current="true"] i { width: 18px; border-radius: 9px; background: #fff; }
+
+/* Sections */
+.sec { padding-block: clamp(44px, 7vw, 80px); }
+.sec + .sec { padding-top: 0; }
+.h2 { font: 400 clamp(1.9rem, 1.5rem + 1.8vw, 3rem)/1.1 var(--serif); text-wrap: balance; }
+.sub { color: var(--soft); max-width: 62ch; margin-top: 10px; }
+.c3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
+.tile { display: grid; grid-template-rows: auto 1fr; border-radius: 22px; overflow: hidden; background: var(--panel); border: 1px solid rgba(255,255,255,.1); min-width: 0; }
+.tile .ph { aspect-ratio: 4 / 3; overflow: hidden; }
+.tile .tx { padding: 16px 18px 18px; display: grid; gap: 8px; align-content: start; justify-items: start; }
+.tile h3 { font-size: 1.15rem; font-weight: 500; line-height: 1.25; }
+.tile p { color: var(--soft); font-size: .97rem; }
+.tile a { font-weight: 500; text-underline-offset: 4px; padding-block: 4px; }
+.who { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 28px; align-items: start; }
+.who video { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 22px; background: var(--panel); }
+.who .list { display: grid; gap: 12px; margin-top: 20px; }
+.row { display: grid; grid-template-columns: 130px minmax(0, 1fr); border-radius: 18px; overflow: hidden; background: var(--panel); border: 1px solid rgba(255,255,255,.1); }
+.row .tx { padding: 14px 16px; display: grid; gap: 4px; justify-items: start; }
+.row h3 { font-size: 1.08rem; font-weight: 500; line-height: 1.25; }
+.row p { color: var(--soft); font-size: .95rem; }
+.row a { font-weight: 500; text-underline-offset: 4px; padding-block: 4px; }
+.gg { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 24px; }
+.gc { display: grid; justify-items: center; text-align: center; gap: 10px; text-decoration: none; width: 180px; }
+.gc-ph { display: grid; place-items: center; width: 130px; height: 130px; border-radius: 50%; overflow: hidden; background: var(--panel); border: 1px solid var(--edge); font: 400 2.8rem/1 var(--serif); }
+.gc b { display: block; font-weight: 500; }
+.gc span.r, .gc i { display: block; font-style: normal; color: var(--soft); font-size: .9rem; }
+.ig-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px; }
+.ig-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 22px; }
+.ig-grid a { flex: 0 0 calc((100% - 20px) / 3); position: relative; display: block; aspect-ratio: 1; border-radius: 16px; overflow: hidden; background: var(--panel); }
+.ig-grid img { position: absolute; inset: 0; }
+.ig-grid svg { position: absolute; right: 12px; top: 12px; width: 24px; height: 24px; color: #fff; filter: drop-shadow(0 1px 4px rgba(0,0,0,.5)); }
+
+/* Tour detail */
+.sheet { position: fixed; inset: 0; z-index: 30; background: rgba(6,10,8,.72); display: grid; place-items: center; padding: max(16px, env(safe-area-inset-top, 0px)) var(--gr) 16px var(--gl); animation: fade .25s both; }
+@keyframes fade { from { opacity: 0; } }
+.s-box { width: min(980px, 100%); height: min(760px, 100%); background: #101A14; border: 1px solid var(--edge); border-radius: 26px; overflow: hidden; display: grid; grid-template-columns: minmax(0, 44fr) minmax(0, 56fr); animation: up .45s var(--e) both; }
+@keyframes up { from { transform: translateY(24px) scale(.97); } }
+.s-pic { position: relative; min-height: 0; overflow: hidden; }
+.s-pic img { position: absolute; inset: 0; }
+.s-body { overflow-y: auto; padding: 22px 24px 26px; display: grid; gap: 14px; align-content: start; min-width: 0; min-height: 0; }
+.s-top { display: flex; justify-content: flex-end; }
+.s-close { min-height: 44px; padding: 0 16px; border: 1px solid var(--edge); border-radius: 99px; font-size: .95rem; }
+.s-body h2 { font: 400 clamp(1.9rem, 1.5rem + 1.6vw, 2.8rem)/1.08 var(--serif); }
+.s-price { font-size: 1.15rem; font-weight: 500; }
+.s-desc, .s-total, .s-note { color: var(--soft); }
+.s-total { font-size: .95rem; }
+.s-total b { color: #fff; font-weight: 500; }
+.s-note { font-size: .92rem; }
+.step { display: inline-flex; align-items: center; border: 1px solid var(--edge); border-radius: 99px; justify-self: start; }
+.step button { width: 46px; height: 46px; font-size: 1.15rem; }
+.step output { min-width: 2ch; text-align: center; font-variant-numeric: tabular-nums; }
+.acts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; text-align: center; min-height: 48px; padding: 10px 18px; border-radius: 99px; text-decoration: none; font-weight: 500; line-height: 1.2; border: 1px solid var(--edge); transition: background .2s; }
+.btn:hover { background: rgba(255,255,255,.1); }
+.btn.go { grid-column: 1 / -1; background: var(--rosso); border-color: var(--rosso); }
+.btn.go:hover { background: #E02A33; }
+.s-sec h3 { font-size: 1.02rem; font-weight: 500; margin-bottom: 6px; }
+.s-sec ul { list-style: none; padding: 0; }
+.s-sec li { padding: 8px 0; border-top: 1px solid rgba(255,255,255,.16); font-size: .97rem; line-height: 1.35; }
+
+.fab { position: fixed; z-index: 9; right: max(16px, env(safe-area-inset-right, 0px)); bottom: max(16px, env(safe-area-inset-bottom, 0px)); width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; background: #1F8A4C; color: #fff; }
+.fab svg { width: 28px; height: 28px; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+@media (max-height: 820px) { .lead { display: none; } }
+@media (max-width: 860px) {
+  .hero { min-height: 600px; max-height: none; grid-template-rows: auto auto minmax(310px, 1fr) auto auto; }
+  .hero h1 { font-size: clamp(1.45rem, 6.4vw, 2rem); }
+  .p-thumb { width: 46px; height: 46px; }
+  .links { display: none; }
+  .lead { display: none; }
+  .c3 { grid-template-columns: minmax(0, 1fr); }
+  .who { grid-template-columns: minmax(0, 1fr); }
+  .who video { width: min(260px, 70%); margin-inline: auto; }
+  .ig-grid a { flex-basis: calc((100% - 10px) / 2); }
+  .fan { --w: 72vw; }
+  .card[data-p="-1"] { --x: -68%; --r: 22deg; --s: .8; }
+  .card[data-p="1"] { --x: 68%; --r: -22deg; --s: .8; }
+  .card[data-p="-2"], .card[data-p="2"] { --o: 0; pointer-events: none; }
+  .card:not([data-p="0"]) .c-txt { display: none; }
+  .chips { justify-content: flex-start; }
+  .sheet { padding: 0; }
+  .s-box { width: 100%; height: 100%; border-radius: 0; border: 0; grid-template-columns: minmax(0, 1fr); grid-template-rows: 26vh minmax(0, 1fr); }
+  .s-body { padding: 14px var(--gr) 90px var(--gl); }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.2.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
+</svg>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand light" href="#top" aria-label="Ital Travel"><b>Ital<span>·</span>Travel</b><i></i><small>տուրեր իտալիայում</small></a>
+    <nav class="links" aria-label="Main"><a href="#tours" data-t="navTours"></a><a href="#occasions" data-t="o3t"></a><a href="#team" data-t="navGuides"></a><a href="#site-foot" data-t="navContact"></a></nav>
+    <div class="sw" role="group" aria-label="Language"><button type="button" data-lang="hy" aria-pressed="true">ՀԱՅ</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+    <div class="sw" role="group" aria-label="Currency"><button type="button" data-cur="EUR" aria-pressed="true" title="Euro">€</button><button type="button" data-cur="AMD" aria-pressed="false" title="Armenian dram">֏</button><button type="button" data-cur="USD" aria-pressed="false" title="US dollar">$</button></div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" id="tours">
+    <div class="bg" aria-hidden="true"><img id="bg-a" alt=""><img id="bg-b" alt=""></div>
+    <div class="wrap h-top">
+      <h1><span data-t="h1a"></span> <em data-t="h1b"></em></h1>
+      <p class="lead" data-t="lead"></p>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Filter"></div>
+    <div class="fan" id="cards" tabindex="0" role="group" aria-label="Tours"></div>
+    <div class="pill">
+      <button class="rnd" type="button" id="f-prev" aria-label="Previous">←</button>
+      <div class="p-thumb"><img id="p-thumb" alt=""></div>
+      <div style="min-width:0"><b id="p-name"></b><span id="p-price"></span></div>
+      <button class="rnd" type="button" id="f-next" aria-label="Next">→</button>
+    </div>
+    <div class="dots" id="dots"></div>
+  </section>
+
+  <section class="sec" id="occasions">
+    <div class="wrap">
+      <h2 class="h2" data-t="occH"></h2>
+      <p class="sub" data-t="occP"></p>
+      <div class="c3">
+        <article class="tile"><div class="ph"><img src="img/t/occ-school.jpg" alt="A school group sitting on the steps in front of the Vittoriano in Rome" loading="lazy" decoding="async" style="object-position:50% 45%"></div><div class="tx"><h3 data-t="o2t"></h3><p data-t="o2d"></p><a href="https://wa.me/393281770199" target="_blank" rel="noopener" data-t="occC"></a></div></article>
+        <article class="tile"><div class="ph"><img src="img/occ-events.webp" alt="A long table set for an event at a villa in the Italian hills" loading="lazy" decoding="async" style="object-position:50% 66%"></div><div class="tx"><h3 data-t="o3t"></h3><p data-t="o3d"></p><a href="https://wa.me/393281770199" target="_blank" rel="noopener" data-t="occC"></a></div></article>
+        <article class="tile"><div class="ph"><img src="img/t/occ-special.jpg" alt="A couple walking down the aisle at their wedding on an Italian lake" loading="lazy" decoding="async"></div><div class="tx"><h3 data-t="o4t"></h3><p data-t="o4d"></p><a href="https://wa.me/393281770199" target="_blank" rel="noopener" data-t="occC"></a></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap who">
+      <video id="intro" src="video/intro.mp4" poster="video/intro.jpg" muted loop playsinline preload="none" aria-label="Ital Travel in Italy"></video>
+      <div>
+        <h2 class="h2" data-t="whoH"></h2>
+        <div class="list">
+          <article class="row"><div><img src="img/t/yerevan.jpg" alt="Yerevan with Mount Ararat at sunset" loading="lazy" decoding="async" style="object-position:44% 30%"></div><div class="tx"><h3 data-t="a1t"></h3><p data-t="a1d"></p><a href="#tours" data-t="a1c"></a></div></article>
+          <article class="row"><div><img src="img/t/armenians-world.jpg" alt="Armenians carrying a giant Armenian flag" loading="lazy" decoding="async" style="object-position:50% 40%"></div><div class="tx"><h3 data-t="a2t"></h3><p data-t="a2d"></p><a href="https://wa.me/393281770199" target="_blank" rel="noopener" data-t="a2c"></a></div></article>
+          <article class="row"><div><img src="img/t/aud-guides-0301.jpg" alt="Our guide showing a group the Baptistery in Florence" loading="lazy" decoding="async"></div><div class="tx"><h3 data-t="a3t"></h3><p data-t="a3d"></p><a href="page.html?p=partner" data-t="a3c"></a></div></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="team">
+    <div class="wrap">
+      <h2 class="h2" data-t="guidesH"></h2>
+      <div class="gg" id="guides"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="instagram">
+    <div class="wrap">
+      <div class="ig-head">
+        <h2 class="h2" data-t="igH"></h2>
+        <a href="https://www.instagram.com/ital_travel_/" target="_blank" rel="noopener" style="text-underline-offset:4px"><span data-t="igFollow"></span> →</a>
+      </div>
+      <div class="ig-grid" id="ig-grid"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot" id="site-foot"></footer>
+<a class="fab" href="https://wa.me/393281770199" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="s-name" hidden>
+  <div class="s-box">
+    <div class="s-pic"><img id="s-img" alt=""></div>
+    <div class="s-body">
+      <div class="s-top"><button class="s-close" type="button" id="s-close"></button></div>
+      <h2 id="s-name"></h2>
+      <p class="s-price" id="s-price"></p>
+      <p class="s-desc" id="s-desc"></p>
+      <div class="step" id="s-step"><button type="button" id="s-minus" aria-label="−1">−</button><output id="s-n">2</output><button type="button" id="s-plus" aria-label="+1">+</button></div>
+      <p class="s-total" id="s-total"></p>
+      <div class="acts">
+        <a class="btn go" id="s-book"></a>
+        <a class="btn" id="s-more"></a>
+        <a class="btn" id="s-ask" target="_blank" rel="noopener"></a>
+      </div>
+      <div id="s-route" style="display:grid;gap:14px"></div>
+    </div>
+  </div>
+</div>
+
+<script src="config.js"></script>
+<script src="core.js"></script>
+<script>
+/* Anonymous visit counting and partner links: the same as on the main page.
+   Only after the visitor presses "Accept" in the cookie banner (IT.consent() === "all"). */
+(function () {
+  var API = (window.ITAL_CONFIG || {}).API_URL || "";
+  function rid() { return Math.random().toString(36).slice(2, 10) + Date.now().toString(36).slice(-4); }
+  function ok() { return IT.consent() === "all"; }
+  var v = null, s = null;
+  function ids() {
+    if (v) return;
+    try { v = localStorage.getItem("it-v"); if (!v) { v = rid(); localStorage.setItem("it-v", v); } } catch (e) { v = rid(); }
+    try { s = sessionStorage.getItem("it-s"); if (!s) { s = rid(); sessionStorage.setItem("it-s", s); } } catch (e) { s = rid(); }
+  }
+  function source() {
+    var q = new URLSearchParams(location.search), u = q.get("utm_source") || q.get("src");
+    if (q.get("ref")) return "Partner";
+    if (u) return u.slice(0, 30);
+    var r = document.referrer || "";
+    if (!r) return "Direct";
+    var h = ""; try { h = new URL(r).hostname.replace(/^www\./, ""); } catch (e) { return "Other"; }
+    if (h === location.hostname) return "Direct";
+    if (/instagram/.test(h)) return "Instagram";
+    if (/facebook|fb\.|messenger/.test(h)) return "Facebook";
+    if (/google\./.test(h)) return "Google";
+    if (/whatsapp|wa\.me/.test(h)) return "WhatsApp";
+    if (/t\.me|telegram/.test(h)) return "Telegram";
+    if (/youtube/.test(h)) return "YouTube";
+    if (/tiktok/.test(h)) return "TikTok";
+    if (/bing|yandex|duckduckgo/.test(h)) return "Other search";
+    return h.slice(0, 30);
+  }
+  var src = source(), sent = {};
+  window.IT_TRACK = function (e, detail) {
+    if (!API || !ok()) return;
+    ids();
+    var key = e + "|" + (detail || "");
+    if (e !== "view" && sent[key]) return; sent[key] = 1;
+    var tz = ""; try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (err) {}
+    var body = JSON.stringify({ action: "track", e: e, d: detail || "", v: v, s: s, src: src, l: (window.IT && IT.state.lang) || "hy",
+      dev: matchMedia("(max-width: 760px)").matches ? "mobile" : "desktop", tz: tz, p: location.pathname });
+    try { if (navigator.sendBeacon && navigator.sendBeacon(API, new Blob([body], { type: "text/plain;charset=utf-8" }))) return; } catch (err) {}
+    try { fetch(API, { method: "POST", mode: "no-cors", keepalive: true, headers: { "Content-Type": "text/plain;charset=utf-8" }, body: body }); } catch (err) {}
+  };
+  var counted = false, REF_DAYS = 60;
+  var code = (new URLSearchParams(location.search).get("ref") || "").trim().toUpperCase();
+  if (!/^[A-Z0-9_-]{2,20}$/.test(code)) code = "";
+  function start() {
+    if (counted || !ok()) return; counted = true;
+    if (!/[?&]notrack/.test(location.search)) setTimeout(function () { window.IT_TRACK("view"); }, 600);
+    if (code) {
+      try { localStorage.setItem("it-ref", JSON.stringify({ c: code, t: Date.now() })); } catch (e) {}
+      setTimeout(function () { window.IT_TRACK("ref_click", code); }, 700);
+    }
+  }
+  window.IT_REF = function () {
+    if (code) return code;
+    try { var o = JSON.parse(localStorage.getItem("it-ref") || "null"); if (o && Date.now() - o.t < REF_DAYS * 864e5) return o.c; } catch (e) {}
+    return "";
+  };
+  start();
+  document.addEventListener("it-consent", start);
+})();
+</script>
+<script>
+(function () {
+  var esc = IT.esc, $ = function (id) { return document.getElementById(id); };
+  var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var fan = $("cards"), LIST = [], cur = 0, lastFilter = null;
+  var EXTRA = {
+    hy: { expand: "Մանրամասն", close: "Փակել", details: "Մանրամասներ և լուսանկարներ", book: "Ամրագրել առցանց", ask: "Հարցնել WhatsApp-ով", route: "Երթուղի", hello: "Բարև, ինձ հետաքրքրում է՝ " },
+    en: { expand: "Details", close: "Close", details: "Details & photos", book: "Book online", ask: "Ask on WhatsApp", route: "Route", hello: "Hello! I'm interested in: " }
+  };
+  function X() { return EXTRA[IT.state.lang]; }
+  function pic(x) { return IT.thumb(IT.IMG[x.id]); }
+  function posOf(x) { return IT.POS[x.id] || "50% 50%"; }
+  function priceText(x) {
+    var u = IT.t();
+    if (x.prices && !x.fromPP) return IT.money(IT.fromPrice(x)) + " " + u.for2;
+    if (x.prices || x.from) return u.from + " " + IT.money(IT.fromPrice(x)) + (x.fromPP ? " " + u.per : "");
+    return u.onReq;
+  }
+
+  /* The fan: core.js fills #cards with this every time the filter, language or currency changes. */
+  function cardsHTML(list) {
+    LIST = list;
+    var N = list.length, expand = esc(X().expand);
+    return list.map(function (x, i) {
+      var L = IT.L(x);
+      return '<div class="card" id="card-' + i + '" data-i="' + i + '" role="button" tabindex="0" aria-label="' + esc(L.t) + '">' +
+        '<img src="' + esc(pic(x)) + '" alt="" draggable="false"' + (i <= 2 || i >= N - 2 ? "" : ' loading="lazy"') + ' decoding="async" style="object-position:' + posOf(x) + '">' +
+        '<span class="c-exp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4H4v5M15 20h5v-5M4 4l6 6M20 20l-6-6"/></svg>' + expand + "</span>" +
+        '<div class="c-txt"><div class="c-top"><h3>' + esc(L.t) + '</h3><span class="c-n">' + (i + 1) + " / " + N + "</span></div>" +
+        '<p class="c-more">' + esc(L.d) + '</p><p class="c-more c-price">' + esc(priceText(x)) + "</p></div></div>";
+    }).join("");
+  }
+  var bgOn = "a";
+  function setBg(src) {
+    var next = bgOn === "a" ? "b" : "a", el = $("bg-" + next), old = $("bg-" + bgOn);
+    if (old.getAttribute("src") === src) return;
+    el.onload = function () { el.classList.add("on"); old.classList.remove("on"); };
+    el.src = src; bgOn = next;
+  }
+  function place() {
+    var N = LIST.length; if (!N) return;
+    Array.prototype.forEach.call(fan.children, function (c, i) {
+      var d = ((i - cur) % N + N) % N; if (d > N / 2) d -= N;
+      d = Math.max(-3, Math.min(3, d));
+      c.dataset.p = d;
+      c.tabIndex = Math.abs(d) >= 3 ? -1 : 0;
+    });
+    var x = LIST[cur];
+    $("p-thumb").src = pic(x); $("p-thumb").style.objectPosition = posOf(x);
+    $("p-name").textContent = IT.L(x).t;
+    $("p-price").textContent = priceText(x);
+    setBg(pic(x));
+    var dots = $("dots");
+    if (N <= 10) {
+      if (dots.children.length !== N) {
+        dots.innerHTML = LIST.map(function (_, i) { return '<button type="button" data-dot="' + i + '" aria-label="' + (i + 1) + '"><i></i></button>'; }).join("");
+      }
+      Array.prototype.forEach.call(dots.children, function (b, i) { b.setAttribute("aria-current", String(i === cur)); });
+    } else dots.innerHTML = "";
+  }
+  function go(i) { var N = LIST.length; if (!N) return; cur = (i + N) % N; place(); }
+  $("f-prev").addEventListener("click", function () { go(cur - 1); });
+  $("f-next").addEventListener("click", function () { go(cur + 1); });
+  $("dots").addEventListener("click", function (e) { var b = e.target.closest("[data-dot]"); if (b) go(+b.dataset.dot); });
+  function act(card) { var i = +card.dataset.i; if (i === cur) openSheet(LIST[i]); else go(i); }
+  fan.addEventListener("click", function (e) { var c = e.target.closest(".card"); if (c && !moved) act(c); });
+  fan.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowLeft") { e.preventDefault(); go(cur - 1); }
+    if (e.key === "ArrowRight") { e.preventDefault(); go(cur + 1); }
+    var c = e.target.closest && e.target.closest(".card");
+    if (c && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); act(c); }
+  });
+  var startX = null, moved = false;
+  fan.addEventListener("pointerdown", function (e) { startX = e.clientX; moved = false; fan.classList.add("drag"); });
+  addEventListener("pointermove", function (e) {
+    if (startX === null) return;
+    var dx = e.clientX - startX;
+    if (Math.abs(dx) > 48) { moved = true; go(cur + (dx < 0 ? 1 : -1)); startX = e.clientX; }
+  });
+  function endDrag() { startX = null; fan.classList.remove("drag"); setTimeout(function () { moved = false; }, 0); }
+  addEventListener("pointerup", endDrag);
+  addEventListener("pointercancel", endDrag);
+
+  /* Tour detail: real prices, real booking window (on the main page) and the full tour page. */
+  var open = null, people = 2, last = null;
+  function bookUrl(id) { var r = window.IT_REF ? window.IT_REF() : ""; return "./?book=" + encodeURIComponent(id) + (r ? "&ref=" + encodeURIComponent(r) : ""); }
+  function drawSheet() {
+    if (!open) return;
+    var x = open, L = IT.L(x), u = IT.t(), e = X();
+    $("s-img").src = pic(x); $("s-img").style.objectPosition = posOf(x); $("s-img").alt = L.t;
+    $("s-close").textContent = e.close;
+    $("s-name").textContent = L.t;
+    $("s-price").textContent = priceText(x);
+    $("s-desc").textContent = L.d;
+    $("s-n").textContent = people;
+    $("s-step").hidden = !x.prices;
+    var tot = $("s-total"); tot.textContent = ""; tot.hidden = !x.prices;
+    if (x.prices) {
+      tot.appendChild(document.createTextNode(u.total.replace("{n}", people) + ": "));
+      var b = document.createElement("b"); b.textContent = IT.money(IT.tourPrice(x, people)); tot.appendChild(b);
+      tot.appendChild(document.createTextNode(". " + u.kids));
+    }
+    $("s-book").textContent = e.book; $("s-book").href = bookUrl(x.id);
+    $("s-more").textContent = e.details; $("s-more").href = "tour.html?id=" + x.id;
+    $("s-ask").textContent = e.ask; $("s-ask").href = IT.WA + "?text=" + encodeURIComponent(e.hello + L.t);
+    var r = $("s-route"); r.innerHTML = "";
+    function sec(h, items) {
+      var s = document.createElement("div"); s.className = "s-sec";
+      if (h) { var hh = document.createElement("h3"); hh.textContent = h; s.appendChild(hh); }
+      var ul = document.createElement("ul");
+      items.forEach(function (it) { var li = document.createElement("li"); li.textContent = it; ul.appendChild(li); });
+      s.appendChild(ul); r.appendChild(s);
+    }
+    function note(t) { var p = document.createElement("p"); p.className = "s-note"; p.textContent = t; r.appendChild(p); }
+    if (x.dur) sec("", [u.dur + ": " + x.dur + " " + u.hrs]);
+    (L.g || []).forEach(function (g) { sec(g.h || e.route, g.a); (g.x || []).forEach(note); });
+    (L.n || []).forEach(note);
+  }
+  function openSheet(x) {
+    last = document.activeElement; open = x;
+    people = x.fromPP ? 1 : 2;
+    drawSheet(); $("sheet").hidden = false; document.body.classList.add("lock"); $("s-close").focus();
+    if (window.IT_TRACK) window.IT_TRACK("tour_open", x.id);
+  }
+  function closeSheet() { open = null; $("sheet").hidden = true; document.body.classList.remove("lock"); if (last && last.focus) last.focus(); }
+  $("s-close").addEventListener("click", closeSheet);
+  $("sheet").addEventListener("click", function (e) { if (e.target === $("sheet")) closeSheet(); });
+  document.addEventListener("keydown", function (e) {
+    if (!open) return;
+    if (e.key === "Escape") closeSheet();
+    if (e.key === "Tab") {
+      var f = $("sheet").querySelectorAll("button:not([hidden]), a[href]"); if (!f.length) return;
+      var a = f[0], z = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); }
+      else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); }
+    }
+  });
+  $("s-minus").addEventListener("click", function () { people = Math.max(open.fromPP ? 1 : 2, people - 1); drawSheet(); });
+  $("s-plus").addEventListener("click", function () { people = Math.min(open.max || 30, people + 1); drawSheet(); });
+  document.addEventListener("it-cur", drawSheet);
+
+  /* Intro video plays only while it is on screen, so it costs nothing further up the page. */
+  var intro = $("intro");
+  if (!reduce && "IntersectionObserver" in window) new IntersectionObserver(function (es) {
+    if (es[0].isIntersecting) intro.play().catch(function () {}); else intro.pause();
+  }, { threshold: .3 }).observe(intro);
+
+  /* Instagram: the same feed as the main page */
+  (function () {
+    var grid = $("ig-grid"), PROFILE = "https://www.instagram.com/ital_travel_/";
+    var PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13l11-6.5z"/></svg>';
+    function tile(p) {
+      var s = p.sizes || {}, img = (s.medium && s.medium.mediaUrl) || (s.large && s.large.mediaUrl) || p.thumbnailUrl || p.mediaUrl;
+      return '<a href="' + esc(p.permalink || PROFILE) + '" target="_blank" rel="noopener" aria-label="' + esc(IT.t().igOpen) + '"><img src="' + esc(img) + '" alt="' + esc((p.prunedCaption || p.caption || "").slice(0, 120)) + '" loading="lazy" decoding="async">' + (p.mediaType === "VIDEO" ? PLAY : "") + "</a>";
+    }
+    function fallback() {
+      grid.innerHTML = ["img/fl-group-signoria.webp", "img/t/cook-group.jpg", "img/t/tu-vineyard-group.jpg", "img/t/fl-duomo-sunset.jpg"].map(function (src) { return tile({ thumbnailUrl: src }); }).join("");
+    }
+    if (!IT.IG_FEED) fallback();
+    else fetch(IT.IG_FEED).then(function (r) { return r.json(); }).then(function (d) {
+      var posts = (Array.isArray(d) ? d : d.posts || []).slice(0, 8);
+      if (posts.length) grid.innerHTML = posts.map(tile).join(""); else fallback();
+    }).catch(fallback);
+  })();
+
+  IT.init({
+    chips: function (list) {
+      return list.map(function (c) { return '<button type="button" class="chip" data-filter="' + c.id + '" aria-pressed="' + c.on + '">' + esc(c.label) + "</button>"; }).join("");
+    },
+    cards: cardsHTML,
+    guides: function (list) {
+      var u = IT.t();
+      return list.map(function (g) {
+        var n = g[IT.state.lang];
+        return '<a class="gc" href="page.html?p=team&amp;id=' + g.id + '"><span class="gc-ph">' +
+          (g.photo ? '<img src="' + g.photo + '" alt="' + esc(n) + '" loading="lazy" style="object-position:' + (g.pos || "50% 30%") + (g.zoom ? ";transform:scale(" + g.zoom + ");transform-origin:" + g.pos : "") + '">' : '<span aria-hidden="true">' + esc(n.charAt(0)) + "</span>") +
+          "</span><span><b>" + esc(n) + '</b><span class="r">' + esc(u.role) + "</span><i>" + esc(u.viewProfile) + " →</i></span></a>";
+      }).join("");
+    },
+    after: function () {
+      if (IT.state.filter !== lastFilter) { lastFilter = IT.state.filter; cur = 0; }
+      if (cur >= LIST.length) cur = 0;
+      place(); drawSheet();
+    }
+  });
+})();
+</script>
+</body>
+</html>

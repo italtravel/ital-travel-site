@@ -1,0 +1,4 @@
+# Netlify: old addresses lead to the new design (the query, like ?id=t1 or ?p=blog, is kept)
+/landing.html   /             301!
+/tour.html      /trip.html    301!
+/page.html      /info.html    301!

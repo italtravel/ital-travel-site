@@ -1,0 +1,78 @@
+/* Ital Travel: the look of the main page (landing.html), shared by info.html, trip.html and partner.html.
+   Load it last in <head>, after the page's own <style>, so it wins.
+   Colours: soft dusty green #4E7D63 (dark #3A5F4A) and dusty red #8A4A4D on a warm off-white #F6F4EE.
+   Fonts: Playfair Display / Noto Serif Armenian for headings, Outfit / Noto Sans Armenian for text. */
+:root {
+  --page: #F6F4EE; --sand: #F6F4EE; --white: #FFFFFF; --ink: #142019; --muted: #56625B; --line: #E2E6DF;
+  --verde: #4E7D63; --verde-d: #3A5F4A; --rosso: #8A4A4D; --rosso-d: #7A3E41;
+  --sea: var(--verde); --sea-d: var(--verde-d); --coral: var(--rosso); --mint: #E3ECE6;
+  --serif: "Playfair Display", "Noto Serif Armenian", Georgia, serif; --sans: "Outfit", "Noto Sans Armenian", system-ui, sans-serif;
+  --display: var(--serif); --num: var(--serif); --body: var(--sans); --classic: var(--serif);
+  --e: cubic-bezier(.2,.75,.2,1); --ease: var(--e);
+  --gl: max(16px, env(safe-area-inset-left, 0px)); --gr: max(16px, env(safe-area-inset-right, 0px));
+}
+body { font-family: var(--sans); color: var(--ink); background: radial-gradient(60vw 50vw at 0% 0%, #E6EEE8, transparent 70%), radial-gradient(50vw 40vw at 100% 10%, #F3E6E4, transparent 70%), var(--page); background-attachment: fixed; }
+h1, h2, h3, html[lang="hy"] h1, html[lang="hy"] h2, html[lang="hy"] h3 { font-family: var(--serif); font-weight: 500; }
+:focus-visible { outline-color: var(--rosso); }
+body > .tricolore { display: none; }
+
+/* Logo: dusty green and red */
+a.brand b span { color: var(--rosso); }
+a.brand i, .site-foot .tricolore { background: linear-gradient(90deg, var(--verde) 0 33.34%, #FFFFFF 0 66.67%, var(--rosso) 0); }
+a.brand small { color: var(--verde); }
+a.brand.light small { color: #A9CBB6; }
+
+/* Header: a floating rounded bar */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: transparent; border: 0; padding-top: 12px; }
+.top .wrap { display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,.82); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: 20px; box-shadow: 0 0 0 1px var(--line), 0 18px 34px -26px rgba(20,32,25,.5); min-height: 64px; max-width: calc(1180px - 32px); width: calc(100% - var(--gl) - var(--gr)); padding: 6px 18px; }
+.back { color: var(--verde-d); font-weight: 500; }
+.back:hover { color: var(--ink); }
+.lang { box-shadow: 0 0 0 1px var(--line); }
+.lang button { font-weight: 600; color: var(--verde-d); }
+.lang button[aria-pressed="true"] { background: var(--verde); color: #fff; }
+@media (max-width: 420px) { .top .wrap { padding: 6px 12px; gap: 8px; } }
+
+/* Headings, labels, cards */
+.head .kind { color: var(--verde-d); font-weight: 600; letter-spacing: .16em; }
+.card, .faq details, .legal section, .mate, .pc, .steps li, .tile { border-radius: 22px; box-shadow: 0 0 0 1px var(--line), 0 22px 40px -32px rgba(20,32,25,.55); }
+.legal a, .faq a, .pc i, .prof-t .role { color: var(--verde-d); }
+.faq .faq-h, .legal h2 { font-family: var(--serif); font-weight: 500; color: var(--verde-d); }
+.faq summary::after { background: var(--mint); color: var(--verde-d); }
+.legal h2 span { color: var(--rosso); }
+
+/* Buttons: white with a thin border; the main one dusty red, WhatsApp dusty green */
+.btn { border-radius: 14px; border: 1px solid var(--line); font-weight: 500; box-shadow: none; transition: border-color .2s, background .2s; }
+.btn:hover { transform: none; border-color: var(--ink); }
+.btn-coral, .btn-book { background: var(--rosso); border-color: var(--rosso); color: #fff; box-shadow: none; }
+.btn-coral:hover, .btn-book:hover { background: var(--rosso-d); border-color: var(--rosso-d); }
+.btn-sea { background: var(--verde); border-color: var(--verde); color: #fff; }
+.btn-sea:hover { background: var(--verde-d); border-color: var(--verde-d); }
+.btn-wa { background: var(--verde); border-color: var(--verde); color: #fff; }
+.btn-wa:hover { background: var(--verde-d); border-color: var(--verde-d); }
+.btn-line { background: #fff; }
+
+/* Form fields */
+.f input, .f select, .f textarea { background: #fff; border: 1px solid var(--line); border-radius: 14px; }
+.f input:focus, .f select:focus, .f textarea:focus { border-color: var(--verde); box-shadow: 0 0 0 3px rgba(78,125,99,.14); }
+
+/* Cookie banner */
+.ck-bar a { color: var(--verde-d); }
+.ck-bar .ck-all { background: var(--verde); border-color: var(--verde); }
+
+/* Footer: a rounded deep-green panel inside the page margins, over a Tuscan photo */
+.site-foot { position: relative; isolation: isolate; overflow: hidden; width: calc(100% - var(--gl) - var(--gr)); max-width: 1240px; margin: 12px auto calc(16px + env(safe-area-inset-bottom, 0px)); border-radius: 26px; color: #D6E6DC;
+  background: radial-gradient(70% 90% at 100% 0%, rgba(138,74,77,.22), transparent 60%), linear-gradient(165deg, rgba(46,76,59,.93), rgba(8,28,18,.97) 70%), url(img/t/tu-cypress-road.jpg) center 60% / cover; box-shadow: 0 30px 60px -40px rgba(20,32,25,.7); }
+.site-foot .tricolore { height: 4px; }
+.site-foot .wrap { max-width: none; padding-left: clamp(22px, 4vw, 52px); padding-right: clamp(22px, 4vw, 52px); }
+.site-foot .sf-grid { padding-block: clamp(40px, 6vw, 64px) 36px; gap: 34px 40px; }
+.site-foot a.sf-badge { width: 132px; height: 132px; background: #F6F4EE; box-shadow: 0 0 0 4px rgba(255,255,255,.12), 0 18px 34px -16px rgba(0,0,0,.6); }
+.site-foot .sf-tag { font-family: var(--serif); font-weight: 500; font-size: clamp(1.4rem, 1.2rem + .8vw, 1.8rem); line-height: 1.25; }
+.site-foot .sf-info { color: #C3D8CB; }
+.site-foot h3 { font-family: var(--sans); font-size: .74rem; letter-spacing: .2em; color: #A9CBB6; margin-bottom: 16px; }
+.site-foot ul { gap: 10px; }
+.site-foot ul a { font-size: 1rem; display: inline-block; transition: transform .25s var(--e), color .2s; }
+.site-foot ul a:hover { color: #fff; transform: translateX(4px); text-decoration: none; }
+.site-foot ul a:hover::before { content: "→ "; color: #A9CBB6; }
+.site-foot a:hover, .site-foot .sf-ck:hover { color: #fff; }
+.site-foot .sf-bottom { border-top-color: rgba(255,255,255,.12); color: #A9C2B3; padding-block: 20px 26px; }
+@media (max-width: 560px) { .site-foot { border-radius: 22px; } .site-foot a.sf-badge { width: 112px; height: 112px; } }
