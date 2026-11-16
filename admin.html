@@ -35,6 +35,9 @@ h1, h2, h3 { margin: 0; line-height: 1.2; }
 .btn-primary { background: var(--verde); border-color: var(--verde); color: #fff; }
 .btn-primary:hover { background: var(--verde-d); }
 .btn-danger { color: var(--rosso); }
+.del-box { display: grid; gap: 8px; margin-top: 6px; padding-top: 14px; border-top: 1px solid var(--line); }
+.del-box .btn-danger { border-color: rgba(138,74,77,.45); }
+.del-box .btn-danger:hover { background: #F7ECEC; }
 .btn:disabled { opacity: .5; cursor: default; }
 .f { display: grid; gap: 5px; font-weight: 600; font-size: .82rem; min-width: 0; color: var(--muted); }
 .f input, .f select, .f textarea { font-weight: 400; font-size: .94rem; color: var(--ink); background: var(--bg); border: 1.5px solid transparent; border-radius: 11px; padding: 8px 11px; min-height: 40px; width: 100%; }
@@ -710,7 +713,9 @@ td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
       '<div><p class="note" style="margin-bottom:8px;font-weight:700;color:var(--ink)">Status</p><div class="statuses">' + ORDER.map(function (s) {
         return '<button type="button" style="--c:var(--st-' + s + ')" data-status="' + s + '" aria-pressed="' + (b.status === s) + '"><i></i>' + LABEL[s] + "</button>";
       }).join("") + "</div></div>" + (b.email ? '<label class="check"><input type="checkbox" id="notify"' + (notify ? " checked" : "") + "> Email the customer when I change the status</label>" : "") +
-      '<label class="f">Notes (only you see these)<textarea id="notes" rows="3">' + esc(notes) + '</textarea></label><button type="button" class="btn btn-primary" id="save-notes" style="justify-self:start">Save notes</button>';
+      '<label class="f">Notes (only you see these)<textarea id="notes" rows="3">' + esc(notes) + '</textarea></label><button type="button" class="btn btn-primary" id="save-notes" style="justify-self:start">Save notes</button>' +
+      '<div class="del-box"><p class="note">Delete removes the booking from the list and calendar. A copy is kept in the <b>Deleted bookings</b> sheet of your Google Sheet. The customer is not emailed.</p>' +
+      '<button type="button" class="btn btn-danger" id="del-booking" style="justify-self:start">Delete booking</button></div>';
     $("drawer").hidden = false;
     if (!keep) $("sheet").scrollTop = 0;
   }
@@ -928,6 +933,7 @@ td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
     if (e.target.closest("#save-notes")) { saveNotes(); return; }
     if (e.target.closest("#save-price")) { savePrice(); return; }
     if (e.target.closest("#save-date")) { saveDate(); return; }
+    if (e.target.closest("#del-booking")) { delBooking(); return; }
     if (e.target.closest("#block")) { block(st.openDay, true, $("reason").value); return; }
     if (e.target.closest("#unblock")) { block(st.openDay, false, ""); return; }
   });
@@ -969,6 +975,19 @@ td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
       b.date = r.date || d; b.time = r.time != null ? r.time : t; render(); openBooking(b.ref, true);
       toast("Moved to " + niceDate(b.date) + (r.emailed ? " · customer emailed" : ""));
     }).catch(function () { btn.disabled = false; btn.textContent = "Save new date"; toast("No connection. The date was not changed."); });
+  }
+  // Delete a booking after asking (the script keeps a copy in the "Deleted bookings" sheet)
+  function delBooking() {
+    var b = find(st.openRef); if (!b) return;
+    var who = [b.name, b.surname].filter(Boolean).join(" ");
+    if (!confirm("Delete this booking?\n\n" + b.ref + (who ? " · " + who : "") + "\n" + tourName(b.tourId || b.tour) + " · " + niceDate(b.date) +
+      "\n\nIt disappears from the list and calendar. A copy stays in the 'Deleted bookings' sheet.")) return;
+    var btn = $("del-booking"); btn.disabled = true; btn.textContent = "Deleting…";
+    api({ action: "admin_delete", ref: b.ref }).then(function (r) {
+      if (!r.ok) { btn.disabled = false; btn.textContent = "Delete booking"; toast(r.error === "unknown_action" ? "Update the Google script first (new version)." : "Not deleted: " + r.error); return; }
+      st.data.bookings = st.data.bookings.filter(function (x) { return x.ref !== b.ref; });
+      closeDrawer(); render(); toast("Booking " + b.ref + " deleted");
+    }).catch(function () { btn.disabled = false; btn.textContent = "Delete booking"; toast("No connection. The booking was not deleted."); });
   }
   function block(day, on, reason) {
     api({ action: "admin_block", date: day, blocked: on, reason: reason }).then(function (r) {
