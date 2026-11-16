@@ -688,6 +688,14 @@ body.bk-open { overflow: hidden; }
 .bk .bk-tour, .bk .addon, .bk .slot, .bk .cal, .bk .ppl, .bk .review, .bk .sum { border-radius: 18px; }
 .bk .f input, .bk .f select, .bk .f textarea { border-width: 1px; border-radius: 14px; background: #fff; }
 .bk .f input:focus, .bk .f select:focus, .bk .f textarea:focus { border-color: var(--verde); box-shadow: 0 0 0 3px rgba(78,125,99,.12); }
+/* Form boxes stand out from the cream window: white with a visible border (name, surname, phone, email, notes) */
+.bk .bk-fields .f input, .bk .f textarea { background: #fff; border: 1.5px solid #CFC8B8; box-shadow: 0 1px 2px rgba(20,32,25,.06); }
+.bk .bk-fields .f input:hover, .bk .f textarea:hover { border-color: #A9B9AE; }
+.bk .bk-fields .f input:focus, .bk .f textarea:focus { border-color: var(--verde); background: #fff; box-shadow: 0 0 0 3px rgba(78,125,99,.15); }
+.bk .bk-fields .f input[aria-invalid="true"] { border-color: var(--coral); background: #FDF0F0; }
+/* Booking summary: the label column doesn't squeeze the answers into one word per line */
+.bk .sum dl { grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); }
+.bk .sum dd { overflow-wrap: anywhere; }
 .bk .tip-b { border-width: 1px; }
 .bk .tip-b[aria-pressed="true"], .bk .addon.on { border-color: var(--verde); }</style>
 <!-- Microsoft Clarity (visit statistics, heatmaps). It loads only after the visitor presses "Accept" in the cookie banner. -->
