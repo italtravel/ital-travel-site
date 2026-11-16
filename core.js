@@ -768,8 +768,8 @@
   }
   // Home page titles and descriptions with the words people search for (Armenian: "Իտալիա տուր", "հայախոս էքսկուրսավար"…)
   var SEO_HOME = {
-    hy: { title: "Իտալիա տուր Հայաստանից՝ հայախոս էքսկուրսավարներով | Ital Travel",
-          desc: "Տուրեր Իտալիայում հայերենով՝ Ֆլորենցիա, Հռոմ, Վատիկան, Վենետիկ և Տոսկանա։ Հայախոս էքսկուրսավարներ, խոհարարական դասեր, գինու տուրեր և տրանսֆեր։ Ամրագրեք առցանց։" },
+    hy: { title: "Տուրեր Իտալիա՝ հայերենով | Իտալիա տուր հայախոս էքսկուրսավարներով | Ital Travel",
+          desc: "Տուրեր Իտալիա՝ Ֆլորենցիա, Հռոմ, Վատիկան, Վենետիկ և Տոսկանա, հայախոս էքսկուրսավարներով։ Իտալիա տուր Հայաստանից և աշխարհի տարբեր երկրներից՝ զբոսատուրեր, խոհարարական դասեր, գինու տուրեր և տրանսֆեր։ Ամրագրեք առցանց։" },
     en: { title: "Tours in Italy with Armenian-speaking guides: Florence, Rome, Venice | Ital Travel",
           desc: "Armenian-speaking guided tours in Italy for travellers from Armenia and around the world: Florence, Rome, the Vatican, Venice, San Lazzaro and Tuscany wine tours. Book online." }
   };
