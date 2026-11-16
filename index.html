@@ -690,6 +690,22 @@ body.bk-open { overflow: hidden; }
 .bk .f input:focus, .bk .f select:focus, .bk .f textarea:focus { border-color: var(--verde); box-shadow: 0 0 0 3px rgba(78,125,99,.12); }
 .bk .tip-b { border-width: 1px; }
 .bk .tip-b[aria-pressed="true"], .bk .addon.on { border-color: var(--verde); }</style>
+<!-- Microsoft Clarity (visit statistics, heatmaps). It loads only after the visitor presses "Accept" in the cookie banner. -->
+<script type="text/javascript">
+  (function () {
+    function ok() { try { return localStorage.getItem("it-consent") === "all"; } catch (e) { return false; } }
+    function load() {
+      if (window.clarity) return;
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "zek1furodm");
+    }
+    if (ok()) load();
+    document.addEventListener("it-consent", function () { if (ok()) load(); else if (window.clarity) window.clarity("consent", false); });
+  })();
+</script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">

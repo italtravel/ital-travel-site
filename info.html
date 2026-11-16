@@ -139,6 +139,22 @@ main { padding-block: 22px 70px; display: grid; gap: 26px; min-height: 60vh; ali
 
 </style>
 <link rel="stylesheet" href="newlook.css">
+<!-- Microsoft Clarity (visit statistics, heatmaps). It loads only after the visitor presses "Accept" in the cookie banner. -->
+<script type="text/javascript">
+  (function () {
+    function ok() { try { return localStorage.getItem("it-consent") === "all"; } catch (e) { return false; } }
+    function load() {
+      if (window.clarity) return;
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "zek1furodm");
+    }
+    if (ok()) load();
+    document.addEventListener("it-consent", function () { if (ok()) load(); else if (window.clarity) window.clarity("consent", false); });
+  })();
+</script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -284,7 +300,7 @@ main { padding-block: 22px 70px; display: grid; gap: 26px; min-height: 60vh; ali
         ]
       },
       privacy: {
-        upd: "Last updated: 12 November 2026",
+        upd: "Last updated: 16 November 2026",
         lead: "This policy explains which personal data Ital Travel collects when you visit our website, book a tour or write to us, why we use it, who receives it, how long we keep it and what your rights are. It follows the EU General Data Protection Regulation (GDPR) and the Armenian Law on Protection of Personal Data.",
         sec: [
           ["Who is responsible for your data", ["The data controller is the business named above. We have not appointed a Data Protection Officer. For any privacy question, write to us at ital.travel.guide@gmail.com or on WhatsApp at +39 328 177 0199."]],
@@ -295,16 +311,16 @@ main { padding-block: 22px 70px; display: grid; gap: 26px; min-height: 60vh; ali
             "Accounting: what we must keep for invoices and tax records. Legal basis: legal obligation (Art. 6(1)(c)).",
             "Partner links: if you came through a partner's link, the partner's code is saved with your booking so we can pay their commission. Legal basis: our legitimate interest (Art. 6(1)(f)). The code is saved in your browser only with your consent.",
             "Visit statistics (only after you press “Accept”): an anonymous random visitor number, the pages and actions on our site (for example opening a tour or starting a booking), the website or app you came from, language, device type and time zone. We don't record names or IP addresses. Purpose: understanding which tours interest people. Legal basis: your consent (Art. 6(1)(a)).",
-            "Technical data: when any website loads, the servers that deliver it see your IP address and browser details. Our host, Netlify, keeps short technical logs to keep the site safe and working. Legal basis: legitimate interest (Art. 6(1)(f))."]]],
+            "Technical data: when any website loads, the servers that deliver it see your IP address and browser details. Our host, GitHub Pages, keeps short technical logs to keep the site safe and working. Legal basis: legitimate interest (Art. 6(1)(f))."]]],
           ["Where your data comes from", ["Mostly from you. Sometimes a partner, a travel agency or a group leader books for you and gives us your name and contact details, or a parent or guardian books for a child."]],
           ["What you must give us", ["To book, we need your name, surname, phone, email, the date and the number of people. Without them we can't confirm your tour. Notes, allergies and accepting statistics are optional."]],
           ["Who receives your data", ["We never sell your data and we don't use it for advertising.",
             "The people who run your tour receive only what they need: the guide, the chef, the driver or the local tour organiser.",
             "Services we use to run the website and bookings (processors):",
-            ["Google (Google Sheets, Apps Script and Gmail): to store bookings and statistics and to send emails", "Netlify: website hosting", "Google Fonts: the fonts on the site", "OpenStreetMap and unpkg (Leaflet): the route maps, loaded when you open a tour", "Behold and Instagram: our latest Instagram posts", "open.er-api.com: exchange rates for prices in dram and dollars", "WhatsApp (Meta): when you write to us"],
+            ["Google (Google Sheets, Apps Script and Gmail): to store bookings and statistics and to send emails", "GitHub Pages (GitHub, Microsoft): website hosting", "Microsoft Clarity: visit statistics, only if you press “Accept” in the cookie banner", "Google Fonts: the fonts on the site", "OpenStreetMap and unpkg (Leaflet): the route maps, loaded when you open a tour", "Behold and Instagram: our latest Instagram posts", "open.er-api.com: exchange rates for prices in dram and dollars", "WhatsApp (Meta): when you write to us"],
             "Partners whose link you used see only the date, tour, status and price of the bookings they brought, never your name or contact details.",
             "Public authorities, only when the law requires it."]],
-          ["Transfers outside the EU and Armenia", ["Ital Travel is based in Armenia, and some of the services above (such as Google, Netlify and Meta) process data in the United States. Where the GDPR applies, these transfers rely on the EU–US Data Privacy Framework or the European Commission's standard contractual clauses, as offered by each provider."]],
+          ["Transfers outside the EU and Armenia", ["Ital Travel is based in Armenia, and some of the services above (such as Google, GitHub, Microsoft and Meta) process data in the United States. Where the GDPR applies, these transfers rely on the EU–US Data Privacy Framework or the European Commission's standard contractual clauses, as offered by each provider."]],
           ["How long we keep it", [["Bookings: one year after your tour, then deleted", "Notes about allergies or health: deleted together with the booking", "Accounting records: as long as tax law requires", "Messages and group requests that didn't lead to a booking: up to 12 months", "Visit statistics: up to 26 months", "What's saved in your browser: see our Cookie Policy"]]],
           ["Your rights", ["Under the GDPR (Articles 15–21) and Armenian law, you can ask us to:",
             ["show you the data we hold about you and give you a copy", "correct it", "delete it", "limit how we use it", "give it to you in a common file format (portability)", "stop using it where we rely on legitimate interest", "withdraw your consent at any time, which doesn't affect what we did before"],
@@ -317,23 +333,24 @@ main { padding-block: 22px 70px; display: grid; gap: 26px; min-height: 60vh; ali
         ]
       },
       cookies: {
-        upd: "Last updated: 12 November 2026",
+        upd: "Last updated: 16 November 2026",
         lead: "This policy explains what our website saves in your browser, why, and how you can choose. It follows the GDPR, the EU ePrivacy rules and the Italian Data Protection Authority's cookie guidelines of 10 June 2021.",
         sec: [
-          ["Cookies and browser storage", ["Our website doesn't set cookies. Instead, it saves a few small items in your browser's local storage and session storage. They work like cookies, so we treat them the same way: anything that isn't strictly necessary is saved only with your consent."]],
+          ["Cookies and browser storage", ["Our own code doesn't set cookies. It saves a few small items in your browser's local storage and session storage, which work like cookies, so we treat them the same way. The only cookies come from Microsoft Clarity, our statistics tool, and only after you press “Accept”. Anything that isn't strictly necessary is saved only with your consent."]],
           ["Your choice", ["The first time you visit, a banner asks you to choose. “Only necessary” and “Accept” are equal buttons, and nothing optional is saved until you press “Accept”.",
             "You can change your mind at any time with “Cookie settings” at the bottom of every page. If you withdraw your consent, we stop counting your visits and delete the optional items.",
             "Your choice is saved in your browser until you clear it."]],
           ["What we save", ["Strictly necessary (always on, no consent needed):",
             ["it-consent: your cookie choice — until you clear your browser", "ital-lang: the language you chose — until you clear your browser", "ital-cur: the currency you chose for prices — until you clear your browser", "ital-rates: exchange rates, so prices in dram and dollars load quickly — refreshed regularly"],
             "Statistics (only with your consent):",
-            ["it-v: an anonymous random visitor number, to count returning visits — until you clear your browser or withdraw your consent", "it-s: an anonymous number for this visit (session storage) — deleted when you close the tab"],
+            ["it-v: an anonymous random visitor number, to count returning visits — until you clear your browser or withdraw your consent", "it-s: an anonymous number for this visit (session storage) — deleted when you close the tab",
+             "Microsoft Clarity (cookies _clck, _clsk and Microsoft's MUID): shows us how visitors use the site — which pages they view, where they click and scroll, and anonymised replays of visits — so we can make it easier to use. Text you type into forms is hidden. _clck 1 year, _clsk 1 day, MUID up to 1 year. See Microsoft's privacy statement: privacy.microsoft.com"],
             "Partner links (only with your consent):",
             ["it-ref: the code of the partner whose link you used, so we can pay their commission if you book later — 60 days"],
             "Our staff admin page keeps its sign-in for the open tab only (it-pw, session storage). Visitors never get it."]],
           ["Content from other companies", ["Some parts of our pages are loaded from other companies. When your browser loads them, they receive your IP address and browser details, and their own privacy policies apply:",
             ["Google Fonts: the fonts", "OpenStreetMap and unpkg: the route map, only when you open a tour that has one", "Behold and Instagram: the photos in our Instagram section", "open.er-api.com: exchange rates", "Instagram and WhatsApp: only when you tap a reel or the WhatsApp button, which opens their app or website"],
-            "We don't use Google Analytics, advertising cookies or tracking pixels."]],
+            "We don't use Google Analytics, advertising cookies or advertising pixels."]],
           ["Blocking in your browser", ["You can also block or delete site data in your browser settings. If you block everything, the site still works, but it won't remember your language and currency."]],
           ["Questions", ["Write to ital.travel.guide@gmail.com. How we handle personal data is explained in our Privacy Policy."]]
         ]
@@ -372,7 +389,7 @@ main { padding-block: 22px 70px; display: grid; gap: 26px; min-height: 60vh; ali
         ]
       },
       privacy: {
-        upd: "Վերջին թարմացումը՝ 12 նոյեմբերի, 2026թ.",
+        upd: "Վերջին թարմացումը՝ 16 նոյեմբերի, 2026թ.",
         lead: "Այս քաղաքականությունը բացատրում է, թե Ital Travel-ն ինչ անձնական տվյալներ է հավաքում, երբ այցելում եք մեր կայքը, ամրագրում եք տուր կամ գրում եք մեզ, ինչու ենք դրանք օգտագործում, ում ենք փոխանցում, որքան ժամանակ ենք պահում և ինչ իրավունքներ ունեք։ Այն կազմված է ԵՄ Տվյալների պաշտպանության ընդհանուր կանոնակարգի (GDPR) և «Անձնական տվյալների պաշտպանության մասին» ՀՀ օրենքի համաձայն։",
         sec: [
           ["Ով է պատասխանատու ձեր տվյալների համար", ["Տվյալների վերահսկողը վերևում նշված անհատ ձեռնարկատերն է։ Տվյալների պաշտպանության պատասխանատու նշանակված չէ։ Գաղտնիության հետ կապված ցանկացած հարցով գրեք մեզ ital.travel.guide@gmail.com հասցեով կամ WhatsApp-ով՝ +39 328 177 0199։"]],
@@ -383,16 +400,16 @@ main { padding-block: 22px 70px; display: grid; gap: 26px; min-height: 60vh; ali
             "Հաշվապահություն՝ այն, ինչ պարտավոր ենք պահել հաշիվների և հարկային հաշվառման համար։ Իրավական հիմքը՝ իրավական պարտավորություն (հոդված 6(1)(գ))։",
             "Գործընկերների հղումներ՝ եթե կայք եք եկել գործընկերոջ հղումով, նրա կոդը պահվում է ձեր ամրագրման հետ, որպեսզի վճարենք նրա միջնորդավճարը։ Իրավական հիմքը՝ մեր օրինական շահը (հոդված 6(1)(զ))։ Կոդը ձեր բրաուզերում պահվում է միայն ձեր համաձայնությամբ։",
             "Այցելությունների վիճակագրություն (միայն «Ընդունել» սեղմելուց հետո)՝ այցելուի անանուն պատահական համար, էջերն ու գործողությունները մեր կայքում (օրինակ՝ տուր բացել կամ ամրագրում սկսել), կայքը կամ հավելվածը, որտեղից եկել եք, լեզուն, սարքի տեսակը և ժամային գոտին։ Անուններ և IP հասցեներ չենք գրանցում։ Նպատակը՝ հասկանալ, թե որ տուրերն են հետաքրքրում մարդկանց։ Իրավական հիմքը՝ ձեր համաձայնությունը (հոդված 6(1)(ա))։",
-            "Տեխնիկական տվյալներ՝ ցանկացած կայք բեռնելիս այն մատուցող սերվերները տեսնում են ձեր IP հասցեն և բրաուզերի տվյալները։ Մեր հոսթինգ ծառայությունը՝ Netlify-ը, կարճ ժամանակով պահում է տեխնիկական գրառումներ՝ կայքի անվտանգությունն ու աշխատանքն ապահովելու համար։ Իրավական հիմքը՝ օրինական շահ (հոդված 6(1)(զ))։"]]],
+            "Տեխնիկական տվյալներ՝ ցանկացած կայք բեռնելիս այն մատուցող սերվերները տեսնում են ձեր IP հասցեն և բրաուզերի տվյալները։ Մեր հոսթինգ ծառայությունը՝ GitHub Pages-ը, կարճ ժամանակով պահում է տեխնիկական գրառումներ՝ կայքի անվտանգությունն ու աշխատանքն ապահովելու համար։ Իրավական հիմքը՝ օրինական շահ (հոդված 6(1)(զ))։"]]],
           ["Որտեղից ենք ստանում տվյալները", ["Հիմնականում՝ ձեզանից։ Երբեմն ձեր փոխարեն ամրագրում է գործընկերը, տուրիստական գործակալությունը կամ խմբի ղեկավարը և մեզ է փոխանցում ձեր անունն ու կոնտակտները, կամ ծնողը կամ խնամակալն է ամրագրում երեխայի համար։"]],
           ["Ինչ պետք է անպայման տրամադրեք", ["Ամրագրման համար մեզ անհրաժեշտ են ձեր անունը, ազգանունը, հեռախոսը, էլ. փոստը, ամսաթիվը և մասնակիցների թիվը։ Առանց դրանց չենք կարող հաստատել տուրը։ Նշումները, ալերգիաները և վիճակագրությանը համաձայնելը պարտադիր չեն։"]],
           ["Ում ենք փոխանցում ձեր տվյալները", ["Մենք երբեք չենք վաճառում ձեր տվյալները և չենք օգտագործում դրանք գովազդի համար։",
             "Ձեր տուրն իրականացնողները ստանում են միայն անհրաժեշտը՝ էքսկուրսավարը, խոհարարը, վարորդը կամ տեղի կազմակերպիչը։",
             "Կայքի և ամրագրումների համար օգտագործվող ծառայություններ (մշակողներ)՝",
-            ["Google (Google Sheets, Apps Script և Gmail)՝ ամրագրումներն ու վիճակագրությունը պահելու և նամակներ ուղարկելու համար", "Netlify՝ կայքի հոսթինգ", "Google Fonts՝ կայքի տառատեսակները", "OpenStreetMap և unpkg (Leaflet)՝ երթուղու քարտեզները, որոնք բեռնվում են տուրը բացելիս", "Behold և Instagram՝ մեր վերջին Instagram-ի գրառումները", "open.er-api.com՝ դրամով և դոլարով գների փոխարժեքները", "WhatsApp (Meta)՝ երբ գրում եք մեզ"],
+            ["Google (Google Sheets, Apps Script և Gmail)՝ ամրագրումներն ու վիճակագրությունը պահելու և նամակներ ուղարկելու համար", "GitHub Pages (GitHub, Microsoft)՝ կայքի հոսթինգ", "Microsoft Clarity՝ այցելությունների վիճակագրություն, միայն եթե cookie-ների պատուհանում սեղմեք «Ընդունել»", "Google Fonts՝ կայքի տառատեսակները", "OpenStreetMap և unpkg (Leaflet)՝ երթուղու քարտեզները, որոնք բեռնվում են տուրը բացելիս", "Behold և Instagram՝ մեր վերջին Instagram-ի գրառումները", "open.er-api.com՝ դրամով և դոլարով գների փոխարժեքները", "WhatsApp (Meta)՝ երբ գրում եք մեզ"],
             "Գործընկերները, որոնց հղումով եկել եք, տեսնում են միայն իրենց բերած ամրագրումների ամսաթիվը, տուրը, կարգավիճակը և գինը, երբեք՝ ձեր անունը կամ կոնտակտները։",
             "Պետական մարմիններին՝ միայն օրենքով պահանջվելու դեպքում։"]],
-          ["Տվյալների փոխանցում ԵՄ-ից և Հայաստանից դուրս", ["Ital Travel-ը գործում է Հայաստանից, իսկ վերը նշված որոշ ծառայություններ (օրինակ՝ Google-ը, Netlify-ը և Meta-ն) տվյալները մշակում են ԱՄՆ-ում։ Երբ կիրառվում է GDPR-ը, այդ փոխանցումները հիմնվում են ԵՄ–ԱՄՆ տվյալների գաղտնիության շրջանակի (Data Privacy Framework) կամ Եվրոպական հանձնաժողովի ստանդարտ պայմանագրային դրույթների վրա, որոնք առաջարկում է յուրաքանչյուր ծառայություն։"]],
+          ["Տվյալների փոխանցում ԵՄ-ից և Հայաստանից դուրս", ["Ital Travel-ը գործում է Հայաստանից, իսկ վերը նշված որոշ ծառայություններ (օրինակ՝ Google-ը, GitHub-ը, Microsoft-ը և Meta-ն) տվյալները մշակում են ԱՄՆ-ում։ Երբ կիրառվում է GDPR-ը, այդ փոխանցումները հիմնվում են ԵՄ–ԱՄՆ տվյալների գաղտնիության շրջանակի (Data Privacy Framework) կամ Եվրոպական հանձնաժողովի ստանդարտ պայմանագրային դրույթների վրա, որոնք առաջարկում է յուրաքանչյուր ծառայություն։"]],
           ["Որքան ժամանակ ենք պահում", [["Ամրագրումներ՝ տուրից հետո մեկ տարի, ապա ջնջվում են", "Ալերգիաների կամ առողջության մասին նշումներ՝ ջնջվում են ամրագրման հետ միասին", "Հաշվապահական փաստաթղթեր՝ այնքան, որքան պահանջում է հարկային օրենսդրությունը", "Հաղորդագրություններ և խմբային հայտեր, որոնք ամրագրման չեն հանգեցրել՝ մինչև 12 ամիս", "Այցելությունների վիճակագրություն՝ մինչև 26 ամիս", "Ձեր բրաուզերում պահվող տվյալներ՝ տե՛ս մեր Cookie-ների քաղաքականությունը"]]],
           ["Ձեր իրավունքները", ["GDPR-ի (հոդվածներ 15–21) և ՀՀ օրենքի համաձայն կարող եք մեզ խնդրել՝",
             ["ցույց տալ ձեր մասին մեր ունեցած տվյալները և տալ դրանց պատճենը", "ուղղել դրանք", "ջնջել դրանք", "սահմանափակել դրանց օգտագործումը", "տրամադրել դրանք տարածված ֆայլային ձևաչափով (տեղափոխելիություն)", "դադարեցնել դրանց օգտագործումը, երբ հիմնվում ենք օրինական շահի վրա", "ցանկացած պահի հետ վերցնել ձեր համաձայնությունը, ինչը չի ազդում մինչ այդ կատարվածի վրա"],
@@ -405,23 +422,24 @@ main { padding-block: 22px 70px; display: grid; gap: 26px; min-height: 60vh; ali
         ]
       },
       cookies: {
-        upd: "Վերջին թարմացումը՝ 12 նոյեմբերի, 2026թ.",
+        upd: "Վերջին թարմացումը՝ 16 նոյեմբերի, 2026թ.",
         lead: "Այս քաղաքականությունը բացատրում է, թե մեր կայքն ինչ է պահում ձեր բրաուզերում, ինչու, և ինչպես կարող եք ընտրել։ Այն համապատասխանում է GDPR-ին, ԵՄ էլեկտրոնային գաղտնիության կանոններին և Իտալիայի տվյալների պաշտպանության մարմնի cookie-ների ուղեցույցին (2021թ. հունիսի 10)։",
         sec: [
-          ["Cookie-ներ և բրաուզերի հիշողություն", ["Մեր կայքը cookie-ներ չի տեղադրում։ Փոխարենը մի քանի փոքր տվյալ է պահում ձեր բրաուզերի local storage և session storage հիշողությունում։ Դրանք աշխատում են cookie-ների նման, ուստի մենք դրանց վերաբերվում ենք նույն կերպ՝ այն ամենը, ինչ խիստ անհրաժեշտ չէ, պահվում է միայն ձեր համաձայնությամբ։"]],
+          ["Cookie-ներ և բրաուզերի հիշողություն", ["Մեր սեփական կոդը cookie-ներ չի տեղադրում։ Այն մի քանի փոքր տվյալ է պահում ձեր բրաուզերի local storage և session storage հիշողությունում, որոնք աշխատում են cookie-ների նման, ուստի մենք դրանց վերաբերվում ենք նույն կերպ։ Միակ cookie-ները գալիս են Microsoft Clarity-ից՝ մեր վիճակագրության գործիքից, և միայն այն բանից հետո, երբ սեղմում եք «Ընդունել»։ Այն ամենը, ինչ խիստ անհրաժեշտ չէ, պահվում է միայն ձեր համաձայնությամբ։"]],
           ["Ձեր ընտրությունը", ["Առաջին այցելության ժամանակ պատուհանը խնդրում է ձեզ ընտրել։ «Միայն անհրաժեշտը» և «Ընդունել» կոճակները հավասար են, և ոչ պարտադիր ոչինչ չի պահվում, մինչև չսեղմեք «Ընդունել»։",
             "Կարող եք ցանկացած պահի փոխել ձեր որոշումը յուրաքանչյուր էջի ներքևում գտնվող «Cookie-ների կարգավորումներ» կոճակով։ Եթե հետ վերցնեք համաձայնությունը, մենք կդադարենք հաշվել ձեր այցելությունները և կջնջենք ոչ պարտադիր տվյալները։",
             "Ձեր ընտրությունը պահվում է բրաուզերում, մինչև այն մաքրեք։"]],
           ["Ինչ ենք պահում", ["Խիստ անհրաժեշտ (միշտ միացված, համաձայնություն չի պահանջվում)՝",
             ["it-consent՝ ձեր cookie-ների ընտրությունը — մինչև բրաուզերը մաքրելը", "ital-lang՝ ձեր ընտրած լեզուն — մինչև բրաուզերը մաքրելը", "ital-cur՝ գների համար ձեր ընտրած արժույթը — մինչև բրաուզերը մաքրելը", "ital-rates՝ փոխարժեքները, որպեսզի դրամով և դոլարով գները արագ բեռնվեն — պարբերաբար թարմացվում է"],
             "Վիճակագրություն (միայն ձեր համաձայնությամբ)՝",
-            ["it-v՝ այցելուի անանուն պատահական համար՝ կրկին այցելությունները հաշվելու համար — մինչև բրաուզերը մաքրելը կամ համաձայնությունը հետ վերցնելը", "it-s՝ այս այցելության անանուն համար (session storage) — ջնջվում է ներդիրը փակելիս"],
+            ["it-v՝ այցելուի անանուն պատահական համար՝ կրկին այցելությունները հաշվելու համար — մինչև բրաուզերը մաքրելը կամ համաձայնությունը հետ վերցնելը", "it-s՝ այս այցելության անանուն համար (session storage) — ջնջվում է ներդիրը փակելիս",
+             "Microsoft Clarity (cookie-ներ՝ _clck, _clsk և Microsoft-ի MUID)՝ ցույց է տալիս, թե ինչպես են այցելուներն օգտագործում կայքը՝ որ էջերն են դիտում, որտեղ են սեղմում և ոլորում, ինչպես նաև այցելությունների անանուն տեսագրություններ, որպեսզի կայքը դարձնենք ավելի հարմար։ Ձևերում գրված տեքստը թաքցվում է։ _clck՝ 1 տարի, _clsk՝ 1 օր, MUID՝ մինչև 1 տարի։ Տես Microsoft-ի գաղտնիության քաղաքականությունը՝ privacy.microsoft.com"],
             "Գործընկերների հղումներ (միայն ձեր համաձայնությամբ)՝",
             ["it-ref՝ այն գործընկերոջ կոդը, որի հղումով եկել եք, որպեսզի վճարենք նրա միջնորդավճարը, եթե ավելի ուշ ամրագրեք — 60 օր"],
             "Մեր աշխատակիցների ադմին էջը մուտքը պահում է միայն բաց ներդիրի համար (it-pw, session storage)։ Այցելուներն այն երբեք չեն ստանում։"]],
           ["Այլ ընկերությունների բովանդակություն", ["Մեր էջերի որոշ մասեր բեռնվում են այլ ընկերություններից։ Երբ բրաուզերը դրանք բեռնում է, նրանք ստանում են ձեր IP հասցեն և բրաուզերի տվյալները, և կիրառվում են նրանց սեփական գաղտնիության քաղաքականությունները՝",
             ["Google Fonts՝ տառատեսակները", "OpenStreetMap և unpkg՝ երթուղու քարտեզը, միայն երբ բացում եք քարտեզով տուր", "Behold և Instagram՝ մեր Instagram բաժնի լուսանկարները", "open.er-api.com՝ փոխարժեքները", "Instagram և WhatsApp՝ միայն երբ սեղմում եք տեսանյութը կամ WhatsApp կոճակը, որը բացում է նրանց հավելվածը կամ կայքը"],
-            "Մենք չենք օգտագործում Google Analytics, գովազդային cookie-ներ կամ հետևող պիքսելներ։"]],
+            "Մենք չենք օգտագործում Google Analytics, գովազդային cookie-ներ կամ գովազդային պիքսելներ։"]],
           ["Արգելափակում բրաուզերում", ["Կայքի տվյալները կարող եք արգելափակել կամ ջնջել նաև բրաուզերի կարգավորումներում։ Եթե արգելափակեք ամեն ինչ, կայքը կաշխատի, բայց չի հիշի ձեր լեզուն և արժույթը։"]],
           ["Հարցեր", ["Գրեք ital.travel.guide@gmail.com հասցեով։ Անձնական տվյալների մշակման մասին մանրամասները կգտնեք մեր Գաղտնիության քաղաքականության մեջ։"]]
         ]
