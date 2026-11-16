@@ -1,0 +1,1149 @@
+<!doctype html>
+<html lang="hy" data-id="t1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Մշակութային զբոսատուր Ֆլորենցիայով | Տուրեր Իտալիայում | Ital Travel</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta property="og:site_name" content="Ital Travel">
+<meta property="og:title" content="Մշակութային զբոսատուր Ֆլորենցիայով | Տուրեր Իտալիայում | Ital Travel">
+<meta property="og:description" content="Բացահայտեք Ֆլորենցիան հայախոս գիդի ուղեկցությամբ՝ քաղաքի գլխավոր և թաքնված անկյունները։ Լեզուն՝ Հայերեն, անգլերեն։ Ամրագրեք առցանց։">
+<meta property="og:image" content="https://italtravel.am/img/share.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="description" content="Բացահայտեք Ֆլորենցիան հայախոս գիդի ուղեկցությամբ՝ քաղաքի գլխավոր և թաքնված անկյունները։ Լեզուն՝ Հայերեն, անգլերեն։ Ամրագրեք առցանց։">
+<link rel="canonical" href="https://italtravel.am/florence-walking-tour.html"><link rel="alternate" hreflang="hy" href="https://italtravel.am/florence-walking-tour.html"><link rel="alternate" hreflang="en" href="https://italtravel.am/florence-walking-tour.html?lang=en"><link rel="alternate" hreflang="x-default" href="https://italtravel.am/florence-walking-tour.html"><meta property="og:url" content="https://italtravel.am/florence-walking-tour.html">
+<script type="application/ld+json">{"name":"Մշակութային զբոսատուր Ֆլորենցիայով","inLanguage":"hy","@context":"https://schema.org","description":"Բացահայտեք Ֆլորենցիան հայախոս գիդի ուղեկցությամբ՝ քաղաքի գլխավոր և թաքնված անկյունները։ Լեզուն՝ Հայերեն, անգլերեն։ Ամրագրեք առցանց։","provider":{"@id":"https://italtravel.am/#org"},"@type":"TouristTrip","url":"https://italtravel.am/florence-walking-tour.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TravelAgency","@id":"https://italtravel.am/#org","name":"Ital Travel","url":"https://italtravel.am/"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Noto+Serif+Armenian:wght@500;600;700&family=Noto+Sans+Armenian:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<style>
+/* Tour page: Riviera palette. Gallery first, then the story and itinerary beside a sticky price & booking card. */
+:root {
+  color-scheme: light;
+  --sand: #FAFAF6; --white: #FFFFFF; --ink: #142019; --muted: #56625B; --line: #E2E6DF;
+  --sea: #4E7D63; --sea-d: #3A5F4A; --mint: #E3ECE6; --coral: #8A4A4D;
+  --display: "Noto Serif Armenian", Georgia, serif;
+  --body: "Outfit", "Noto Sans Armenian", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --num: "Playfair Display", "Noto Serif Armenian", Georgia, serif;
+  --ease: cubic-bezier(.2,.8,.2,1);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { margin: 0; background: var(--sand); color: var(--ink); font-family: var(--body); font-size: .98rem; line-height: 1.6; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+[hidden] { display: none !important; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; margin: 0; line-height: 1.12; text-wrap: balance; }
+html[lang="hy"] h1, html[lang="hy"] h2, html[lang="hy"] h3 { font-weight: 600; line-height: 1.25; }
+p { margin: 0; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; border-radius: 6px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.tricolore { height: 5px; background: linear-gradient(90deg, #4E7D63 0 33.34%, #FFFFFF 0 66.67%, #8A4A4D 0); }
+.top { background: rgba(250,250,246,.96); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; gap: 14px; min-height: 62px; }
+.logo { margin-right: auto; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.logo i { width: 28px; height: 20px; border-radius: 3px; background: linear-gradient(90deg, #4E7D63 0 33.34%, #FFFFFF 0 66.67%, #8A4A4D 0); box-shadow: 0 1px 2px rgba(0,0,0,.25); }
+.logo b { font-family: "Young Serif", Georgia, serif; font-weight: 400; font-size: 1.3rem; }
+.back { text-decoration: none; font-weight: 600; font-size: .9rem; color: var(--muted); }
+.back:hover { color: var(--ink); }
+@media (max-width: 560px) { .back { display: none; } }
+.lang { display: flex; padding: 3px; background: var(--white); border-radius: 999px; box-shadow: 0 4px 12px -8px rgba(20,32,25,.4); }
+.lang button { border: 0; background: transparent; border-radius: 999px; padding: 4px 12px; min-height: 32px; font-weight: 700; font-size: .82rem; color: var(--sea); cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--sea); color: var(--white); }
+.cur button { padding: 4px 10px; font-family: "Noto Sans Armenian", "Outfit", sans-serif; }
+@media (max-width: 420px) { .top .wrap { gap: 8px; } .lang button { padding: 4px 9px; } .cur button { padding: 4px 8px; } }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 48px; padding: 10px 22px; border-radius: 999px; border: 2px solid transparent; font-weight: 700; cursor: pointer; text-decoration: none; transition: transform .2s var(--ease); }
+.btn:hover { transform: translateY(-2px); }
+.btn-coral { background: var(--coral); color: var(--white); box-shadow: 0 12px 24px -12px rgba(138,74,77,.8); }
+.btn-line { background: var(--white); border-color: var(--line); color: var(--ink); }
+.btn-wa { background: #4E7D63; color: var(--white); }
+.btn svg { width: 18px; height: 18px; }
+
+main { padding-block: 22px 70px; display: grid; gap: 30px; }
+.crumbs { font-size: .84rem; color: var(--muted); display: flex; gap: 6px; flex-wrap: wrap; }
+.crumbs a { text-decoration: none; } .crumbs a:hover { color: var(--ink); }
+.head { display: grid; gap: 10px; }
+.head .kind { display: inline-flex; gap: 8px; align-items: center; font-weight: 700; font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--coral); }
+.head h1 { font-size: clamp(1.9rem, 1.3rem + 2.6vw, 3.1rem); }
+.facts { display: flex; flex-wrap: wrap; gap: 8px; }
+.facts span { background: var(--white); border-radius: 999px; padding: 5px 13px; font-size: .86rem; font-weight: 600; box-shadow: 0 6px 16px -12px rgba(16,42,58,.5); }
+
+/* Gallery: one big picture and up to four smaller ones; all open a full-screen viewer */
+.gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 210px 210px; gap: 10px; border-radius: 24px; overflow: hidden; }
+.gallery button { position: relative; padding: 0; border: 0; cursor: zoom-in; overflow: hidden; background: var(--mint); min-width: 0; }
+.gallery button:first-child { grid-row: span 2; }
+.gallery img, .gallery video { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .8s var(--ease); }
+.gallery .play { position: absolute; right: 12px; top: 12px; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.9); color: var(--ink); font-size: .8rem; padding-left: 2px; }
+.gallery button:hover img { transform: scale(1.05); }
+.gallery .more { position: absolute; right: 12px; bottom: 12px; background: rgba(255,255,255,.92); border-radius: 999px; padding: 6px 12px; font-weight: 700; font-size: .82rem; }
+.gallery .cap { position: absolute; left: 12px; top: 12px; background: rgba(20,32,25,.72); color: #fff; border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: .8rem; backdrop-filter: blur(4px); }
+.gallery.n1 { grid-template-columns: 1fr; grid-template-rows: 420px; }
+.gallery.n2 { grid-template-columns: 2fr 1fr; grid-template-rows: 420px; } .gallery.n2 button:first-child { grid-row: auto; }
+.gallery.n3 { grid-template-columns: 2fr 1fr; }
+.gallery.n4 button:last-child { grid-column: span 2; }
+@media (max-width: 760px) {
+  .gallery, .gallery.n2, .gallery.n3 { grid-template-columns: 1fr 1fr; grid-template-rows: 240px 120px; }
+  .gallery button:first-child { grid-column: span 2; grid-row: auto; }
+  .gallery button:nth-child(n+4) { display: none; }
+  .gallery.n1 { grid-template-columns: 1fr; grid-template-rows: 260px; } .gallery.n1 button:first-child { grid-column: auto; }
+  .gallery.n2 { grid-template-rows: 240px; } .gallery.n2 button:first-child { grid-column: auto; }
+}
+
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 28px; align-items: start; }
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+.card { background: var(--white); border-radius: 22px; padding: clamp(18px, 3vw, 28px); display: grid; gap: 14px; min-width: 0; }
+.card h2 { font-size: 1.45rem; }
+.lead { font-size: 1.08rem; color: var(--muted); }
+.itin { display: grid; gap: 14px; }
+.itin h3 { font-family: var(--body); font-weight: 800; font-size: .86rem; letter-spacing: .08em; text-transform: uppercase; color: var(--sea); }
+.stops { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: s; }
+.stops li { counter-increment: s; display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; align-items: start; padding: 9px 0; position: relative; }
+.stops li::before { content: counter(s); width: 30px; height: 30px; border-radius: 50%; background: var(--mint); color: var(--sea-d); display: grid; place-items: center; font-weight: 800; font-size: .82rem; position: relative; z-index: 1; }
+.stops li:not(:last-child)::after { content: ""; position: absolute; left: 14px; top: 39px; bottom: -9px; width: 2px; background: var(--mint); }
+.notes { display: grid; gap: 8px; }
+.notes p { background: #FFF6E2; border-radius: 12px; padding: 10px 14px; font-size: .93rem; }
+.side { position: sticky; top: 84px; display: grid; gap: 14px; }
+@media (max-width: 900px) { .side { position: static; } }
+.price .row { display: flex; justify-content: space-between; gap: 10px; padding: 5px 10px; border-radius: 10px; font-size: .94rem; font-variant-numeric: tabular-nums; }
+.price .row.on { background: var(--mint); font-weight: 700; }
+.price .tot { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 12px 14px; border-radius: 14px; background: var(--sea); color: var(--white); }
+.price .tot b { font-family: var(--num); font-variant-numeric: lining-nums tabular-nums; font-size: 1.7rem; }
+.stepper { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: var(--sand); border-radius: 14px; padding: 8px 8px 8px 14px; }
+.stepper span { font-weight: 600; font-size: .9rem; } .stepper small { display: block; font-weight: 500; color: var(--muted); font-size: .78rem; }
+.stepper .ctl { display: flex; align-items: center; gap: 8px; }
+.stepper button { width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid var(--line); background: var(--white); font-size: 1.2rem; font-weight: 700; cursor: pointer; }
+.stepper output { min-width: 2ch; text-align: center; font-family: var(--num); font-variant-numeric: lining-nums; font-size: 1.4rem; font-weight: 700; }
+.onreq { font-weight: 700; color: var(--coral); }
+.side .btn { width: 100%; }
+/* Large groups box: the same red as the old home-page section */
+.side .grp { background: var(--coral); color: var(--white); border-color: transparent; display: grid; gap: 12px; }
+.side .grp p { color: var(--white); opacity: .92; font-size: .95rem; }
+.side .grp .perks { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: .92rem; font-weight: 600; }
+.side .grp .perks li::before { content: "✓ "; }
+.small { font-size: .84rem; color: var(--muted); }
+
+.long { min-height: 150px; align-content: start; gap: 12px; }
+.long p { font-size: 1.02rem; line-height: 1.7; color: var(--ink); }
+.long-h { font-size: 1.2rem; line-height: 1.35; color: var(--sea-d); }
+.long-more { display: grid; gap: 12px; animation: lmIn .35s var(--ease); }
+@keyframes lmIn { from { opacity: 0; transform: translateY(-6px); } }
+.read-more { justify-self: start; border: 0; background: var(--mint); color: var(--sea-d); font-weight: 700; font-size: .92rem; padding: 8px 16px; border-radius: 999px; cursor: pointer; }
+.read-more:hover { background: #C6E8D2; }
+.long { min-height: 0; }
+.fl { display: inline-block; width: 22px; height: 15px; margin-left: 6px; vertical-align: -2px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,.1); }
+.fl-am { background: linear-gradient(#D90012 0 33.34%, #0033A0 0 66.67%, #F2A800 0); }
+.fl-it { background: linear-gradient(90deg, #4E7D63 0 33.34%, #FFFFFF 0 66.67%, #8A4A4D 0); }
+/* Route map */
+.map { height: clamp(280px, 42vw, 420px); border-radius: 18px; overflow: hidden; z-index: 0; background: var(--mint); }
+.pin { background: none; border: 0; }
+.pin span { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #4E7D63; color: #fff; font: 800 .8rem/1 var(--body); border: 2.5px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,.35); }
+.pin.g2 span { background: #8A4A4D; }
+.pin.dest span, .pin.start span { width: 18px; height: 18px; border-width: 3px; }
+.pin.start span { background: #8A4A4D; }
+.leaflet-tooltip.pin-label { background: rgba(255,255,255,.95); border: 0; border-radius: 999px; padding: 2px 9px; font: 700 .74rem/1.4 var(--body); color: var(--ink); box-shadow: 0 3px 10px -4px rgba(0,0,0,.4); }
+.leaflet-tooltip.pin-label::before { display: none; }
+.leaflet-tooltip.pin-label.start { background: #8A4A4D; color: #fff; }
+.pin.dim, .leaflet-tooltip.pin-label.dim { opacity: .22 !important; }
+.stops li[data-route] { cursor: pointer; border-radius: 10px; }
+.stops.routes li::after { display: none; } /* Tuscany: separate routes, not one path, so no connecting line */
+.stops li[data-route]:hover span { color: var(--sea); text-decoration: underline; text-underline-offset: 3px; }
+.stops li[data-route].on span { color: var(--sea); font-weight: 700; }
+.leaflet-popup-content { font-family: var(--body); font-size: .9rem; margin: 10px 14px; }
+.stops li[data-stop] { cursor: pointer; border-radius: 10px; }
+.stops li[data-stop]:hover span { color: var(--sea); text-decoration: underline; text-underline-offset: 3px; }
+.stops.g2 li::before { background: #F3E6E4; color: var(--coral); }
+.stops.g2 li:not(:last-child)::after { background: #F3E6E4; }
+.hl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 900px) { .hl { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 460px) { .hl { grid-template-columns: 1fr; } }
+.hl > div { display: flex; gap: 12px; align-items: center; background: var(--white); border-radius: 18px; padding: 14px 16px; min-width: 0; }
+.hl svg { width: 44px; height: 44px; flex: none; padding: 9px; border-radius: 50%; background: var(--mint); color: var(--sea-d); }
+.hl .hl-cancel svg { background: var(--sea); color: var(--white); }
+.hl .hl-nopick svg { background: #ECEEEA; color: #8A948E; }
+.hl b { display: block; font-size: .95rem; line-height: 1.3; }
+.hl small { display: block; color: var(--muted); font-size: .84rem; line-height: 1.35; }
+.xtra { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; padding: 8px 14px; border-radius: 12px; background: var(--mint); font-size: .86rem; font-weight: 600; }
+.xtra b { font-family: var(--num); font-variant-numeric: lining-nums tabular-nums; font-size: 1.2rem; }
+.ie-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 18px; }
+.ie-grid h3 { font-family: var(--body); font-weight: 800; font-size: .86rem; letter-spacing: .08em; text-transform: uppercase; color: var(--sea); margin-bottom: 8px; }
+.ie { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.ie li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 10px; align-items: start; }
+.ie li::before { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: .8rem; }
+.ie.yes li::before { content: "✓"; background: var(--mint); color: var(--sea-d); }
+.ie.no li::before { content: "✕"; background: #F3E6E4; color: var(--coral); }
+.others h2 { font-size: 1.5rem; margin-bottom: 14px; }
+.ogrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); gap: 14px; }
+.ocard { position: relative; display: block; aspect-ratio: 4 / 3; max-width: 100%; border-radius: 18px; overflow: hidden; text-decoration: none; color: var(--white); isolation: isolate; }
+.ocard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform .8s var(--ease); }
+.ocard::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, transparent 40%, rgba(8,30,18,.85)); }
+.ocard:hover img { transform: scale(1.07); }
+.ocard span { position: absolute; left: 14px; right: 14px; bottom: 12px; display: grid; }
+.ocard small { font-size: .7rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #CFE0D5; }
+.ocard b { font-family: var(--display); font-weight: 400; font-size: 1.15rem; line-height: 1.2; }
+.notfound { text-align: center; padding: 60px 0; display: grid; gap: 14px; justify-items: center; }
+
+/* Full-screen photo viewer */
+.viewer { position: fixed; inset: 0; z-index: 100; background: rgba(8,16,12,.94); display: grid; grid-template-columns: 64px minmax(0, 1fr) 64px; align-items: center; padding: calc(16px + env(safe-area-inset-top, 0px)) max(8px, env(safe-area-inset-right, 0px)) calc(16px + env(safe-area-inset-bottom, 0px)) max(8px, env(safe-area-inset-left, 0px)); }
+.viewer img, .viewer video { max-width: 100%; max-height: calc(100vh - 90px); margin: 0 auto; display: block; border-radius: 12px; }
+.viewer [hidden] { display: none; }
+.viewer button { width: 48px; height: 48px; border-radius: 50%; border: 0; background: rgba(255,255,255,.14); color: #fff; font-size: 1.4rem; cursor: pointer; justify-self: center; }
+.viewer button:hover { background: rgba(255,255,255,.26); }
+.viewer .x { position: absolute; top: calc(14px + env(safe-area-inset-top, 0px)); right: max(14px, env(safe-area-inset-right, 0px)); }
+.viewer .count { position: absolute; left: 50%; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); color: #DDE6E0; font-size: .86rem; font-weight: 600; }
+
+/* Instagram reel covers (tap = open the reel on Instagram) */
+.reels { display: flex; gap: 14px; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px; }
+.reels::-webkit-scrollbar { display: none; }
+.reel { flex: none; position: relative; display: block; width: clamp(140px, 16vw, 190px); aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: var(--line); box-shadow: 0 16px 28px -22px rgba(20,32,25,.6); transition: transform .35s var(--ease); }
+.reel:hover { transform: translateY(-5px); }
+.reel img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.reel-b { position: absolute; right: 10px; top: 10px; width: 32px; height: 32px; border-radius: 10px; display: grid; place-items: center; color: #fff; background: linear-gradient(45deg, #F9A825, #E1306C 55%, #833AB4); box-shadow: 0 6px 14px -6px rgba(0,0,0,.6); }
+.reel-b svg { width: 19px; height: 19px; }
+/* Booking window (copied from index.html) */
+:root { --lemon: #E3ECE6; --pink: #EEDDDC; --classic: "Playfair Display", "Noto Serif Armenian", Georgia, serif; --am-red: #D90012; --am-blue: #0033A0; --am-apricot: #F2A800; }
+.f { display: grid; gap: 6px; font-weight: 700; font-size: .9rem; min-width: 0; }
+.f input, .f select, .f textarea { font: inherit; font-weight: 400; font-size: 1rem; color: var(--ink); background: var(--sand); border: 2px solid transparent; border-radius: 16px; padding: 11px 14px; min-height: 50px; width: 100%; transition: border-color .2s, background .2s; }
+.f textarea { resize: vertical; min-height: 96px; }
+.f input:focus, .f select:focus, .f textarea:focus { outline: none; border-color: var(--sea); background: var(--white); }
+@media (max-width: 760px) {
+.f { font-size: .84rem; gap: 5px; }
+.f input, .f select, .f textarea { min-height: 44px; font-size: .95rem; padding: 9px 12px; border-radius: 12px; }
+.f textarea { min-height: 84px; }
+}
+/* Online booking window */
+.bk { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: calc(16px + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) calc(16px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); background: rgba(10,24,16,.6); }
+.bk-panel { width: min(100%, 1020px); max-height: 100%; overflow: auto; background: var(--white); border-radius: 24px; box-shadow: 0 40px 80px -30px rgba(0,0,0,.6); animation: bkUp .35s var(--ease); display: flex; flex-direction: column; }
+@keyframes bkUp { from { transform: translateY(24px) scale(.98); } }
+.bk-head { position: sticky; top: 0; z-index: 2; background: var(--white); padding: 18px 22px 0; border-bottom: 1px solid var(--line); }
+.bk-head .row1 { display: flex; align-items: center; gap: 12px; }
+.bk-head h2 { font-size: clamp(1.3rem, 1.1rem + .8vw, 1.7rem); margin-right: auto; }
+.bk-x { width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--line); background: var(--white); font-size: 1.2rem; cursor: pointer; color: var(--ink); flex: none; }
+.bk-x:hover { background: var(--sand); }
+.bk-steps { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.bk-steps li { font-size: .78rem; font-weight: 700; color: var(--muted); padding: 0 0 10px; border-bottom: 3px solid var(--line); display: flex; gap: 6px; align-items: center; min-width: 0; }
+.bk-steps li b { flex: none; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: var(--line); color: var(--ink); font-size: .72rem; }
+.bk-steps li span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bk-steps li.on { color: var(--ink); border-color: var(--coral); } .bk-steps li.on b { background: var(--coral); color: var(--white); }
+.bk-steps li.done { color: var(--sea); border-color: var(--sea); } .bk-steps li.done b { background: var(--sea); color: var(--white); }
+@media (max-width: 560px) { .bk-steps li span { display: none; } .bk-steps li { justify-content: center; } }
+.bk-body { display: grid; grid-template-columns: minmax(0, 1fr) 290px; gap: 22px; padding: 22px; }
+@media (max-width: 820px) { .bk-body { grid-template-columns: 1fr; } }
+.bk-main { display: grid; gap: 20px; align-content: start; min-width: 0; }
+.bk-main h3 { font-family: var(--body); font-size: .8rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--sea); margin-bottom: 10px; }
+.bk-tours { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 480px) { .bk-tours { grid-template-columns: 1fr; } }
+.bk-tour { position: relative; display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 12px; align-items: center; text-align: left; font: inherit; color: var(--ink); background: var(--sand); border: 2px solid transparent; border-radius: 16px; padding: 10px; cursor: pointer; }
+.bk-tour img { width: 64px; height: 64px; border-radius: 12px; object-fit: cover; }
+.bk-tour b { display: block; font-size: .92rem; line-height: 1.25; }
+.bk-tour small { color: var(--muted); font-size: .8rem; }
+.bk-tour[aria-pressed="true"] { border-color: var(--sea); background: var(--lemon); }
+/* Add-on card in the booking window: two photos, text, extra price and an Add button; outlined in green when added */
+.addon { border: 2px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--white); transition: border-color .2s, box-shadow .2s; }
+.addon.on { border-color: var(--sea); box-shadow: 0 10px 24px -16px rgba(31,122,74,.6); }
+.addon-pics { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; height: 140px; overflow: hidden; }
+.addon-pics img { width: 100%; height: 140px; min-width: 0; object-fit: cover; display: block; }
+.addon-body { padding: 12px 14px 14px; display: grid; gap: 6px; }
+.addon-body b { font-size: 1rem; }
+.addon-body p { margin: 0; font-size: .88rem; color: var(--ink); }
+.addon-body > small { color: var(--muted); font-size: .78rem; }
+.addon-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+.addon-price { font-weight: 800; font-size: 1.15rem; color: var(--sea-d); }
+.addon-price small { font-weight: 600; font-size: .75rem; color: var(--muted); }
+.addon .btn { min-height: 40px; padding: 6px 18px; }
+.tip { display: grid; gap: 8px; margin-top: 16px; }
+.tip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.tip-b { min-height: 42px; padding: 6px 16px; border-radius: 999px; border: 2px solid var(--line); background: var(--white); font-weight: 700; cursor: pointer; }
+.tip-b[aria-pressed="true"] { border-color: var(--sea); background: var(--mint); color: var(--sea-d); }
+.tip-o { display: flex; align-items: center; gap: 6px; font-weight: 700; font-size: .88rem; }
+.tip-o input { width: 84px; min-height: 42px; border-radius: 12px; border: 2px solid var(--line); padding: 6px 10px; font: inherit; }
+.bk-one { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 16px; align-items: center; background: var(--lemon); border-radius: 18px; padding: 10px; }
+.bk-one img { width: 150px; height: 100px; border-radius: 12px; object-fit: cover; }
+.bk-one b { display: block; font-family: "Young Serif", "Noto Serif Armenian", Georgia, serif; font-weight: 400; font-size: 1.25rem; line-height: 1.2; }
+html[lang="hy"] .bk-one b { font-weight: 600; }
+.bk-one small { color: var(--muted); font-size: .86rem; }
+@media (max-width: 480px) { .bk-one { grid-template-columns: 96px minmax(0, 1fr); } .bk-one img { width: 96px; height: 72px; } }
+.cal { border: 1.5px solid var(--line); border-radius: 18px; padding: 14px; }
+.cal-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+.cal-head b { font-family: "Young Serif", "Noto Serif Armenian", Georgia, serif; font-weight: 400; font-size: 1.15rem; text-transform: capitalize; }
+.cal-head button { width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid var(--line); background: var(--white); color: var(--ink); cursor: pointer; font-size: 1rem; }
+.cal-head button:disabled { opacity: .35; cursor: default; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; text-align: center; }
+.cal-grid .wd { font-size: .7rem; font-weight: 800; color: var(--muted); text-transform: uppercase; padding: 4px 0; }
+.cal-grid button { height: 40px; max-width: 100%; border: 0; border-radius: 12px; background: transparent; font: inherit; font-size: .9rem; font-weight: 600; color: var(--ink); cursor: pointer; font-variant-numeric: tabular-nums; transition: background .15s; }
+.cal-grid button:hover:not(:disabled) { background: var(--lemon); }
+.cal-grid button:disabled { color: #B8C0BA; cursor: default; text-decoration: line-through; text-decoration-color: rgba(0,0,0,.15); }
+.cal-grid button.today { box-shadow: inset 0 0 0 1.5px var(--line); }
+.cal-grid button[aria-pressed="true"] { background: var(--sea); color: var(--white); }
+.slots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.slot { font: inherit; font-family: var(--classic); font-variant-numeric: lining-nums tabular-nums; font-size: 1.35rem; font-weight: 600; padding: 12px; border-radius: 14px; border: 2px solid var(--line); background: var(--white); color: var(--ink); cursor: pointer; display: grid; gap: 2px; }
+.slot small { font-family: var(--body); font-size: .76rem; font-weight: 600; color: var(--muted); }
+.slot:hover:not(:disabled) { border-color: var(--sea); }
+.slot:disabled { opacity: .5; cursor: default; text-decoration: line-through; }
+.slot[aria-pressed="true"] { border-color: var(--sea); background: var(--sea); color: var(--white); } .slot[aria-pressed="true"] small { color: #E3ECE6; }
+.bk-note { font-size: .84rem; color: var(--muted); margin-top: 8px; }
+.ppl { display: grid; gap: 8px; }
+.ppl .r { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 12px; background: var(--sand); border-radius: 14px; }
+.ppl .r span { font-weight: 600; font-size: .92rem; } .ppl .r small { display: block; font-weight: 500; color: var(--muted); font-size: .78rem; }
+.ppl .ctl { display: flex; align-items: center; gap: 8px; }
+.ppl .ctl button { width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid var(--line); background: var(--white); color: var(--ink); font: inherit; font-size: 1.15rem; font-weight: 700; cursor: pointer; }
+.ppl .ctl button:disabled { opacity: .35; cursor: default; }
+.ppl .ctl output { min-width: 2ch; text-align: center; font-family: var(--classic); font-variant-numeric: lining-nums tabular-nums; font-size: 1.25rem; font-weight: 600; }
+.bk-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 520px) { .bk-fields { grid-template-columns: 1fr; } }
+.bk-fields .f input { background: var(--sand); }
+.bk-fields .f input[aria-invalid="true"] { border-color: var(--coral); background: #FDF0F0; }
+.err { color: var(--coral); font-size: .8rem; font-weight: 600; min-height: 1em; }
+.dep { background: var(--lemon); border-radius: 20px; padding: 22px; display: grid; gap: 10px; }
+.dep .amt { font-family: var(--classic); font-variant-numeric: lining-nums tabular-nums; font-size: clamp(2.4rem, 2rem + 2vw, 3.4rem); font-weight: 700; color: var(--sea-d); line-height: 1; }
+.dep .split2 { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: .9rem; color: var(--muted); }
+.dep .split2 b { color: var(--ink); font-family: var(--classic); font-variant-numeric: lining-nums; }
+.review { display: grid; gap: 4px; border: 1.5px solid var(--line); border-radius: 18px; padding: 14px 16px; }
+.review div { display: flex; justify-content: space-between; gap: 14px; font-size: .9rem; padding: 4px 0; border-bottom: 1px dashed var(--line); }
+.review div:last-child { border: 0; }
+.review span { color: var(--muted); } .review b { text-align: right; overflow-wrap: anywhere; }
+.bk-foot { position: sticky; bottom: 0; background: var(--white); border-top: 1px solid var(--line); padding: 14px 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+.bk-foot .hint { margin-right: auto; font-size: .84rem; color: var(--muted); }
+.bk-foot .btn[aria-disabled="true"] { opacity: .45; pointer-events: none; box-shadow: none; }
+.sum { background: var(--sand); border-radius: 20px; padding: 18px; display: grid; gap: 10px; align-content: start; height: max-content; }
+@media (min-width: 821px) { .sum { position: sticky; top: 120px; } }
+.sum h4 { margin: 0; font-family: "Young Serif", "Noto Serif Armenian", Georgia, serif; font-weight: 400; font-size: 1.15rem; }
+.sum img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px; }
+.sum dl { margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 12px; font-size: .86rem; }
+.sum dt { color: var(--muted); } .sum dd { margin: 0; text-align: right; font-weight: 600; }
+.sum .tot { display: flex; justify-content: space-between; align-items: baseline; border-top: 1.5px solid var(--line); padding-top: 10px; }
+.sum .tot b { font-family: var(--classic); font-variant-numeric: lining-nums tabular-nums; font-size: 1.5rem; color: var(--ink); }
+.sum .dep-line { display: flex; justify-content: space-between; background: var(--sea); color: var(--white); border-radius: 12px; padding: 8px 12px; font-size: .86rem; font-weight: 700; }
+.sum .dep-line b { font-family: var(--classic); font-variant-numeric: lining-nums; font-size: 1.1rem; }
+.done { text-align: center; display: grid; gap: 12px; justify-items: center; padding: 20px 0; }
+.done .tick { width: 76px; height: 76px; border-radius: 50%; background: var(--sea); color: var(--white); display: grid; place-items: center; font-size: 2.2rem; animation: pop2 .5s var(--ease); }
+@keyframes pop2 { from { transform: scale(.4); } }
+.done .refc { font-family: var(--classic); font-variant-numeric: lining-nums; font-size: 1.4rem; font-weight: 700; letter-spacing: .04em; background: var(--lemon); padding: 6px 16px; border-radius: 999px; user-select: all; }
+.done p { max-width: 52ch; color: var(--muted); }
+.btn-book { background: var(--sea); color: var(--white); }
+.price .btn-book { margin-top: 8px; width: 100%; min-height: 40px; padding: 8px 14px; font-size: .86rem; }
+.price .btn + .btn { margin-top: 6px; }
+.btn-line { background: var(--white); color: var(--ink); border-color: var(--line); }
+body.bk-open { overflow: hidden; }
+.am-word { background: linear-gradient(transparent 0 78%, var(--am-red) 78% 85%, var(--am-blue) 85% 92%, var(--am-apricot) 92%); padding-bottom: 1px; }
+</style>
+<link rel="stylesheet" href="newlook.css">
+<!-- Microsoft Clarity (visit statistics, heatmaps). It loads only after the visitor presses "Accept" in the cookie banner. -->
+<script type="text/javascript">
+  (function () {
+    function ok() { try { return localStorage.getItem("it-consent") === "all"; } catch (e) { return false; } }
+    function load() {
+      if (window.clarity) return;
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "zek1furodm");
+    }
+    if (ok()) load();
+    document.addEventListener("it-consent", function () { if (ok()) load(); else if (window.clarity) window.clarity("consent", false); });
+  })();
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.2.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
+</svg>
+<div class="tricolore"></div>
+<header class="top"><div class="wrap">
+  <a class="brand" href="./" aria-label="Ital Travel"><b>Ital<span>·</span>Travel</b><i></i><small>տուրեր իտալիայում</small></a>
+  <a class="back" href="./#city-tours" id="back"></a>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="hy" aria-pressed="true">ՀԱՅ</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+  <div class="lang cur" role="group" aria-label="Currency"><button type="button" data-cur="EUR" aria-pressed="true" title="Euro">€</button><button type="button" data-cur="AMD" aria-pressed="false" title="Armenian dram">֏</button><button type="button" data-cur="USD" aria-pressed="false" title="US dollar">$</button></div>
+</div></header>
+
+<main class="wrap" id="page"><nav class="crumbs" aria-label="Breadcrumb"><a href="./">Ital Travel</a><span>›</span><a href="./#city-tours">Տուրեր</a><span>›</span><span>Մշակութային զբոսատուր Ֆլորենցիայով</span></nav><div class="head"><span class="kind">Տուր</span><h1>Մշակութային զբոսատուր Ֆլորենցիայով</h1><div class="facts"><span>Ֆլորենցիա</span><span>սկսած €140</span></div></div><div class="gallery n5"><button type="button" data-pic="0" aria-label="Մշակութային զբոսատուր Ֆլորենցիայով 1"><img src="img/fl-duomo-aerial.jpg" alt=""><span class="cap">Ֆլորենցիայի տաճար</span></button><button type="button" data-pic="1" aria-label="Մշակութային զբոսատուր Ֆլորենցիայով 2"><video src="video/florence-tour.mp4" muted="" autoplay="" loop="" playsinline="" preload="metadata"></video><span class="play" aria-hidden="true">▶</span><span class="cap">Մեր տուրը Ֆլորենցիայում</span></button><button type="button" data-pic="2" aria-label="Մշակութային զբոսատուր Ֆլորենցիայով 3"><img src="img/fl-group-selfie.jpg" alt="" loading="lazy"><span class="cap">Ֆլորենցիայի տաճար</span></button><button type="button" data-pic="3" aria-label="Մշակութային զբոսատուր Ֆլորենցիայով 4"><img src="img/fl-group-street.webp" alt="" loading="lazy"><span class="cap">Ֆլորենցիա</span></button><button type="button" data-pic="4" aria-label="Մշակութային զբոսատուր Ֆլորենցիայով 5"><img src="img/fl-duomo-sunset.jpg" alt="" loading="lazy"><span class="cap">Ֆլորենցիա</span><span class="more">6 լուսանկար</span></button></div><section class="hl" aria-label="Առանձնահատկություններ"><div class="hl-dur"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"></circle><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg><span><b>Տևողությունը</b><small>2.5–3.5 ժամ</small></span></div><div class="hl-cancel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"></circle><path d="m8 12.5 2.6 2.5L16 9.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span><b>Անվճար չեղարկում</b><small>Ծրագրերը փոխվե՞լ են՝ չեղարկեք անվճար</small></span></div><div class="hl-lang"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path><path d="M8 9.5h8M8 12.5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg><span><b>Լեզուներ</b><small>Հայերեն, անգլերեն</small></span></div><div class="hl-pickup"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15v-3l2-5h11l3 5h2v3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path><circle cx="7.5" cy="16.5" r="1.8" fill="currentColor"></circle><circle cx="17" cy="16.5" r="1.8" fill="currentColor"></circle></svg><span><b>Դիմավորում հյուրանոցից</b><small>Կդիմավորենք ձեզ ձեր հյուրանոցում</small></span></div></section><div class="layout"><div style="display:grid;gap:18px;min-width:0"><section class="card"><h2>Տուրի մասին</h2><p class="lead">Բացահայտեք Ֆլորենցիան հայախոս գիդի ուղեկցությամբ՝ քաղաքի գլխավոր և թաքնված անկյունները։</p></section><section class="card long" aria-label="Ավելին տուրի մասին"><h3 class="long-h">ՖԼՈՐԵՆՑԻԱ․ Վերածննդի օրրանը, Մեդիչիների քաղաքը և տոսկանական համերի աշխարհը</h3><p>Ֆլորենցիայի քաղաքային զբոսանքը պարզապես ծանոթություն չէ քաղաքի տեսարժան վայրերին։ Սա ճանապարհորդություն է դեպի մի ժամանակաշրջան, երբ մեկ քաղաք կարողացավ փոխել ամբողջ Եվրոպայի պատմությունը, արվեստը, գիտությունը, բանկային համակարգը և մարդու մասին պատկերացումները։</p><div class="long-more" id="long-more" hidden=""><p>Ֆլորենցիան Վերածննդի ծննդավայրն է՝ քաղաք, որտեղ հարստությունը հանդիպեց արվեստին, իշխանությունը՝ գիտությանը, իսկ մարդկային միտքը բացահայտեց նոր հորիզոններ։</p><p>Մեր զբոսանքի ընթացքում կբացահայտենք Մեդիչիների ընտանիքի հարստության և փառքի գաղտնիքները և կխոսենք այն մասին, թե ինչպես Եվրոպայի ամենաազդեցիկ տոհմերից մեկը առանց թագավորական տիտղոսի կարողացավ ղեկավարել Ֆլորենցիան։</p><p>Կայցելենք քաղաքի պատմական կենտրոնը, Սինյորիայի հրապարակը և Պալացցո Վեկիոն՝ ծանոթանալու Ֆլորենցիայի հանրապետության պատմությանը, կառավարման համակարգին և քաղաքական պայքարներին։</p><p>Կբացահայտենք Վերածննդի գաղտնիքները՝ խոսելով Լեոնարդո դա Վինչիի, Միքելանջելոյի և Ռաֆայելի մասին, որոնց ստեղծագործությունները կապված են այս քաղաքի պատմության հետ։ Կտեսնենք Սանտա Մարիա դել Ֆիորեի հիասքանչ տաճարը, Բրունելեսկիի հանրահայտ գմբեթը, Ջոտտոյի զանգակատունը և քաղաքի ճարտարապետական այլ գանձեր։</p><p>Մեր ճանապարհը կշարունակվի դեպի Պոնտե Վեկիո՝ հայտնի հին կամուրջը, որի վրա այսօր էլ գործում են ոսկերչական խանութներ։ Կծանոթանանք նաև Ֆլորենցիայի հայտնի կաշվի շուկային, որտեղ կարելի է բացահայտել իտալական կաշեգործության ավանդույթները և ձեռագործ արտադրանքները։</p><p>Անհնար էր բացահայտել Ֆլորենցիան առանց նրա համերի։ Կծանոթանանք իտալական սուրճի մշակույթին և կբացահայտենք տոսկանական խոհանոցի առանձնահատկությունները։</p><p>Այս զբոսանքը հնարավորություն է տալիս ոչ միայն տեսնել Ֆլորենցիան, այլև զգալ նրա իրական բնավորությունը՝ պատմությունը, արվեստը, գեղեցկությունը, արհեստները և տոսկանական կյանքի անկրկնելի մթնոլորտը։</p></div><button type="button" class="read-more" data-readmore="" aria-expanded="false" aria-controls="long-more">Կարդալ ավելին ↓</button></section><section class="card"><h2>Երթուղի</h2><div class="map leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style="position: relative;"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 19; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" src="https://tile.openstreetmap.org/14/8703/5971.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(0px, -164px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/14/8704/5971.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(256px, -164px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/14/8703/5972.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(0px, 92px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/14/8704/5972.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(256px, 92px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/14/8702/5971.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-256px, -164px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/14/8705/5971.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(512px, -164px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/14/8702/5972.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-256px, 92px, 0px); opacity: 1;"><img alt="" src="https://tile.openstreetmap.org/14/8705/5972.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(512px, 92px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-overlay-pane"><svg pointer-events="none" class="leaflet-zoom-animated" width="794" height="380" viewBox="-66 -32 794 380" style="transform: translate3d(-66px, -32px, 0px);"><g><path class="leaflet-interactive" stroke="#4E7D63" stroke-opacity="0.75" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M249 35L230 48L326 60L304 87L333 94L301 114L324 116L318 145L292 142L256 189"></path><path class="leaflet-interactive" stroke="#8A4A4D" stroke-opacity="0.75" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 8" fill="none" d="M431 281L431 224"></path></g></svg></div><div class="leaflet-pane leaflet-shadow-pane"></div><div class="leaflet-pane leaflet-marker-pane"><div class="leaflet-marker-icon pin leaflet-zoom-animated leaflet-interactive" title="Սանտա Մարիա Նովելլա (Santa Maria Novella)" tabindex="0" role="button" style="margin-left: -15px; margin-top: -15px; width: 30px; height: 30px; transform: translate3d(249px, 35px, 0px); z-index: 35;"><span>1</span></div><div class="leaflet-marker-icon pin leaflet-zoom-animated leaflet-interactive" title="Սանտա Մարիա Նովելլա դեղատուն (Officina Santa Maria Novella)" tabindex="0" role="button" style="margin-left: -15px; margin-top: -15px; width: 30px; height: 30px; transform: translate3d(230px, 48px, 0px); z-index: 48;"><span>2</span></div><div class="leaflet-marker-icon pin leaflet-zoom-animated leaflet-interactive" title="Դուոմո՝ Սանտա Մարիա դել Ֆիորե" tabindex="0" role="button" style="margin-left: -15px; margin-top: -15px; width: 30px; height: 30px; transform: translate3d(326px, 60px, 0px); z-index: 60;"><span>3</span></div><div class="leaflet-marker-icon pin leaflet-zoom-animated leaflet-interactive" title="Հանրապետության հրապարակ (Piazza della Repubblica)" tabindex="0" role="button" style="margin-left: -15px; margin-top: -15px; width: 30px; height: 30px; transform: translate3d(304px, 87px, 0px); z-index: 87;"><span>4</span></div><div class="leaflet-marker-icon pin leaflet-zoom-animated leaflet-interactive" title="Դանթեի տուն (Casa di Dante)" tabindex="0" role="button" style="margin-left: -15px; margin-top: -15px; width: 30px; height: 30px; transform: translate3d(333px, 94px, 0px); z-index: 94;"><span>5</span></div><div class="leaflet-marker-icon pin leaflet-zoom-animated leaflet-interactive" title="Վայրի խոզուկ (Porcellino)" tabindex="0" role="button" style="margin-left: -15px; margin-top: -15px; width: 30px; height: 30px; transform: translate3d(301px, 114px, 0px); z-index: 114;"><span>6</span></div><div class="leaflet-marker-icon pin leaflet-zoom-animated leaflet-interactive" title="Սինյորիայի հրապարակ (Piazza della Signoria)" tabindex="0" role="button" style="margin-left: -15px; margin-top: -15px; width: 30px; height: 30px; transform: translate3d(324px, 116px, 0px); z-index: 116;"><span>7</span></div><div class="leaflet-marker-icon pin leaflet-zoom-animated leaflet-interactive" title="Ուֆֆիցի պատկերասրահ (Galleria degli Uffizi)" tabindex="0" role="button" style="margin-left: -15px; margin-top: -15px; width: 30px; height: 30px; transform: translate3d(318px, 145px, 0px); z-index: 145;"><span>8</span></div><div class="leaflet-marker-icon pin leaflet-zoom-animated leaflet-interactive" title="Հին կամուրջ (Ponte Vecchio)" tabindex="0" role="button" style="margin-left: -15px; margin-top: -15px; width: 30px; height: 30px; transform: translate3d(292px, 142px, 0px); z-index: 142;"><span>9</span></div><div class="leaflet-marker-icon pin leaflet-zoom-animated leaflet-interactive" title="Պիտտի դղյակ (Palazzo Pitti)" tabindex="0" role="button" style="margin-left: -15px; margin-top: -15px; width: 30px; height: 30px; transform: translate3d(256px, 189px, 0px); z-index: 189;"><span>10</span></div><div class="leaflet-marker-icon pin g2 leaflet-zoom-animated leaflet-interactive" title="San Miniato / Սուրբ Մինաս եկեղեցի" tabindex="0" role="button" style="margin-left: -15px; margin-top: -15px; width: 30px; height: 30px; transform: translate3d(431px, 281px, 0px); z-index: 281;"><span>11</span></div><div class="leaflet-marker-icon pin g2 leaflet-zoom-animated leaflet-interactive" title="Միքելանջելոյի հրապարակ (հիասքանչ տեսարան քաղաքի վրա)" tabindex="0" role="button" style="margin-left: -15px; margin-top: -15px; width: 30px; height: 30px; transform: translate3d(431px, 224px, 0px); z-index: 224;"><span>12</span></div></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(2.2283e+06px, 1.5289e+06px, 0px) scale(8192);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in" aria-disabled="false"><span aria-hidden="true">+</span></a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out" aria-disabled="false"><span aria-hidden="true">−</span></a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="https://leafletjs.com" title="A JavaScript library for interactive maps"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" class="leaflet-attribution-flag"><path fill="#4C7BE1" d="M0 0h12v4H0z"></path><path fill="#FFD500" d="M0 4h12v3H0z"></path><path fill="#E0BC00" d="M0 7h12v1H0z"></path></svg> Leaflet</a> <span aria-hidden="true">|</span> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a></div></div></div></div><div class="itin"><ol class="stops" style="counter-reset:s 0"><li data-stop="0" tabindex="0" role="button"><span>Սանտա Մարիա Նովելլա (Santa Maria Novella)</span></li><li data-stop="1" tabindex="0" role="button"><span>Սանտա Մարիա Նովելլա դեղատուն (Officina Santa Maria Novella)</span></li><li data-stop="2" tabindex="0" role="button"><span>Դուոմո՝ Սանտա Մարիա դել Ֆիորե</span></li><li data-stop="3" tabindex="0" role="button"><span>Հանրապետության հրապարակ (Piazza della Repubblica)</span></li><li data-stop="4" tabindex="0" role="button"><span>Դանթեի տուն (Casa di Dante)</span></li><li data-stop="5" tabindex="0" role="button"><span>Վայրի խոզուկ (Porcellino)</span></li><li data-stop="6" tabindex="0" role="button"><span>Սինյորիայի հրապարակ (Piazza della Signoria)</span></li><li data-stop="7" tabindex="0" role="button"><span>Ուֆֆիցի պատկերասրահ (Galleria degli Uffizi)</span></li><li data-stop="8" tabindex="0" role="button"><span>Հին կամուրջ (Ponte Vecchio)</span></li><li data-stop="9" tabindex="0" role="button"><span>Պիտտի դղյակ (Palazzo Pitti)</span></li></ol></div><div class="itin"><h3>Լրացուցիչ վայրեր (հավելյալ վճարով)</h3><ol class="stops g2" style="counter-reset:s 10"><li data-stop="10" tabindex="0" role="button"><span>San Miniato / Սուրբ Մինաս եկեղեցի</span></li><li data-stop="11" tabindex="0" role="button"><span>Միքելանջելոյի հրապարակ (հիասքանչ տեսարան քաղաքի վրա)</span></li></ol><div class="notes"><p>Հավելյալ վճար՝ +10 եվրո 2 կամ 3 անձի համար, +20 եվրո 4 անձի համար, +10 եվրո յուրաքանչյուր անձի համար՝ 5 անձից սկսած։ Տուրը երկարում է մոտ 1 ժամով։</p><p>Լրացուցիչ վայրեր հասնելու համար հասանելի է տաքսի՝ 20–30 եվրո մեկ մեքենա, 3–4 անձ։</p></div></div></section><section class="card"><h2>Ինչ է ներառված</h2><ul class="ie yes"><li>Հայախոս էքսկուրսավար</li><li>Զբոսանք գլխավոր տեսարժան վայրերով</li></ul></section><section class="card"><h2>Լավ է իմանալ</h2><div class="notes"><p>Զբոսանքը ոտքով է, թանգարանների ներսում այցելություններ չեն նախատեսված։</p></div></section></div><aside class="side"><section class="card"><h2>Գինը</h2><div class="stepper"><span>Մեծահասակներ (14+)</span><div class="ctl"><button type="button" data-adj="-1" aria-label="−1" disabled="">−</button><output>2</output><button type="button" data-adj="1" aria-label="+1">+</button></div></div><div class="stepper"><span>Երեխաներ<small>մինչև 14՝ անվճար</small></span><div class="ctl"><button type="button" data-kadj="-1" aria-label="−1" disabled="">−</button><output>0</output><button type="button" data-kadj="1" aria-label="+1">+</button></div></div><div class="price"><div class="tot"><span>Ընդամենը 2 մեծահասակի համար</span><b>€140</b></div></div><p class="xtra"><span>Լրացուցիչ վայրերով</span><b>€150</b></p><p class="small">Վճարումը՝ կանխիկ կամ բանկային փոխանցումով։</p><a class="btn btn-coral" href="#book" data-book="t1">Ամրագրել այս տուրը</a><a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/393281770199?text=%D4%B2%D5%A1%D6%80%D6%87%2C%20%D5%AB%D5%B6%D5%B1%20%D5%B0%D5%A5%D5%BF%D5%A1%D6%84%D6%80%D6%84%D6%80%D5%B8%D6%82%D5%B4%20%D5%A7%D5%9D%20%D5%84%D5%B7%D5%A1%D5%AF%D5%B8%D6%82%D5%A9%D5%A1%D5%B5%D5%AB%D5%B6%20%D5%A6%D5%A2%D5%B8%D5%BD%D5%A1%D5%BF%D5%B8%D6%82%D6%80%20%D5%96%D5%AC%D5%B8%D6%80%D5%A5%D5%B6%D6%81%D5%AB%D5%A1%D5%B5%D5%B8%D5%BE"><svg><use href="#i-wa"></use></svg>Հարցնել WhatsApp-ով</a></section><section class="card grp"><h2>Տուրեր մեծ խմբերի համար</h2><p>Ճամփորդո՞ւմ եք 10 և ավելի հոգով՝ ընտանիքով, ընկերներով, դպրոցական, եկեղեցական կամ աշխատանքային խմբով։ Պատմեք ձեր խմբի մասին, և մենք կկազմենք օրվա ծրագիրը և կուղարկենք առաջարկ։</p><ul class="perks"><li>Երթուղի՝ ձեր ամսաթվերին և հետաքրքրություններին համապատասխան</li><li>Խմբային գինը կուղարկենք WhatsApp-ով</li></ul><a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/393281770199?text=%D4%B2%D5%A1%D6%80%D6%87%2C%20%D6%81%D5%A1%D5%B6%D5%AF%D5%A1%D5%B6%D5%B8%D6%82%D5%B4%20%D5%A5%D5%B4%20%D5%BA%D5%A1%D5%BF%D5%BE%D5%AB%D6%80%D5%A5%D5%AC%20%D5%BF%D5%B8%D6%82%D6%80%20%D5%B4%D5%A5%D5%AE%20%D5%AD%D5%B4%D5%A2%D5%AB%20%D5%B0%D5%A1%D5%B4%D5%A1%D6%80%D6%89%20%D5%84%D5%B7%D5%A1%D5%AF%D5%B8%D6%82%D5%A9%D5%A1%D5%B5%D5%AB%D5%B6%20%D5%A6%D5%A2%D5%B8%D5%BD%D5%A1%D5%BF%D5%B8%D6%82%D6%80%20%D5%96%D5%AC%D5%B8%D6%80%D5%A5%D5%B6%D6%81%D5%AB%D5%A1%D5%B5%D5%B8%D5%BE"><svg><use href="#i-wa"></use></svg>Ուղարկել խմբային հայտը WhatsApp-ով</a></section></aside></div><section class="others"><h2>Այլ տուրեր</h2><div class="ogrid"><a class="ocard" href="rome-walking-tour.html"><img src="img/rome-7071.jpg" alt="" loading="lazy" style="object-position:50% 72%"><span><small>Հռոմ</small><b>Մշակութային զբոսատուր Հռոմում</b></span></a><a class="ocard" href="vatican-tour.html"><img src="img/vat-street.jpg" alt="" loading="lazy" style="object-position:50% 50%"><span><small>Վատիկան</small><b>Տուր Վատիկանում</b></span></a><a class="ocard" href="vatican-museums-tour.html"><img src="img/vat-square.jpg" alt="" loading="lazy"><span><small>Վատիկան</small><b>Տուր Վատիկանում՝ Վատիկանի թանգարաններով</b></span></a><a class="ocard" href="rome-vatican-tour.html"><img src="img/vat-aerial.jpg" alt="" loading="lazy"><span><small>Հռոմ</small><b>Հռոմ և Վատիկան</b></span></a><a class="ocard" href="florence-san-gimignano-private-tour.html"><img src="img/fl-piazzale.jpg" alt="" loading="lazy"><span><small>Ֆլորենցիա</small><b>Մեքենայով անհատական տուր՝ Ֆլորենցիա և Սան Ջիմինյանո</b></span></a><a class="ocard" href="florence-fiat-500-tour.html"><img src="img/fiat-front.jpg" alt="" loading="lazy"><span><small>Ֆլորենցիա</small><b>Fiat 500 կաբրիոլետով տուր Ֆլորենցիայում</b></span></a><a class="ocard" href="siena-san-gimignano-chianti-tour.html"><img src="img/si-duomo.jpg" alt="" loading="lazy"><span><small>Տոսկանա</small><b>Սիենա, Սան Ջիմինյանո և Կյանտի</b></span></a><a class="ocard" href="san-gimignano-monteriggioni-chianti-tour.html"><img src="img/monteriggioni.jpg" alt="" loading="lazy"><span><small>Տոսկանա</small><b>Սան Ջիմինյանո, Մոնտերիջոնի և Կյանտի</b></span></a><a class="ocard" href="san-gimignano-chianti-half-day-tour.html"><img src="img/sg-towers.jpg" alt="" loading="lazy"><span><small>Տոսկանա</small><b>Սան Ջիմինյանո և Կյանտի՝ կես օր</b></span></a><a class="ocard" href="val-d-orcia-tour.html"><img src="img/vo-castle-vines.jpg" alt="" loading="lazy" style="object-position:50% 22%"><span><small>Տոսկանա</small><b>Վալ դ'Օրչա՝ Մոնտալչինո, Մոնտեպուլչանո և Պիենցա</b></span></a><a class="ocard" href="pisa-lucca-tour.html"><img src="img/pi-tower.jpg" alt="" loading="lazy"><span><small>Տոսկանա</small><b>Պիզա և Լուկկա</b></span></a><a class="ocard" href="cinque-terre-pisa-tour.html"><img src="img/ct-vernazza.jpg" alt="" loading="lazy"><span><small>Տոսկանա</small><b>Չինկվե Տերե և Պիզա</b></span></a><a class="ocard" href="cinque-terre-tour.html"><img src="img/ct-manarola.jpg" alt="" loading="lazy"><span><small>Տոսկանա</small><b>Չինկվե Տերե</b></span></a><a class="ocard" href="tuscany-private-tours.html"><img src="img/tu-villa-vineyards.jpg" alt="" loading="lazy"><span><small>Տոսկանա</small><b>Այլ անհատական տուրեր Տոսկանայում</b></span></a><a class="ocard" href="florence-cooking-class.html"><img src="img/cooking-1680-m.jpg" alt="" loading="lazy" style="object-position:50% 55%"><span><small>Ֆլորենցիա</small><b>Իսկական խոհարարական փորձ Ֆլորենցիայում</b></span></a><a class="ocard" href="venice-walking-tour.html"><img src="img/venice.jpg" alt="" loading="lazy" style="object-position:50% 60%"><span><small>Վենետիկ</small><b>Զբոսանք Վենետիկում</b></span></a><a class="ocard" href="san-lazzaro-armenian-island-venice.html"><img src="img/sl-island.jpg" alt="" loading="lazy" style="object-position:50% 50%"><span><small>Վենետիկ</small><b>Սուրբ Ղազար կղզի</b></span></a><a class="ocard" href="rome-airport-transfer.html"><img src="img/transfer.jpg" alt="" loading="lazy"><span><small>Հռոմ</small><b>Տրանսֆեր Հռոմի օդանավակայանից</b></span></a></div></section></main>
+
+<footer class="site-foot" id="site-foot"><span class="tricolore" aria-hidden="true"></span><div class="wrap sf-grid"><div class="sf-brand"><a class="brand sf-badge" href="./" aria-label="Ital Travel"><b>Ital<span>·</span>Travel</b><i></i><small>տուրեր իտալիայում</small></a><p class="sf-tag">Իտալիայի պատմությունները՝<br>հայերենով։</p><p class="sf-info">Ֆլորենցիա · Հռոմ · Տոսկանա · Վենետիկ<br>Հայաստան <a href="tel:+37499515169">+374 99 515169</a><br>Իտալիա · WhatsApp <a href="tel:+393281770199">+39 328 177 0199</a><br><a href="mailto:ital.travel.guide@gmail.com">ital.travel.guide@gmail.com</a><br>Instagram <a href="https://www.instagram.com/ital_travel_/" target="_blank" rel="noopener">@ital_travel_</a></p></div><div><h3>Տուրեր</h3><ul><li><a href="./?city=top">Լավագույն տուրեր</a></li><li><a href="./?city=rome">Հռոմ</a></li><li><a href="./?city=florence">Ֆլորենցիա</a></li><li><a href="./?city=tuscany">Տոսկանա</a></li><li><a href="./?city=venice">Վենետիկ</a></li><li><a href="./?city=vatican">Վատիկան</a></li><li><a href="./?city=every">Բոլոր տուրերը</a></li></ul></div><div><h3>Ital Travel</h3><ul><li><a href="./#team">Մեր թիմը</a></li><li><a href="blog.html">Բլոգ</a></li><li><a href="booking-info.html">Անվճար տեղեկատու գիրք</a></li><li><a href="info.html?p=partner">Համագործակցել մեզ հետ</a></li></ul></div><div><h3>Օգնություն</h3><ul><li><a href="manage-booking.html">Կառավարել ամրագրումը</a></li><li><a href="faq.html">Հաճախ տրվող հարցեր</a></li><li><a href="https://wa.me/393281770199" target="_blank" rel="noopener">Գրել WhatsApp-ով</a></li><li><a href="https://www.instagram.com/ital_travel_/" target="_blank" rel="noopener">Instagram @ital_travel_</a></li></ul></div></div><div class="wrap sf-bottom"><p>© 2026 Ital Travel · ԱՁ Գայանե Այվազյան · ՀՎՀՀ՝ 82592899 · Բոլոր իրավունքները պաշտպանված են։</p><p class="sf-links"><a href="privacy-policy.html">Գաղտնիության քաղաքականություն</a> · <a href="cookie-policy.html">Cookie-ների քաղաքականություն</a> · <a href="terms.html">Պայմաններ և դրույթներ</a> · <a href="https://www.instagram.com/ital_travel_/" target="_blank" rel="noopener">Instagram @ital_travel_</a> · <button type="button" class="sf-ck" data-consent-open="">Cookie-ների կարգավորումներ</button><span>Venice photo: @mikecleggphoto</span></p></div></footer><span id="foot-home" hidden></span>
+
+<div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-label="Photos">
+  <button type="button" id="v-prev" aria-label="Previous">←</button>
+  <img id="v-img" alt="">
+  <video id="v-vid" controls playsinline loop hidden></video>
+  <button type="button" id="v-next" aria-label="Next">→</button>
+  <button type="button" class="x" id="v-close" aria-label="Close">✕</button>
+  <span class="count" id="v-count"></span>
+</div>
+
+<div class="bk" id="bk" role="dialog" aria-modal="true" aria-labelledby="bk-title" hidden>
+  <div class="bk-panel" id="bk-panel">
+    <div class="bk-head">
+      <div class="row1"><h2 id="bk-title">Book a Florence tour</h2><button type="button" class="bk-x" id="bk-x" aria-label="Close">✕</button></div>
+      <ol class="bk-steps" id="bk-steps"></ol>
+    </div>
+    <div class="bk-body"><div class="bk-main" id="bk-main"></div><aside class="sum" id="bk-sum" aria-live="polite"></aside></div>
+    <div class="bk-foot" id="bk-foot"></div>
+  </div>
+</div>
+
+<script src="config.js"></script>
+<script src="core.js"></script>
+<script src="gallery.js"></script>
+<script>
+/* Anonymous visit counting: a random visitor id, the event, where the visit came from, language, device and time zone.
+   No names, no cookies, nothing personal. Sent to the Ital Travel Google Sheet (see config.js).
+   Only after the visitor presses "Accept" in the cookie banner (IT.consent() === "all"). */
+(function () {
+  var API = (window.ITAL_CONFIG || {}).API_URL || "";
+  function rid() { return Math.random().toString(36).slice(2, 10) + Date.now().toString(36).slice(-4); }
+  function ok() { return IT.consent() === "all"; }
+  var v = null, s = null;
+  function ids() {
+    if (v) return;
+    try { v = localStorage.getItem("it-v"); if (!v) { v = rid(); localStorage.setItem("it-v", v); } } catch (e) { v = rid(); }
+    try { s = sessionStorage.getItem("it-s"); if (!s) { s = rid(); sessionStorage.setItem("it-s", s); } } catch (e) { s = rid(); }
+  }
+  function source() {
+    var q = new URLSearchParams(location.search), u = q.get("utm_source") || q.get("src");
+    if (q.get("ref")) return "Partner";
+    if (u) return u.slice(0, 30);
+    var r = document.referrer || "";
+    if (!r) return "Direct";
+    var h = ""; try { h = new URL(r).hostname.replace(/^www\./, ""); } catch (e) { return "Other"; }
+    if (h === location.hostname) return "Direct";
+    if (/instagram/.test(h)) return "Instagram";
+    if (/facebook|fb\.|messenger/.test(h)) return "Facebook";
+    if (/google\./.test(h)) return "Google";
+    if (/whatsapp|wa\.me/.test(h)) return "WhatsApp";
+    if (/t\.me|telegram/.test(h)) return "Telegram";
+    if (/youtube/.test(h)) return "YouTube";
+    if (/tiktok/.test(h)) return "TikTok";
+    if (/bing|yandex|duckduckgo/.test(h)) return "Other search";
+    return h.slice(0, 30);
+  }
+  var src = source();
+  var sent = {};
+  window.IT_TRACK = function (e, detail) {
+    if (!API || !ok()) return;
+    ids();
+    var key = e + "|" + (detail || "");
+    if (e !== "view" && sent[key]) return; sent[key] = 1; // count each step once per page visit
+    var tz = ""; try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (err) {}
+    var body = JSON.stringify({ action: "track", e: e, d: detail || "", v: v, s: s, src: src, l: (window.IT && IT.state.lang) || "hy",
+      dev: matchMedia("(max-width: 760px)").matches ? "mobile" : "desktop", tz: tz, p: location.pathname });
+    try {
+      if (navigator.sendBeacon && navigator.sendBeacon(API, new Blob([body], { type: "text/plain;charset=utf-8" }))) return;
+    } catch (err) {}
+    try { fetch(API, { method: "POST", mode: "no-cors", keepalive: true, headers: { "Content-Type": "text/plain;charset=utf-8" }, body: body }); } catch (err) {}
+  };
+  var counted = false;
+  function start() {
+    if (counted || !ok()) return; counted = true;
+    if (!/[?&]notrack/.test(location.search)) setTimeout(function () { window.IT_TRACK("view"); }, 600);
+    if (code) {
+      try { localStorage.setItem("it-ref", JSON.stringify({ c: code, t: Date.now() })); } catch (e) {}
+      setTimeout(function () { window.IT_TRACK("ref_click", code); }, 700);
+    }
+  }
+
+  // Partner links (?ref=CODE): remembered in this browser for 60 days (after "Accept"); the last partner link clicked counts.
+  // Without "Accept" the code still counts for a booking made during this visit, but isn't saved.
+  var REF_DAYS = 60;
+  var code = (new URLSearchParams(location.search).get("ref") || "").trim().toUpperCase();
+  if (!/^[A-Z0-9_-]{2,20}$/.test(code)) code = "";
+  window.IT_REF = function () {
+    if (code) return code;
+    try { var o = JSON.parse(localStorage.getItem("it-ref") || "null"); if (o && Date.now() - o.t < REF_DAYS * 864e5) return o.c; } catch (e) {}
+    return "";
+  };
+  start();
+  document.addEventListener("it-consent", start); // pressed "Accept" on this page
+})();
+
+</script>
+<script>
+(function () {
+  var esc = IT.esc;
+  var GALLERY = IT_GAL.GALLERY, CAPS = IT_GAL.CAPS, GPOS = IT_GAL.GPOS; // photos per tour: gallery.js
+  function cap(src) { var c = CAPS[src]; return c ? c[IT.state.lang === "hy" ? 1 : 0] : ""; }
+  var S = {
+    en: { back: "← All tours", home: "Back to the website", tours: "Tours", dur: "Duration", hrs: "hours", photos: "{n} photos", about: "About this tour", plan: "Route", notes: "Good to know",
+      price: "Price", adults: "Adults (14+)", kidsL: "Children", kidsSm: "under 14, free", kidsFree: "Children under 14 go free", total: "Total for {n} adults", onReq: "Price on request", onReqP: "Tell us your dates and group size and we'll send you the price.",
+      book: "Book this tour", ask: "Ask on WhatsApp", payDay: "Pay in cash or by bank transfer.", others: "Other tours", notFound: "We couldn't find this tour.", seeAll: "See all tours",
+      waMsg: "Hello! I'm interested in: {t}", withX: "With the extra destinations", readMore: "Read more ↓", readLess: "Show less ↑", incH: "What's included", inc: "Included", exc: "Not included", more: "More about the tour" },
+    hy: { back: "← Բոլոր տուրերը", home: "Վերադառնալ կայք", tours: "Տուրեր", dur: "Տևողությունը", hrs: "ժամ", photos: "{n} լուսանկար", about: "Տուրի մասին", plan: "Երթուղի", notes: "Լավ է իմանալ",
+      price: "Գինը", adults: "Մեծահասակներ (14+)", kidsL: "Երեխաներ", kidsSm: "մինչև 14՝ անվճար", kidsFree: "Մինչև 14 տարեկան երեխաները՝ անվճար", total: "Ընդամենը {n} մեծահասակի համար", onReq: "Գինը՝ հարցման դեպքում", onReqP: "Գրեք մեզ ձեր ամսաթվերը և խմբի չափը, և մենք կուղարկենք գինը։",
+      book: "Ամրագրել այս տուրը", ask: "Հարցնել WhatsApp-ով", payDay: "Վճարումը՝ կանխիկ կամ բանկային փոխանցումով։", others: "Այլ տուրեր", notFound: "Այս տուրը չգտնվեց։", seeAll: "Դիտել բոլոր տուրերը",
+      waMsg: "Բարև, ինձ հետաքրքրում է՝ {t}", withX: "Լրացուցիչ վայրերով", readMore: "Կարդալ ավելին ↓", readLess: "Փակել ↑", incH: "Ինչ է ներառված", inc: "Ներառված է", exc: "Ներառված չէ", more: "Ավելին տուրի մասին" }
+  };
+  var id = IT.qp("id") || "";
+  if (id === "t2") id = "t1"; // the old "Florence tour 2" is now part of the Florence tour
+  var adults = 2, kids = 0, pics = [], cur = 0;
+  function t() { return S[IT.state.lang]; }
+  // Long description: the first paragraph is shown, the rest opens with "Read more"
+  var longOpen = false;
+  function longHTML(text, u) {
+    var raw = text.split(/\n\s*\n/).filter(Boolean);
+    var ps = raw.map(function (p) {
+      var h = /^#{1,6}\s+([\s\S]*)$/.exec(p);
+      var s = esc(h ? h[1] : p).replace(/\*\*([\s\S]+?)\*\*/g, "<strong>$1</strong>");
+      return flags(h ? '<h3 class="long-h">' + s + "</h3>" : "<p>" + s + "</p>");
+    });
+    var keep = /^#/.test(raw[0]) ? 2 : 1; // a heading stays visible with the first paragraph
+    if (ps.length <= keep) return ps.join("");
+    return ps.slice(0, keep).join("") + '<div class="long-more" id="long-more"' + (longOpen ? "" : " hidden") + ">" + ps.slice(keep).join("") + "</div>" +
+      '<button type="button" class="read-more" data-readmore aria-expanded="' + longOpen + '" aria-controls="long-more">' + esc(longOpen ? u.readLess : u.readMore) + "</button>";
+  }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-readmore]"); if (!b) return;
+    longOpen = !longOpen; document.getElementById("long-more").hidden = !longOpen;
+    b.setAttribute("aria-expanded", String(longOpen)); b.textContent = longOpen ? t().readLess : t().readMore;
+  });
+  // 🇦🇲 and 🇮🇹 emojis show as letters on Windows, so they are drawn as small flags instead
+  function flags(html) {
+    return html.replace(/🇦🇲/g, '<span class="fl fl-am" role="img" aria-label="Armenia"></span>')
+      .replace(/🇮🇹/g, '<span class="fl fl-it" role="img" aria-label="Italy"></span>');
+  }
+  function tour() { return IT.TOURS.filter(function (x) { return x.id === id; })[0]; }
+  // Which route lists are drawn in red: normally the second one (extra destinations, the island); with redFirst the first (the Vatican)
+  function red(x, gi) { return x.redFirst ? gi === 0 : gi > 0; }
+  function price(p, n) { return IT.priceFor(p, n); }
+
+  var GROUP_TOURS = ["t1", "t5", "t3", "t17", "t7", "t19", "t4", "t8"];
+  function render() {
+    var x = tour(), u = t(), lang = IT.state.lang;
+    document.documentElement.lang = lang;
+    document.getElementById("back").textContent = u.back;
+    document.getElementById("foot-home").textContent = u.home;
+    document.querySelectorAll("[data-lang]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
+    var page = document.getElementById("page");
+    if (!x) { page.innerHTML = '<div class="notfound"><h1>' + esc(u.notFound) + '</h1><a class="btn btn-coral" href="./#city-tours">' + esc(u.seeAll) + "</a></div>"; return; }
+    var L = x[lang];
+    IT.seoTour(x); // title and description with search words, and the address of each language
+    pics = (GALLERY[x.id] || [IT.IMG[x.id]]).slice();
+    var n = Math.min(pics.length, 5);
+    var gal = '<div class="gallery n' + n + '">' + pics.slice(0, 5).map(function (src, i) {
+      var media = /\.mp4$/.test(src) ? '<video src="' + esc(src) + '" muted autoplay loop playsinline preload="metadata"></video><span class="play" aria-hidden="true">▶</span>'
+        : '<img src="' + esc(src) + '" alt="" ' + (i ? 'loading="lazy"' : "") + (i === 0 && (GPOS[x.id] || IT.POS[x.id]) ? ' style="object-position:' + (GPOS[x.id] || IT.POS[x.id]) + '"' : "") + ">";
+      return '<button type="button" data-pic="' + i + '" aria-label="' + esc(L.t) + " " + (i + 1) + '">' + media + (cap(src) ? '<span class="cap">' + esc(cap(src)) + "</span>" : "") +
+        (i === Math.min(n, 5) - 1 && pics.length > 1 ? '<span class="more">' + esc(u.photos.replace("{n}", pics.length)) + "</span>" : "") + "</button>";
+    }).join("") + "</div>";
+    var facts = [IT.cityLabel(x)];
+    facts.push(x.prices || x.from ? (IT.t().from + " " + IT.money(IT.fromPrice(x)) + (x.fromPP ? " " + IT.t().per : "")) : u.onReq);
+    var hl = '<section class="hl" aria-label="' + esc(IT.t().highlights) + '">' + IT.highlights(x).map(function (o) {
+      return '<div class="hl-' + o.k + '">' + IT.ICON[o.k] + "<span><b>" + esc(o.h) + "</b><small>" + esc(o.v) + "</small></span></div>";
+    }).join("") + "</section>";
+    var ln = IT.LANGS[x.id] && IT.LANGS[x.id].note;
+    if (ln) L = Object.assign({}, L, { n: (L.n || []).concat(ln[lang]) });
+    var ie = (IT.INCL[x.id] || {})[lang], long = ((IT.LONG[x.id] || {})[lang]) || "";
+    function ieList(items, cls) { return '<ul class="ie ' + cls + '">' + items.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>"; }
+    // Stops are numbered straight through all groups so they match the pins on the map
+    // (with splitMap every option has its own map and starts again from 1).
+    var pins = IT.MAP[x.id], k = 0, split = pins && x.splitMap;
+    var stops = L.g.map(function (g, gi) {
+      var start = split ? 0 : k;
+      return '<div class="itin">' + (g.h ? "<h3>" + esc(g.h) + "</h3>" : "") + (split ? '<div class="map-slot" data-g="' + gi + '"></div>' : "") + '<ol class="stops' + (red(x, gi) ? " g2" : "") + (pins && pins.places ? " routes" : "") + '" style="counter-reset:s ' + start + '">' + g.a.map(function (s) {
+        var i = k++, has = pins && !pins.places && pins[i], route = pins && pins.places && placesIn(pins, s).length;
+        return "<li" + (has ? ' data-stop="' + i + '" tabindex="0" role="button"' : route ? ' data-route tabindex="0" role="button"' : "") + "><span>" + esc(s) + "</span></li>";
+      }).join("") + "</ol>" +
+      (g.x && g.x.length ? '<div class="notes">' + g.x.map(function (s) { return "<p>" + esc(s) + "</p>"; }).join("") + "</div>" : "") + "</div>"; }).join("");
+    if (pins && !split) stops = '<div class="map-slot"></div>' + stops;
+    // Adults and children counters (children under 14 go free); both go on to the booking window
+    var mx = x.max || 30;
+    var steps = '<div class="stepper"><span>' + esc(u.adults) + '</span><div class="ctl"><button type="button" data-adj="-1" aria-label="−1"' + (adults <= 2 ? " disabled" : "") + '>−</button><output>' + adults + '</output><button type="button" data-adj="1" aria-label="+1"' + (adults + kids >= mx ? " disabled" : "") + '>+</button></div></div>' +
+      '<div class="stepper"><span>' + esc(u.kidsL) + "<small>" + esc(u.kidsSm) + '</small></span><div class="ctl"><button type="button" data-kadj="-1" aria-label="−1"' + (kids <= 0 ? " disabled" : "") + '>−</button><output>' + kids + '</output><button type="button" data-kadj="1" aria-label="+1"' + (adults + kids >= mx ? " disabled" : "") + '>+</button></div></div>';
+    var pr, cn = IT.state.cur !== "EUR" ? '<p class="small">' + esc(IT.t().curNote) + "</p>" : "";
+    if (x.prices) {
+      var on = adults <= 2 ? 0 : adults === 3 ? 1 : adults === 4 ? 2 : 3;
+      pr = steps +
+        '<div class="price"><div class="tot"><span>' + esc(u.total.replace("{n}", adults)) + "</span><b>" + IT.money(IT.tourPrice(x, adults)) + "</b></div></div>" +
+        (x.pricesX ? '<p class="xtra"><span>' + esc(u.withX) + "</span><b>" + IT.money(price(x.pricesX, adults)) + "</b></p>" : "") +
+        '<p class="small">' + esc(u.payDay) + "</p>" + cn;
+    } else if (x.from) pr = steps + '<div class="price"><div class="tot"><span>' + esc(IT.t().availFrom) + (x.fromPP ? " · " + esc(IT.t().per) : "") + "</span><b>" + IT.money(x.from) + '</b></div></div><p class="small">' + esc(u.onReqP) + "</p>" + cn;
+    else pr = steps + '<p class="onreq">' + esc(u.onReq) + '</p><p class="small">' + esc(u.onReqP) + "</p>";
+    var wa = "https://wa.me/393281770199?text=" + encodeURIComponent(u.waMsg.replace("{t}", L.t));
+    // Large groups (10+ people): a request box under the price on these tours
+    var G = IT.t(), grp = GROUP_TOURS.indexOf(x.id) < 0 ? "" : '<section class="card grp"><h2>' + esc(G.grpH) + "</h2><p>" + esc(G.grpP) + '</p><ul class="perks">' +
+      [G.gp2, G.gp3].map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + '</ul><a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/393281770199?text=' +
+      encodeURIComponent(G.waGroup + L.t) + '"><svg><use href="#i-wa"/></svg>' + esc(G.qSend) + "</a></section>";
+    var others = IT.TOURS.filter(function (y) { return y.id !== x.id; }).map(function (y) {
+      return '<a class="ocard" href="trip.html?id=' + y.id + '"><img src="' + IT.IMG[y.id] + '" alt="" loading="lazy"' + (IT.POS[y.id] ? ' style="object-position:' + IT.POS[y.id] + '"' : "") + "><span><small>" + esc(IT.cityLabel(y)) + "</small><b>" + esc(y[lang].t) + "</b></span></a>";
+    }).join("");
+    page.innerHTML =
+      '<nav class="crumbs" aria-label="Breadcrumb"><a href="./">Ital Travel</a><span>›</span><a href="./#city-tours">' + esc(u.tours) + "</a><span>›</span><span>" + esc(L.t) + "</span></nav>" +
+      '<div class="head"><span class="kind">' + esc(IT.kindLabel(x)) + "</span><h1>" + esc(L.t) + '</h1><div class="facts">' + facts.map(function (f) { return "<span>" + esc(f) + "</span>"; }).join("") + "</div></div>" + gal + hl +
+      '<div class="layout"><div style="display:grid;gap:18px;min-width:0"><section class="card"><h2>' + esc(u.about) + '</h2><p class="lead">' + esc(L.d) + "</p></section>" +
+      '<section class="card long" aria-label="' + esc(u.more) + '">' + longHTML(long, u) + "</section>" +
+      '<section class="card"><h2>' + esc(u.plan) + "</h2>" + stops + "</section>" +
+      (ie && ie.inc.length ? '<section class="card"><h2>' + esc(u.incH) + "</h2>" + ieList(ie.inc, "yes") + "</section>" : "") +
+      (L.n && L.n.length ? '<section class="card"><h2>' + esc(u.notes) + '</h2><div class="notes">' + L.n.map(function (s) { return "<p>" + esc(s) + "</p>"; }).join("") + "</div></section>" : "") + "</div>" +
+      '<aside class="side"><section class="card"><h2>' + esc(u.price) + "</h2>" + pr + '<a class="btn btn-coral" href="#book" data-book="' + x.id + '">' + esc(u.book) + '</a><a class="btn btn-wa" target="_blank" rel="noopener" href="' + wa + '"><svg><use href="#i-wa"/></svg>' + esc(u.ask) + "</a></section>" + grp + "</aside></div>" +
+      '<section class="others"><h2>' + esc(u.others) + '</h2><div class="ogrid">' + others + "</div></section>";
+    drawMap(x, L);
+  }
+
+  // Route map with numbered pins (Leaflet + free map tiles). Map elements are kept between re-renders.
+  // Usually one map per tour; a tour with splitMap (Rome) gets one map per option, placed above that option's list.
+  var mapEl = null, map = null, layers = null, markers = [], MAPS = {};
+  function mapAt(key, slot) {
+    var M = MAPS[key];
+    if (!M) {
+      if (!slot) return null;
+      M = MAPS[key] = { el: document.createElement("div") };
+      M.el.className = "map"; slot.replaceWith(M.el);
+      M.map = window.L.map(M.el, { scrollWheelZoom: false });
+      window.L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(M.map);
+      M.layers = window.L.layerGroup().addTo(M.map);
+    } else if (slot) { slot.replaceWith(M.el); M.map.invalidateSize(); }
+    M.layers.clearLayers();
+    return M;
+  }
+  function drawMap(x, L) {
+    var pins = IT.MAP[x.id];
+    if (!pins || !window.L) return;
+    markers = [];
+    if (x.splitMap) { // one map per option: first option green, the second red
+      var k = 0;
+      L.g.forEach(function (g, gi) {
+        var M = mapAt(gi, document.querySelector('.map-slot[data-g="' + gi + '"]')), pts = [];
+        g.a.forEach(function (name, n) {
+          var i = k++, p = pins[i]; if (!p || !M) return;
+          pts.push(p);
+          markers[i] = window.L.marker(p, { icon: window.L.divIcon({ className: "pin" + (red(x, gi) ? " g2" : ""), html: "<span>" + (n + 1) + "</span>", iconSize: [30, 30], iconAnchor: [15, 15] }), title: name })
+            .bindPopup("<b>" + (n + 1) + ".</b> " + esc(name)).addTo(M.layers);
+        });
+        if (!M || !pts.length) return;
+        if (pts.length > 1) window.L.polyline(pts, { color: red(x, gi) ? "#8A4A4D" : "#4E7D63", weight: 3, opacity: .75 }).addTo(M.layers);
+        if (!M.map._loaded) M.map.fitBounds(pts, { padding: [30, 30] });
+      });
+      return;
+    }
+    var M = mapAt("all", document.querySelector(".map-slot")); if (!M) return;
+    mapEl = M.el; map = M.map; layers = M.layers;
+    if (pins.places) { // destinations map (Tuscany): named pins, Florence as the starting point
+      var hy = IT.state.lang === "hy", st = pins.start;
+      allPts = [];
+      function label(p, start) {
+        var m = window.L.marker([p[0], p[1]], { icon: window.L.divIcon({ className: "pin" + (start ? " start" : " dest"), html: "<span></span>", iconSize: [18, 18], iconAnchor: [9, 9] }), title: hy ? p[3] : p[2] })
+          .bindTooltip(esc(hy ? p[3] : p[2]), { permanent: true, direction: p[4] || "right", offset: [p[4] === "left" ? -8 : p[4] === "right" ? 8 : 0, p[4] === "top" ? -8 : p[4] === "bottom" ? 8 : 0], className: "pin-label" + (start ? " start" : "") }).addTo(layers);
+        m.place = p; markers.push(m); allPts.push([p[0], p[1]]);
+      }
+      if (st) label(st, true);
+      pins.places.forEach(function (p) { label(p); });
+      if (!map._loaded) map.fitBounds(allPts, { padding: [40, 40] });
+      return;
+    }
+    var k = 0, all = [];
+    L.g.forEach(function (g, gi) {
+      var line = [], r = red(x, gi), color = r ? "#8A4A4D" : "#4E7D63";
+      g.a.forEach(function (name) {
+        var i = k++, p = pins[i]; if (!p) return;
+        line.push(p); all.push(p);
+        markers[i] = window.L.marker(p, { icon: window.L.divIcon({ className: "pin" + (r ? " g2" : ""), html: "<span>" + (i + 1) + "</span>", iconSize: [30, 30], iconAnchor: [15, 15] }), title: name })
+          .bindPopup("<b>" + (i + 1) + ".</b> " + esc(name)).addTo(layers);
+      });
+      if (line.length > 1) window.L.polyline(line, { color: color, weight: 3, opacity: .75, dashArray: r ? "6 8" : null }).addTo(layers);
+    });
+    if (!map._loaded) map.fitBounds(all, { padding: [30, 30] });
+  }
+  // Tuscany: which map places a route of the list mentions (by the words saved with each place)
+  var allPts = [], activeRoute = null;
+  function placesIn(pins, text) {
+    return [pins.start].concat(pins.places).filter(function (p) { return p && (p[5] || []).some(function (w) { return text.indexOf(w) >= 0; }); });
+  }
+  function showRoute(li) {
+    var pins = IT.MAP[id], text = li.textContent, hit = placesIn(pins, text);
+    if (!hit.length || !map) return;
+    var again = activeRoute === li; // pressing the same route again shows all places
+    document.querySelectorAll("[data-route]").forEach(function (x) { x.classList.toggle("on", !again && x === li); });
+    activeRoute = again ? null : li;
+    markers.forEach(function (m) { var on = again || hit.indexOf(m.place) >= 0; var el = m.getElement(), tt = m.getTooltip() && m.getTooltip().getElement();
+      if (el) el.classList.toggle("dim", !on); if (tt) tt.classList.toggle("dim", !on); });
+    mapEl.scrollIntoView({ behavior: "smooth", block: "center" });
+    var pts = again ? allPts : hit.map(function (p) { return [p[0], p[1]]; });
+    if (pts.length === 1) map.flyTo(pts[0], 12, { duration: .8 }); else map.flyToBounds(pts, { padding: [90, 90], maxZoom: 10, duration: .8 });
+  }
+  document.addEventListener("click", function (e) { var li = e.target.closest("[data-route]"); if (li) showRoute(li); });
+  document.addEventListener("keydown", function (e) { var li = e.target.closest && e.target.closest("[data-route]"); if (li && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); showRoute(li); } });
+  function focusStop(i) {
+    var m = markers[i]; if (!m) return;
+    var mp = m._map; // the map this stop is on (Rome has two)
+    mp.getContainer().scrollIntoView({ behavior: "smooth", block: "center" });
+    mp.flyTo(m.getLatLng(), 16, { duration: .6 }); m.openPopup();
+  }
+  document.addEventListener("click", function (e) { var li = e.target.closest("[data-stop]"); if (li) focusStop(+li.dataset.stop); });
+  document.addEventListener("keydown", function (e) { var li = e.target.closest && e.target.closest("[data-stop]"); if (li && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); focusStop(+li.dataset.stop); } });
+
+  // Photo viewer
+  var viewer = document.getElementById("viewer"), vimg = document.getElementById("v-img");
+  // A video in the gallery (.mp4) plays in the viewer instead of the picture
+  var vvid = document.getElementById("v-vid");
+  function show(i) {
+    cur = (i + pics.length) % pics.length;
+    var isVid = /\.mp4$/.test(pics[cur]);
+    vimg.hidden = isVid; vvid.hidden = !isVid;
+    if (isVid) { vvid.src = pics[cur]; vvid.play().catch(function () {}); } else { vvid.pause(); vimg.src = pics[cur]; }
+    document.getElementById("v-count").textContent = (cap(pics[cur]) ? cap(pics[cur]) + " · " : "") + (cur + 1) + " / " + pics.length; }
+  function openV(i) { show(i); viewer.hidden = false; document.getElementById("v-close").focus(); }
+  function closeV() { viewer.hidden = true; vvid.pause(); }
+  document.getElementById("v-prev").onclick = function () { show(cur - 1); };
+  document.getElementById("v-next").onclick = function () { show(cur + 1); };
+  document.getElementById("v-close").onclick = closeV;
+  viewer.addEventListener("click", function (e) { if (e.target === viewer) closeV(); });
+  var sx = null;
+  viewer.addEventListener("touchstart", function (e) { sx = e.touches[0].clientX; }, { passive: true });
+  viewer.addEventListener("touchend", function (e) { if (sx == null) return; var dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1)); sx = null; });
+  document.addEventListener("keydown", function (e) { if (viewer.hidden) return; if (e.key === "Escape") closeV(); if (e.key === "ArrowLeft") show(cur - 1); if (e.key === "ArrowRight") show(cur + 1); });
+
+  document.addEventListener("click", function (e) {
+    var el;
+    if ((el = e.target.closest("[data-pic]"))) { openV(+el.dataset.pic); return; }
+    if ((el = e.target.closest("#page [data-adj]"))) { e.stopImmediatePropagation(); var m = tour().max || 30, d = +el.dataset.adj; if (d < 0 || adults + kids < m) adults = Math.max(2, adults + d); render(); return; }
+    if ((el = e.target.closest("#page [data-kadj]"))) { e.stopImmediatePropagation(); var m2 = tour().max || 30, d2 = +el.dataset.kadj; if (d2 < 0 || adults + kids < m2) kids = Math.max(0, kids + d2); render(); return; }
+    // "Book" on this page: the booking window starts with these adults and children
+    if (e.target.closest("#page [data-book]")) { IT.state.people = adults; IT.state.kids = kids; IT.state.fromSearch = true; }
+  }, true);
+  document.addEventListener("click", function (e) { if (e.target.closest("[data-lang]")) setTimeout(render, 0); });
+  document.addEventListener("it-cur", function () { render(); });
+
+  IT.init({});
+  render();
+})();
+</script>
+<script>
+/* Online booking for every tour: tour and date → personal details → confirm.
+   Bookings go straight to the Ital Travel Google Sheet (see config.js); the customer gets an email confirmation. */
+(function () {
+  var CFG = window.ITAL_CONFIG || {}, API = CFG.API_URL || "";
+  // Start times and options per tour. Keep the times the same as TOURS in google-apps-script/Code.gs.
+  //  times: null lets the customer type any time (transfers); false = no time to choose (we agree it with the guest). opt: "g0" = first list of the tour, "all" = every list.
+  //  Tours in the same group share their time slots (one guide): both Rome tours, both Venice tours.
+  var BOOKABLE = {
+    // Florence: option 2 (with the extra destinations) is sent to the Google Sheet as "t2", which has those prices.
+    t1:  { times: false, group: "florence-walk", min: 2, opt: "fx" },
+    t5:  { times: ["10:00", "13:30", "17:00"], group: "florence-cooking", min: 1, opt: "g0" },
+    t6:  { times: ["09:00"], group: "tuscany", min: 1, opt: "all" },
+    t15: { times: ["09:00"], group: "florence-car", min: 1 },
+    t16: { times: false, group: "florence-car", min: 1 },
+    t9:  { times: ["09:00"], group: "tuscany", min: 1 },
+    t18: { times: ["09:00"], group: "tuscany", min: 1 },
+    t10: { times: ["09:00"], group: "tuscany", min: 1 },
+    t11: { times: ["09:00"], group: "tuscany", min: 1 },
+    t12: { times: ["09:00"], group: "tuscany", min: 1 },
+    t13: { times: ["09:00"], group: "tuscany", min: 1 },
+    t14: { times: ["09:00"], group: "tuscany", min: 1 },
+    t3:  { times: false, group: "rome", min: 1 },
+    t7:  { times: false, group: "rome", min: 1 },
+    t17: { times: false, group: "rome", min: 1 },
+    t19: { times: false, group: "rome", min: 1 },
+    t4:  { times: false, group: "venice", min: 1 },
+    t8:  { times: false, group: "venice", min: 1 },
+    tr1: { times: null, group: "transfer", min: 1, opt: "g0" }
+  };
+  var ORDER_T = ["t1", "t5", "t15", "t16", "t9", "t18", "t10", "t11", "t12", "t13", "t14", "t6", "t3", "t7", "t19", "t17", "t4", "t8", "tr1"];
+  var esc = IT.esc;
+  function track(e, d) { if (window.IT_TRACK) window.IT_TRACK(e, d); }
+
+  var BK = {
+    en: {
+      fx: ["Main route", "Main route + San Miniato & Piazzale Michelangelo (extra payment)"],
+      title: "Book a tour", steps: ["Tour & date", "Your details", "Confirm"], bookBtn: "Book online", ask: "Ask a question",
+      tipH: "Tip for your guide (optional)", tipNo: "No tip", tipOther: "Other", tipNote: "Thank you! The whole tip goes to your guide and is paid on the day of the tour.", sTip: "Tip for the guide", ppOnSite: "per person · paid on site", addonH: "Add to your tour", addonAdd: "+ Add", addonOn: "✓ Added", addonFor: "for {n} adults",
+      chooseTour: "Choose the tour", chooseOpt: "Choose the option", chooseRoute: "Choose the route", chooseDate: "Choose a date", chooseTime: "Choose a start time",
+      startTimes: "Start times: {list}.", startTime: "This tour starts at {list}.", morning: "Morning", afternoon: "Afternoon", evening: "Evening", full: "Fully booked",
+      pickupTime: "Pickup time", pickupNote: "Choose when we should pick you up. If you're flying in, add your flight number in the next step.",
+      loadingDays: "Checking free dates…", people: "Who is coming", adults: "Adults (14+)", kids: "Children under 14", free: "free",
+      next: "Continue", back: "Back", close: "Close", prev: "Previous month", nextM: "Next month",
+      pickFirst: "Choose a date and a time to continue.", pickDate: "Choose a date to continue.", timeAgreed: "We'll agree it with you",
+      detailsH: "Your details", name: "Name", surname: "Surname", phone: "Phone", email: "Email",
+      note: "Notes (optional)", notePh: "Hotel, flight number, special requests",
+      errName: "Enter your name.", errSurname: "Enter your surname.",
+      errPhone: "Enter a phone number with the country code, for example +374 99 123456.",
+      errEmail: "Enter an email address like name@example.com.",
+      reviewH: "Check and confirm", priceOnReq: "We'll contact you with the price for your group.", payOnDay: "You pay on the day of the tour.",
+      confirm: "Confirm booking", sending: "Booking…", confirmNote: "Press Confirm booking to send it to us. You'll get an email with all the details.",
+      doneH: "Thank you, {name}!", doneP: "Your booking is saved. We've emailed the details to {email} and will contact you soon to confirm your guide.",
+      donePnoMail: "Your booking is saved. We will contact you soon to confirm your guide.",
+      refLabel: "Your booking number", sumH: "Your booking", sTour: "Tour", sOption: "Option", sDate: "Date", sTime: "Time", sPeople: "People", sNote: "Notes",
+      sTotal: "Total", onReq: "On request", notChosen: "Not chosen yet", adultsN: "{n} adults", adults1: "1 adult", kidsN: "{n} children", kids1: "1 child", customer: "Customer",
+      fromP: "from {x}",
+      errTaken: "Sorry, this time was just booked by someone else. Please choose another time.",
+      errBlocked: "Sorry, this day is no longer available. Please choose another date.",
+      errNet: "We couldn't send your booking. Check your internet connection and try again, or call us on +39 328 177 0199.",
+      errSetup: "Online booking is not connected yet. Please call or WhatsApp us on +39 328 177 0199."
+    },
+    hy: {
+      fx: ["Հիմնական երթուղի", "Հիմնական երթուղի + Սան Մինիատո և Միքելանջելոյի հրապարակ (հավելյալ վճարով)"],
+      title: "Ամրագրել տուր", steps: ["Տուր և ամսաթիվ", "Ձեր տվյալները", "Հաստատում"], bookBtn: "Ամրագրել առցանց", ask: "Հարց տալ",
+      tipH: "Թեյավճար էքսկուրսավարին (ըստ ցանկության)", tipNo: "Առանց թեյավճարի", tipOther: "Այլ գումար", tipNote: "Շնորհակալություն։ Թեյավճարն ամբողջությամբ ստանում է ձեր էքսկուրսավարը և վճարվում է տուրի օրը։", sTip: "Թեյավճար էքսկուրսավարին", ppOnSite: "մեկ անձի համար · վճարվում է տեղում", addonH: "Ավելացրեք ձեր տուրին", addonAdd: "+ Ավելացնել", addonOn: "✓ Ավելացված է", addonFor: "{n} մեծահասակի համար",
+      chooseTour: "Ընտրեք տուրը", chooseOpt: "Ընտրեք տարբերակը", chooseRoute: "Ընտրեք ուղղությունը", chooseDate: "Ընտրեք ամսաթիվը", chooseTime: "Ընտրեք մեկնարկի ժամը",
+      startTimes: "Մեկնարկի ժամերը՝ {list}։", startTime: "Տուրը սկսվում է ժամը {list}-ին։", morning: "Առավոտյան", afternoon: "Կեսօրից հետո", evening: "Երեկոյան", full: "Զբաղված է",
+      pickupTime: "Ժամը", pickupNote: "Ընտրեք, թե երբ դիմավորենք ձեզ։ Եթե ինքնաթիռով եք ժամանում, հաջորդ քայլում նշեք չվերթի համարը։",
+      loadingDays: "Ստուգում ենք ազատ օրերը…", people: "Ովքեր են գալիս", adults: "Մեծահասակներ (14+)", kids: "Մինչև 14 տարեկան երեխաներ", free: "անվճար",
+      next: "Շարունակել", back: "Հետ", close: "Փակել", prev: "Նախորդ ամիս", nextM: "Հաջորդ ամիս",
+      pickFirst: "Շարունակելու համար ընտրեք ամսաթիվը և ժամը։", pickDate: "Շարունակելու համար ընտրեք ամսաթիվը։", timeAgreed: "Կհամաձայնեցնենք ձեզ հետ",
+      detailsH: "Ձեր տվյալները", name: "Անուն", surname: "Ազգանուն", phone: "Հեռախոս", email: "Էլ. փոստ",
+      note: "Նշումներ (ըստ ցանկության)", notePh: "Հյուրանոց, չվերթի համար, հատուկ ցանկություններ",
+      errName: "Մուտքագրեք ձեր անունը։", errSurname: "Մուտքագրեք ձեր ազգանունը։",
+      errPhone: "Մուտքագրեք հեռախոսահամարը երկրի կոդով, օրինակ՝ +374 99 123456։",
+      errEmail: "Մուտքագրեք էլ. հասցե, օրինակ՝ name@example.com։",
+      reviewH: "Ստուգեք և հաստատեք", priceOnReq: "Մենք կկապնվենք ձեզ հետ՝ ձեր խմբի գինը հայտնելու համար։", payOnDay: "Վճարումը կատարվում է տուրի օրը։",
+      confirm: "Հաստատել ամրագրումը", sending: "Ամրագրվում է…", confirmNote: "Սեղմեք «Հաստատել ամրագրումը»՝ այն մեզ ուղարկելու համար։ Բոլոր մանրամասներով նամակ կստանաք էլ. փոստով։",
+      doneH: "Շնորհակալություն, {name}։", doneP: "Ձեր ամրագրումը պահպանված է։ Մանրամասներն ուղարկել ենք {email} հասցեին և շուտով կկապնվենք ձեզ հետ՝ էքսկուրսավարին հաստատելու համար։",
+      donePnoMail: "Ձեր ամրագրումը պահպանված է։ Շուտով կկապնվենք ձեզ հետ՝ էքսկուրսավարին հաստատելու համար։",
+      refLabel: "Ձեր ամրագրման համարը", sumH: "Ձեր ամրագրումը", sTour: "Տուր", sOption: "Տարբերակ", sDate: "Ամսաթիվ", sTime: "Ժամ", sPeople: "Մասնակիցներ", sNote: "Նշումներ",
+      sTotal: "Ընդամենը", onReq: "Հարցման դեպքում", notChosen: "Դեռ ընտրված չէ", adultsN: "{n} մեծահասակ", adults1: "1 մեծահասակ", kidsN: "{n} երեխա", kids1: "1 երեխա", customer: "Հաճախորդ",
+      fromP: "սկսած {x}",
+      errTaken: "Ներողություն, այս ժամն արդեն ամրագրվել է։ Խնդրում ենք ընտրել այլ ժամ։",
+      errBlocked: "Ներողություն, այս օրն այլևս հասանելի չէ։ Խնդրում ենք ընտրել այլ ամսաթիվ։",
+      errNet: "Չհաջողվեց ուղարկել ամրագրումը։ Ստուգեք ինտերնետ կապը և կրկին փորձեք կամ զանգահարեք +39 328 177 0199։",
+      errSetup: "Առցանց ամրագրումը դեռ միացված չէ։ Խնդրում ենք զանգահարել կամ գրել WhatsApp-ով՝ +39 328 177 0199։"
+    }
+  };
+  function T() { return BK[IT.state.lang]; }
+  window.BK_T = T;
+  // The booking total stays in euros (that's the real price), with the chosen currency next to it.
+  function eur(n) { return "€" + n + (IT.state.cur !== "EUR" ? " (" + IT.money(n) + ")" : ""); }
+
+  var today = new Date(); today.setHours(0, 0, 0, 0);
+  var minDay = new Date(today); minDay.setDate(minDay.getDate() + 1);
+  var maxDay = new Date(today); maxDay.setFullYear(maxDay.getFullYear() + 1);
+  var s = { tour: "t1", opt: 0, extras: [], tip: 0, date: null, time: null, adults: 2, kids: 0, step: 1, view: new Date(minDay.getFullYear(), minDay.getMonth(), 1),
+            f: { name: "", surname: "", phone: "", email: "", note: "" }, errs: {}, ref: null, emailSent: true,
+            avail: null, loading: false, sending: false, msg: "" };
+
+  function tour() { return IT.TOURS.filter(function (x) { return x.id === s.tour; })[0]; }
+  function cfg() { return BOOKABLE[s.tour]; }
+  function priced() { return !!tour().prices; }
+  function options(id) {
+    var c = BOOKABLE[id || s.tour], x = IT.TOURS.filter(function (y) { return y.id === (id || s.tour); })[0];
+    if (!c.opt) return [];
+    if (c.opt === "fx") return T().fx;
+    var g = x[IT.state.lang].g;
+    return c.opt === "all" ? g.reduce(function (a, grp) { return a.concat(grp.a); }, []) : g[0].a;
+  }
+  function optLabel() { var o = options(); return o.length ? o[s.opt] || o[0] : ""; }
+  // Florence prices: flat for 2, 3 or 4 adults, per person from 5. Children under 14 are free.
+  function withX() { return cfg().opt === "fx" && s.opt === 1; }
+  function total() { var x = tour(); if (!x.prices) return null; return (withX() ? IT.priceFor(x.pricesX, s.adults) : IT.tourPrice(x, s.adults)) + s.tip; }
+  // Armenian date names written out, since many browsers have no Armenian calendar data.
+  var HY = {
+    months: ["Հունվար", "Փետրվար", "Մարտ", "Ապրիլ", "Մայիս", "Հունիս", "Հուլիս", "Օգոստոս", "Սեպտեմբեր", "Հոկտեմբեր", "Նոյեմբեր", "Դեկտեմբեր"],
+    monthsOf: ["հունվարի", "փետրվարի", "մարտի", "ապրիլի", "մայիսի", "հունիսի", "հուլիսի", "օգոստոսի", "սեպտեմբերի", "հոկտեմբերի", "նոյեմբերի", "դեկտեմբերի"],
+    days: ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"],
+    short: ["Կիր", "Երկ", "Երք", "Չրք", "Հնգ", "Ուրբ", "Շբթ"]
+  };
+  function hy() { return IT.state.lang === "hy"; }
+  function fmtDate(d) {
+    if (!d) return "";
+    if (hy()) return HY.days[d.getDay()] + ", " + d.getDate() + " " + HY.monthsOf[d.getMonth()] + " " + d.getFullYear() + " թ.";
+    return d.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+  }
+  function fmtMonth(d) { return hy() ? HY.months[d.getMonth()] + " " + d.getFullYear() : d.toLocaleDateString("en-GB", { month: "long", year: "numeric" }); }
+  function fmtWd(d) { return hy() ? HY.short[d.getDay()] : d.toLocaleDateString("en-GB", { weekday: "short" }); }
+  function ymd(d) { function p(n) { return (n < 10 ? "0" : "") + n; } return d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate()); }
+  function sameDay(a, b) { return a && b && a.getTime() === b.getTime(); }
+  function peopleText() {
+    var t = T(), a = s.adults === 1 ? t.adults1 : t.adultsN.replace("{n}", s.adults), k = s.kids === 1 ? t.kids1 : t.kidsN.replace("{n}", s.kids);
+    return a + (s.kids ? " + " + k : "");
+  }
+  function partOfDay(h) { var t = T(), n = parseInt(h, 10); return n < 12 ? t.morning : n < 17 ? t.afternoon : t.evening; }
+  function validTime() { if (cfg().times === false) return true; return !!s.time && (cfg().times ? cfg().times.indexOf(s.time) >= 0 : /^([01]\d|2[0-3]):[0-5]\d$/.test(s.time)); }
+
+  /* ----- Talking to the Google Sheet ----- */
+  function api(payload) {
+    // text/plain keeps this a "simple" request, which Google Apps Script web apps accept from any site.
+    return fetch(API, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(payload) })
+      .then(function (r) { return r.json(); });
+  }
+  function loadAvailability() {
+    if (!API) return;
+    s.loading = true; render();
+    api({ action: "availability" }).then(function (r) { if (r && r.ok) s.avail = r; })
+      .catch(function () { /* booking still works; the server double-checks each slot */ })
+      .then(function () { s.loading = false; tidy(); render(); });
+  }
+  function blocked(d) { return !!(s.avail && s.avail.blocked.indexOf(ymd(d)) >= 0); }
+  function slotFull(d, t) { var g = s.avail && s.avail.full && s.avail.full[cfg().group], f = g && g[ymd(d)]; return !!(f && f.indexOf(t) >= 0); }
+  function dayFull(d) { return blocked(d) || (cfg().times ? cfg().times.every(function (t) { return slotFull(d, t); }) : false); }
+  // Clear choices that are no longer possible after a tour change or new availability.
+  function tidy() {
+    var c = cfg();
+    if (s.adults < c.min) s.adults = c.min;
+    var mx = tour().max; if (mx && s.adults + s.kids > mx) { s.adults = Math.min(s.adults, mx); s.kids = Math.max(0, mx - s.adults); }
+    if (s.opt >= options().length) s.opt = 0;
+    if (c.times === false) s.time = null;
+    if (c.times && s.time && c.times.indexOf(s.time) < 0) s.time = null;
+    if (!c.times && s.time && !/^([01]\d|2[0-3]):[0-5]\d$/.test(s.time)) s.time = null;
+    if (s.date && dayFull(s.date)) { s.date = null; s.time = c.times ? null : s.time; }
+    if (s.date && s.time && c.times && slotFull(s.date, s.time)) s.time = null;
+  }
+
+  var root = document.getElementById("bk"), main = document.getElementById("bk-main"), sum = document.getElementById("bk-sum"), foot = document.getElementById("bk-foot"), lastFocus = null;
+
+  function open(id) {
+    if (s.step === 4) { s.step = 1; s.date = null; s.time = null; s.ref = null; s.f.note = ""; s.tip = 0; }
+    var optX = id === "t2"; if (optX) id = "t1"; // old links to "Florence tour 2" open the Florence tour with the extra destinations
+    if (BOOKABLE[id] && id !== s.tour) { s.tour = id; s.opt = 0; s.extras = []; s.step = 1; }
+    if (optX) s.opt = 1;
+    // Date and participants from the search bar, used once after each search
+    if (IT.state.fromSearch) {
+      IT.state.fromSearch = false;
+      s.adults = IT.state.people || s.adults;
+      if (IT.state.kids != null) s.kids = IT.state.kids; // children chosen on the tour page
+      var p = (IT.state.date || "").split("-"), d = p.length === 3 ? new Date(+p[0], +p[1] - 1, +p[2]) : null;
+      if (d && d >= minDay && d <= maxDay) { s.date = d; s.view = new Date(d.getFullYear(), d.getMonth(), 1); }
+    }
+    tidy();
+    s.msg = API ? "" : T().errSetup;
+    lastFocus = document.activeElement; root.hidden = false; document.body.classList.add("bk-open"); render();
+    document.getElementById("bk-panel").scrollTop = 0;
+    document.getElementById("bk-x").focus();
+    track("book_open", s.tour);
+    loadAvailability();
+  }
+  function close() { root.hidden = true; document.body.classList.remove("bk-open"); if (lastFocus) lastFocus.focus(); }
+
+  function renderSteps() {
+    var t = T();
+    document.getElementById("bk-title").textContent = t.title;
+    document.getElementById("bk-x").setAttribute("aria-label", t.close);
+    document.getElementById("bk-steps").innerHTML = t.steps.map(function (n, i) {
+      var k = i + 1, cls = k < s.step ? "done" : k === s.step || (s.step === 4 && k === 3) ? "on" : "";
+      return '<li class="' + cls + '"' + (cls === "on" ? ' aria-current="step"' : "") + "><b>" + (k < s.step ? "✓" : k) + "</b><span>" + esc(n) + "</span></li>";
+    }).join("");
+  }
+
+  function renderSum() {
+    var t = T(), x = tour(), L = x[IT.state.lang], o = [optLabel(), extrasLabel() && "+ " + extrasLabel()].filter(Boolean).join(" ");
+    sum.innerHTML = "<h4>" + esc(t.sumH) + "</h4>" +
+      "<dl><dt>" + esc(t.sTour) + "</dt><dd>" + esc(L.t) + "</dd>" +
+      (o ? "<dt>" + esc(t.sOption) + "</dt><dd>" + esc(o) + "</dd>" : "") +
+      "<dt>" + esc(t.sDate) + "</dt><dd>" + esc(s.date ? fmtDate(s.date) : t.notChosen) + "</dd>" +
+      "<dt>" + esc(t.sTime) + "</dt><dd>" + esc(cfg().times === false ? t.timeAgreed : validTime() ? s.time : t.notChosen) + "</dd>" +
+      "<dt>" + esc(t.sPeople) + "</dt><dd>" + esc(peopleText()) + "</dd>" + (s.tip ? "<dt>" + esc(t.sTip) + "</dt><dd>" + eur(s.tip) + "</dd>" : "") + "</dl>" +
+      '<div class="tot"><span>' + esc(t.sTotal) + "</span>" + (priced() ? "<b>" + eur(total()) + "</b>" : '<b style="font-size:1.05rem">' + esc(t.onReq) + "</b>") + "</div>";
+  }
+
+  function calendar() {
+    var t = T(), v = s.view, y = v.getFullYear(), m = v.getMonth();
+    var first = new Date(y, m, 1), lead = (first.getDay() + 6) % 7, days = new Date(y, m + 1, 0).getDate();
+    var canPrev = new Date(y, m, 0) >= minDay, canNext = new Date(y, m + 1, 1) <= maxDay;
+    var wd = [], base = new Date(2024, 0, 1); // a Monday
+    for (var i = 0; i < 7; i++) { var d0 = new Date(base); d0.setDate(1 + i); wd.push('<span class="wd">' + esc(fmtWd(d0)) + "</span>"); }
+    var cells = [];
+    for (var j = 0; j < lead; j++) cells.push("<span></span>");
+    for (var d = 1; d <= days; d++) {
+      var dt = new Date(y, m, d), off = dt < minDay || dt > maxDay || dayFull(dt);
+      cells.push('<button type="button" data-day="' + d + '"' + (off ? " disabled" : "") + (sameDay(dt, today) ? ' class="today"' : "") +
+        ' aria-pressed="' + sameDay(dt, s.date) + '" aria-label="' + esc(fmtDate(dt)) + '">' + d + "</button>");
+    }
+    return '<div class="cal"><div class="cal-head"><button type="button" data-cal="-1" aria-label="' + esc(t.prev) + '"' + (canPrev ? "" : " disabled") + '>←</button><b>' +
+      esc(fmtMonth(first)) + '</b><button type="button" data-cal="1" aria-label="' + esc(t.nextM) + '"' + (canNext ? "" : " disabled") + ">→</button></div>" +
+      '<div class="cal-grid">' + wd.join("") + cells.join("") + "</div>" + (s.loading ? '<p class="bk-note">' + esc(t.loadingDays) + "</p>" : "") + "</div>";
+  }
+
+  function stepper(key, label, note, min) {
+    return '<div class="r"><span>' + esc(label) + (note ? "<small>" + esc(note) + "</small>" : "") + '</span><div class="ctl"><button type="button" data-ppl="' + key + '" data-d="-1" aria-label="−1"' + (s[key] <= min ? " disabled" : "") +
+      '>−</button><output>' + s[key] + '</output><button type="button" data-ppl="' + key + '" data-d="1" aria-label="+1"' + (s[key] >= 30 || (tour().max && s.adults + s.kids >= tour().max) ? " disabled" : "") + ">+</button></div></div>";
+  }
+
+  function field(k, label, type, ac) {
+    var err = s.errs[k];
+    return '<div class="f"><label for="bk-' + k + '">' + esc(label) + '</label><input id="bk-' + k + '" data-f="' + k + '" type="' + type + '" autocomplete="' + ac + '" value="' + esc(s.f[k]) + '"' +
+      (err ? ' aria-invalid="true" aria-describedby="bk-' + k + '-e"' : "") + '><span class="err" id="bk-' + k + '-e">' + (err ? esc(err) : "") + "</span></div>";
+  }
+  function alertBox() { return s.msg ? '<p class="err" role="alert" style="font-size:.9rem;background:#FDF0F0;padding:10px 12px;border-radius:12px">' + esc(s.msg) + "</p>" : ""; }
+
+  // Only the tour the customer pressed "Book" on is shown (no list of other tours).
+  function tourCards() {
+    var u = IT.t(), x = tour(), L = x[IT.state.lang];
+    var fp = IT.fromPrice(x);
+    var meta = esc(IT.cityLabel(x)) + " · " + (fp ? esc(T().fromP.replace("{x}", eur(fp)) + (x.fromPP ? " " + u.per : "")) : esc(u.onReq));
+    return '<div class="bk-one"><img src="' + IT.IMG[x.id] + '" alt=""' + (IT.POS[x.id] ? ' style="object-position:' + IT.POS[x.id] + '"' : "") + "><span><b>" + esc(L.t) +
+      "</b><small>" + meta + "</small></span></div>";
+  }
+
+  // Add-ons offered while booking (Florence: San Miniato + Piazzale Michelangelo). Choosing one sets option 2 (the "t2" prices).
+  var ADDON = {
+    t1: { imgs: ["img/fl-san-miniato.jpg", "img/fl-piazzale.jpg"],
+      en: { t: "San Miniato church & Piazzale Michelangelo", d: "Add the church of San Miniato (Saint Minas) and Piazzale Michelangelo, with a wide view over the whole city. About 1 extra hour.", note: "Taxi up the hill if you like: €20–30 per car for 3–4 people." },
+      hy: { t: "Սան Մինիատո եկեղեցի և Միքելանջելոյի հրապարակ", d: "Ավելացրեք Սան Մինիատո (Սուրբ Մինաս) եկեղեցին և Միքելանջելոյի հրապարակը՝ ամբողջ քաղաքի հիասքանչ տեսարանով։ Մոտ 1 ժամ ավելի։", note: "Ցանկության դեպքում՝ տաքսի բլուր՝ 20–30 եվրո մեկ մեքենա, 3–4 անձ։" } }
+  };
+  // Add-ons without a fixed price: the guide confirms the price. Chosen ones go into the booking's option text.
+  var EXTRA = {
+    museums: { imgs: ["img/vat-square.jpg", "img/vat-aerial.jpg"],
+      en: { t: "Vatican Museums & Sistine Chapel", d: "After the Vatican tour: a coffee break, then a guided visit of the Vatican Museums and the Sistine Chapel.", note: "Museum tickets are booked for you in advance." },
+      hy: { t: "Վատիկանի թանգարաններ և Սիքստինյան կապելլա", d: "Վատիկանի տուրից հետո՝ սուրճի ընդմիջում, ապա էքսկուրսիա Վատիկանի թանգարաններում և Սիքստինյան կապելլայում։", note: "Թանգարանի տոմսերը մենք նախապես ամրագրում ենք։" } },
+    // Tuscany wineries: a price per person, paid on site (not added to the total). Only one of the two can be chosen.
+    wine: { imgs: ["img/tu-wine-cellar.webp", "img/tu-tasting-room.jpg"], pp: 35, other: "lunch",
+      en: { t: "Wine tasting at a winery", d: "A tasting of local Tuscan wines at a family winery.", note: "" },
+      hy: { t: "Գինու համտես գինեգործարանում", d: "Տեղական տոսկանյան գինիների համտես ընտանեկան գինեգործարանում։", note: "" } },
+    lunch: { imgs: ["img/tu-winery-lunch.jpg", "img/tu-wine-table.jpg"], pp: 65, other: "wine",
+      en: { t: "Lunch and wine tasting at a winery", d: "Lunch with local Tuscan dishes at a winery, together with a wine tasting.", note: "" },
+      hy: { t: "Ճաշ և գինու համտես գինեգործարանում", d: "Ճաշ տեղական տոսկանյան ուտեստներով գինեգործարանում՝ գինու համտեսի հետ միասին։", note: "" } }
+  };
+  var EXTRAS = { t7: ["museums"], t17: ["museums"] };
+  ["t6", "t9", "t18", "t10", "t11", "t13", "t14"].forEach(function (id) { EXTRAS[id] = ["wine", "lunch"]; }); // every Tuscany tour except Pisa & Lucca
+  function extrasLabel() {
+    return (s.extras || []).map(function (k) { return EXTRA[k][IT.state.lang].t; }).join(", ");
+  }
+  function bookOption() { return [optLabel(), extrasLabel() && "+ " + extrasLabel(), s.tip ? "· " + BK.en.sTip + ": €" + s.tip : ""].filter(Boolean).join(" "); }
+  function extraCards(t) {
+    var list = EXTRAS[s.tour]; if (!list) return "";
+    return '<div><h3>' + esc(t.addonH) + "</h3>" + list.map(function (k) {
+      var a = EXTRA[k], A = a[IT.state.lang], on = s.extras.indexOf(k) >= 0;
+      return '<div class="addon' + (on ? " on" : "") + '" style="margin-bottom:10px"><div class="addon-pics">' +
+        a.imgs.map(function (src) { return '<img src="' + src + '" alt="" loading="lazy">'; }).join("") + "</div>" +
+        '<div class="addon-body"><b>' + esc(A.t) + "</b><p>" + esc(A.d) + "</p>" + (A.note ? "<small>" + esc(A.note) + "</small>" : "") +
+        '<div class="addon-foot"><span class="addon-price"' + (a.pp ? ">" + eur(a.pp) + " <small>" + esc(t.ppOnSite) + "</small>" : ' style="font-size:.95rem">' + esc(t.onReq)) + "</span>" +
+        '<button type="button" class="btn ' + (on ? "btn-sea" : "btn-line") + '" data-extra="' + k + '">' + esc(on ? t.addonOn : t.addonAdd) + "</button></div></div></div>";
+    }).join("") + "</div>";
+  }
+  function addonCard(t) {
+    var a = ADDON[s.tour]; if (!a) return "";
+    var x = tour(), A = a[IT.state.lang], on = s.opt === 1;
+    var extra = IT.priceFor(x.pricesX, s.adults) - IT.priceFor(x.prices, s.adults);
+    return '<div><h3>' + esc(t.addonH) + '</h3><div class="addon' + (on ? " on" : "") + '"><div class="addon-pics">' +
+      a.imgs.map(function (src) { return '<img src="' + src + '" alt="" loading="lazy">'; }).join("") + "</div>" +
+      '<div class="addon-body"><b>' + esc(A.t) + "</b><p>" + esc(A.d) + '</p><small>' + esc(A.note) + "</small>" +
+      '<div class="addon-foot"><span class="addon-price">+' + eur(extra) + ' <small>' + esc(t.addonFor.replace("{n}", s.adults)) + "</small></span>" +
+      '<button type="button" class="btn ' + (on ? "btn-sea" : "btn-line") + '" data-addon>' + esc(on ? t.addonOn : t.addonAdd) + "</button></div></div></div></div>";
+  }
+
+  // Optional tip for the guide, chosen on the last step and paid on the day.
+  var TIP_AMOUNTS = [0, 10, 20, 30];
+  function tipPicker(t) {
+    var other = s.tip && TIP_AMOUNTS.indexOf(s.tip) < 0;
+    return '<div class="tip"><h3>' + esc(t.tipH) + '</h3><div class="tip-row">' + TIP_AMOUNTS.map(function (n) {
+      return '<button type="button" class="tip-b" data-tip="' + n + '" aria-pressed="' + (s.tip === n) + '">' + (n ? "€" + n : esc(t.tipNo)) + "</button>";
+    }).join("") + '<label class="tip-o"><span>' + esc(t.tipOther) + ' €</span><input type="number" min="0" max="500" step="1" inputmode="numeric" id="bk-tip" value="' + (other ? s.tip : "") + '"></label></div>' +
+      (s.tip ? '<p class="bk-note">' + esc(t.tipNote) + "</p>" : "") + "</div>";
+  }
+
+  function render() {
+    var t = T(), c = cfg(); renderSteps(); renderSum();
+    var html = "", ft = "";
+    if (s.step === 1) {
+      var opts = options();
+      html = alertBox() + tourCards() +
+        (c.opt === "fx" ? addonCard(t) : opts.length ? '<div><h3><label for="bk-opt">' + esc(s.tour === "tr1" ? t.chooseRoute : t.chooseOpt) + '</label></h3><div class="f"><select id="bk-opt" data-opt>' +
+          opts.map(function (o, i) { return '<option value="' + i + '"' + (i === s.opt ? " selected" : "") + ">" + esc(o) + "</option>"; }).join("") + "</select></div></div>" : "") + extraCards(t) +
+        "<div><h3>" + esc(t.chooseDate) + "</h3>" + calendar() + "</div>" +
+        (c.times === false ? "" : c.times
+          ? "<div><h3>" + esc(t.chooseTime) + '</h3><div class="slots"' + (c.times.length === 1 ? ' style="grid-template-columns:minmax(0,1fr)"' : "") + ">" + c.times.map(function (h) {
+              var full = s.date && slotFull(s.date, h);
+              return '<button type="button" class="slot" data-time="' + h + '" aria-pressed="' + (s.time === h) + '"' + (full ? " disabled" : "") + ">" + h + "<small>" + esc(full ? t.full : partOfDay(h)) + "</small></button>";
+            }).join("") + '</div><p class="bk-note">' + esc((c.times.length === 1 ? t.startTime : t.startTimes).replace("{list}", c.times.join(hy() ? " և " : " or "))) + "</p></div>"
+          : '<div><h3><label for="bk-ftime">' + esc(t.pickupTime) + '</label></h3><div class="f"><input type="time" id="bk-ftime" step="900" value="' + esc(s.time || "") + '" style="max-width:200px"></div><p class="bk-note">' + esc(t.pickupNote) + "</p></div>") +
+        "<div><h3>" + esc(t.people) + '</h3><div class="ppl">' + stepper("adults", t.adults, "", c.min) + stepper("kids", t.kids, priced() ? t.free : "", 0) + "</div></div>";
+      var ok = s.date && validTime();
+      ft = '<span class="hint">' + (ok ? "" : esc(c.times === false ? t.pickDate : t.pickFirst)) + '</span><button type="button" class="btn btn-coral" data-go="2"' + (ok ? "" : ' aria-disabled="true"') + ">" + esc(t.next) + " →</button>";
+    } else if (s.step === 2) {
+      html = "<div><h3>" + esc(t.detailsH) + '</h3><div class="bk-fields">' + field("name", t.name, "text", "given-name") + field("surname", t.surname, "text", "family-name") +
+        field("phone", t.phone, "tel", "tel") + field("email", t.email, "email", "email") +
+        '<div class="f" style="grid-column:1/-1"><label for="bk-note">' + esc(t.note) + '</label><textarea id="bk-note" data-f="note" rows="3" maxlength="1000" placeholder="' + esc(t.notePh) + '">' + esc(s.f.note) + "</textarea></div></div></div>";
+      ft = '<button type="button" class="btn btn-line" data-go="1">← ' + esc(t.back) + '</button><span class="hint"></span><button type="button" class="btn btn-coral" data-go="3">' + esc(t.next) + " →</button>";
+    } else if (s.step === 3) {
+      var x = tour(), o = [optLabel(), extrasLabel() && "+ " + extrasLabel()].filter(Boolean).join(" ");
+      var rows = [[t.sTour, x[IT.state.lang].t]];
+      if (o) rows.push([t.sOption, o]);
+      rows.push([t.sDate, fmtDate(s.date)], [t.sTime, s.time || t.timeAgreed], [t.sPeople, peopleText()], [t.customer, s.f.name + " " + s.f.surname], [t.phone, s.f.phone], [t.email, s.f.email]);
+      if (s.f.note.trim()) rows.push([t.sNote, s.f.note.trim()]);
+      if (s.tip) rows.push([t.sTip, eur(s.tip)]);
+      rows.push([t.sTotal, priced() ? eur(total()) : t.onReq]);
+      html = alertBox() + "<div><h3>" + esc(t.reviewH) + '</h3><div class="review">' +
+        rows.map(function (r) { return "<div><span>" + esc(r[0]) + "</span><b>" + esc(r[1]) + "</b></div>"; }).join("") +
+        '</div>' + tipPicker(t) + '<p class="bk-note" style="color:var(--ink);font-weight:600">' + esc(priced() ? t.payOnDay : t.priceOnReq) + '</p><p class="bk-note">' + esc(t.confirmNote) + "</p></div>";
+      ft = '<button type="button" class="btn btn-line" data-go="2"' + (s.sending ? " disabled" : "") + ">← " + esc(t.back) + '</button><span class="hint"></span><button type="button" class="btn btn-book" id="bk-send"' +
+        (s.sending || !API ? ' aria-disabled="true"' : "") + ">" + esc(s.sending ? t.sending : t.confirm) + "</button>";
+    } else {
+      html = '<div class="done"><span class="tick" aria-hidden="true">✓</span><h3 style="font-family:\'Young Serif\',\'Noto Serif Armenian\',serif;font-size:1.6rem;letter-spacing:0;text-transform:none;color:var(--ink)">' + esc(t.doneH.replace("{name}", s.f.name)) +
+        '</h3><span class="bk-note">' + esc(t.refLabel) + '</span><span class="refc">' + esc(s.ref) + "</span><p>" + esc(s.emailSent ? t.doneP.replace("{email}", s.f.email) : t.donePnoMail) + "</p></div>";
+      ft = '<span class="hint"></span><button type="button" class="btn btn-line" data-close>' + esc(t.close) + "</button>";
+    }
+    main.innerHTML = html; foot.innerHTML = ft;
+  }
+
+  function validate() {
+    var t = T(), f = s.f, e = {};
+    if (!f.name.trim()) e.name = t.errName;
+    if (!f.surname.trim()) e.surname = t.errSurname;
+    if (!/^\+?[0-9][0-9\s\-()]{6,}$/.test(f.phone.trim())) e.phone = t.errPhone;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email.trim())) e.email = t.errEmail;
+    s.errs = e; return !Object.keys(e).length;
+  }
+
+  function send() {
+    if (s.sending || !API) return;
+    s.sending = true; s.msg = ""; render();
+    api({ action: "book", tour: withX() ? "t2" : s.tour, option: bookOption(), date: ymd(s.date), time: s.time || "", adults: s.adults, kids: s.kids,
+          name: s.f.name.trim(), surname: s.f.surname.trim(), phone: s.f.phone.trim(), email: s.f.email.trim(), note: s.f.note.trim(), lang: IT.state.lang,
+          partner: window.IT_REF ? window.IT_REF() : "" })
+      .then(function (r) {
+        s.sending = false;
+        if (r && r.ok) { s.ref = r.ref; s.emailSent = r.emailSent !== false; s.step = 4; track("book_done", s.tour); render(); return; }
+        var code = r && r.error;
+        if (code === "slot_taken" || code === "day_blocked") { s.msg = code === "slot_taken" ? T().errTaken : T().errBlocked; s.step = 1; s.time = cfg().times ? null : s.time; if (code === "day_blocked") s.date = null; render(); loadAvailability(); return; }
+        s.msg = T().errNet; render();
+      })
+      .catch(function () { s.sending = false; s.msg = T().errNet; render(); });
+  }
+
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-book]");
+    if (b) { e.preventDefault(); open(b.dataset.book); return; }
+    if (root.hidden) return;
+    if (e.target === root || e.target.closest("#bk-x") || e.target.closest("[data-close]")) { if (!s.sending) close(); return; }
+    var el;
+    if ((el = e.target.closest("[data-tour]"))) { if (s.tour !== el.dataset.tour) { s.tour = el.dataset.tour; s.opt = 0; s.extras = []; tidy(); } render(); }
+    else if ((el = e.target.closest("[data-cal]"))) { s.view = new Date(s.view.getFullYear(), s.view.getMonth() + (+el.dataset.cal), 1); render(); }
+    else if ((el = e.target.closest("[data-day]"))) { s.date = new Date(s.view.getFullYear(), s.view.getMonth(), +el.dataset.day); tidy(); if (API) s.msg = ""; render(); }
+    else if ((el = e.target.closest("[data-time]"))) { s.time = el.dataset.time; render(); }
+    else if ((el = e.target.closest("[data-tip]"))) { s.tip = +el.dataset.tip; if (s.tip) track("tip", s.tour + ":" + s.tip); render(); }
+    else if ((el = e.target.closest("[data-extra]"))) { var ek = el.dataset.extra, ei = s.extras.indexOf(ek); if (ei >= 0) s.extras.splice(ei, 1); else { s.extras = s.extras.filter(function (k) { return k !== EXTRA[ek].other; }); s.extras.push(ek); } track(ei >= 0 ? "addon_remove" : "addon_add", s.tour + ":" + ek); render(); }
+    else if (e.target.closest("[data-addon]")) { s.opt = s.opt === 1 ? 0 : 1; track(s.opt ? "addon_add" : "addon_remove", s.tour); render(); }
+    else if ((el = e.target.closest("[data-ppl]"))) { var k = el.dataset.ppl; s[k] = Math.max(k === "adults" ? cfg().min : 0, Math.min(30, s[k] + (+el.dataset.d))); if (tour().max && s.adults + s.kids > tour().max) s[k]--; render(); }
+    else if ((el = e.target.closest("[data-go]"))) {
+      var to = +el.dataset.go;
+      if (to === 3 && s.step === 2 && !validate()) { render(); var bad = main.querySelector('[aria-invalid="true"]'); if (bad) bad.focus(); return; }
+      s.step = to; render(); document.getElementById("bk-panel").scrollTop = 0;
+      if (to === 2) track("book_details", s.tour);
+      if (to === 3) track("book_review", s.tour);
+    }
+    else if (e.target.closest("#bk-send")) send();
+  });
+  main.addEventListener("change", function (e) {
+    if (e.target.id === "bk-opt") { s.opt = +e.target.value; renderSum(); }
+    if (e.target.id === "bk-ftime") { s.time = e.target.value; render(); }
+    if (e.target.id === "bk-tip") { s.tip = Math.max(0, Math.min(500, Math.round(+e.target.value) || 0)); if (s.tip) track("tip", s.tour + ":" + s.tip); render(); }
+  });
+  main.addEventListener("input", function (e) {
+    if (e.target.id === "bk-ftime") { s.time = e.target.value; renderSum(); var ok = s.date && validTime(), go = foot.querySelector('[data-go="2"]'), hint = foot.querySelector(".hint");
+      if (go) { if (ok) go.removeAttribute("aria-disabled"); else go.setAttribute("aria-disabled", "true"); } if (hint) hint.textContent = ok ? "" : T().pickFirst; return; }
+    var k = e.target.dataset.f; if (!k) return;
+    s.f[k] = e.target.value;
+    if (s.errs[k]) { delete s.errs[k]; e.target.removeAttribute("aria-invalid"); var er = document.getElementById("bk-" + k + "-e"); if (er) er.textContent = ""; }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (root.hidden) return;
+    if (e.key === "Escape" && !s.sending) close();
+    if (e.key === "Tab") { // keep focus inside the booking window
+      var f = root.querySelectorAll('button:not([disabled]), a[href], input, select, textarea'); if (!f.length) return;
+      var a = f[0], z = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); }
+      else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); }
+    }
+  });
+  document.addEventListener("click", function (e) { if (e.target.closest("[data-lang]") && !root.hidden) { if (!API) s.msg = T().errSetup; tidy(); render(); } });
+  document.addEventListener("it-cur", function () { if (!root.hidden) render(); });
+  var qid = IT.qp("id");
+  if (location.hash === "#book") setTimeout(function () { open(BOOKABLE[qid] ? qid : "t1"); }, 0);
+  var qb = new URLSearchParams(location.search).get("book");
+  if (BOOKABLE[qb]) setTimeout(function () { open(qb); }, 0);
+})();
+</script>
+<script src="newlook.js"></script>
+</body>
+</html>

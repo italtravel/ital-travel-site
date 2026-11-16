@@ -174,7 +174,7 @@ main { padding-block: 22px 70px; display: grid; gap: 26px; min-height: 60vh; ali
 <script src="core.js"></script>
 <script>
 (function () {
-  var esc = IT.esc, q = new URLSearchParams(location.search), P = q.get("p") || "", ID = q.get("id") || "";
+  var esc = IT.esc, q = new URLSearchParams(location.search), P = IT.qp("p") || "", ID = IT.qp("id") || "";
   var GC = ["var(--sea)", "var(--coral)", "var(--sea-d)"];
   var S = {
     en: {

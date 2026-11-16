@@ -723,11 +723,28 @@
      seo({ title, desc }) sets the page title, description, share texts, the canonical address and the
      links between the two language versions (hreflang). ---- */
   var SEO_KEEP = ["id", "p", "city"]; // address parts that make a different page; everything else (tracking, ?ref, ?book) is left out
+  /* Each tour and info page also has its own address with its title and text built in, so Google sees one
+     page per tour (made by tools/build-pages.ps1 from trip.html / info.html). The file says which page it is
+     with <html data-id="t1"> or <html data-p="faq" data-id="…">; qp() reads the address first, then those. */
+  var SLUG = {
+    t1: "florence-walking-tour", t5: "florence-cooking-class", t6: "tuscany-private-tours", t15: "florence-san-gimignano-private-tour",
+    t16: "florence-fiat-500-tour", t9: "siena-san-gimignano-chianti-tour", t18: "san-gimignano-monteriggioni-chianti-tour",
+    t10: "san-gimignano-chianti-half-day-tour", t11: "val-d-orcia-tour", t12: "pisa-lucca-tour", t13: "cinque-terre-pisa-tour",
+    t14: "cinque-terre-tour", t3: "rome-walking-tour", t7: "vatican-tour", t19: "vatican-museums-tour", t17: "rome-vatican-tour",
+    t4: "venice-walking-tour", t8: "san-lazzaro-armenian-island-venice", tr1: "rome-airport-transfer",
+    "p:blog": "blog", "p:blog/gelato": "blog-gelato", "p:blog/coffee": "blog-coffee", "p:blog/tips": "blog-italy-travel-tips",
+    "p:faq": "faq", "p:infobook": "booking-info", "p:manage": "manage-booking", "p:terms": "terms",
+    "p:privacy": "privacy-policy", "p:cookies": "cookie-policy", "p:team/gaya": "team-gaya", "p:team/feliks": "team-feliks"
+  };
+  function qp(k) { var v = new URLSearchParams(location.search).get(k); return v != null ? v : document.documentElement.getAttribute("data-" + k); }
+  // The page's own address name (without .html) for a tour id, or for an info page p (+ id); "" if it has none
+  function slugOf(p, id) { return (p ? SLUG["p:" + p + (id ? "/" + id : "")] : SLUG[id]) || ""; }
   function pageUrl(lang) {
+    var p = qp("p"), id = qp("id"), onHome = /\/(index\.html)?$/.test(location.pathname), slug = onHome ? "" : slugOf(p, id);
     var q = new URLSearchParams(location.search), o = new URLSearchParams();
-    SEO_KEEP.forEach(function (k) { if (q.get(k)) o.set(k, q.get(k)); });
+    if (!slug) SEO_KEEP.forEach(function (k) { if (q.get(k)) o.set(k, q.get(k)); });
     if (lang === "en") o.set("lang", "en");
-    var path = location.pathname.replace(/\/index\.html$/, "/"), s = o.toString().replace(/%2C/g, ",");
+    var path = slug ? "/" + slug + ".html" : location.pathname.replace(/\/index\.html$/, "/"), s = o.toString().replace(/%2C/g, ",");
     return location.origin + path + (s ? "?" + s : "");
   }
   function headTag(sel, make) { var el = document.head.querySelector(sel); if (!el) { el = make(); document.head.appendChild(el); } return el; }
@@ -1009,7 +1026,7 @@
     UI: UI, CITY: CITY, PLACES: PLACES, TOURS: TOURS, GUIDES: GUIDES, state: state,
     // Instagram feed for the homepage: the JSON feed address from behold.so (e.g. "https://feeds.behold.so/AbC123"). Empty = show our own photos.
     IG_FEED: "https://feeds.behold.so/6U4JQewC2XuDlVz49SFL",    consent: consent,
-    seo: seo, seoTour: seoTour, SEO_HOME: SEO_HOME, pageUrl: pageUrl,
+    seo: seo, seoTour: seoTour, SEO_HOME: SEO_HOME, pageUrl: pageUrl, SLUG: SLUG, slugOf: slugOf, qp: qp,
     t: t, esc: esc, money: money, eur: eur, priceInfo: priceInfo, priceFor: priceFor, tourPrice: tourPrice, fromPrice: fromPrice, kindLabel: kindLabel, cityLabel: cityLabel, count: count, setAdults: setAdults, TAGS: TAGS, INCL: INCL, tipGroups: tipGroups, LONG: LONG, MAP: MAP, LANGS: LANGS, langLabel: langLabel, ICON: ICON, highlights: highlights, WA: WA, COMPANY: COMPANY,
     L: function (x) { return x[state.lang]; },
     init: function (templates) { tpl = templates || {}; renderAll(); }

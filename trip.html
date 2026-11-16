@@ -387,7 +387,6 @@ body.bk-open { overflow: hidden; }
 <script src="core.js"></script>
 <script src="gallery.js"></script>
 <script>
-<script>
 /* Anonymous visit counting: a random visitor id, the event, where the visit came from, language, device and time zone.
    No names, no cookies, nothing personal. Sent to the Ital Travel Google Sheet (see config.js).
    Only after the visitor presses "Accept" in the cookie banner (IT.consent() === "all"). */
@@ -474,7 +473,7 @@ body.bk-open { overflow: hidden; }
       book: "Ամրագրել այս տուրը", ask: "Հարցնել WhatsApp-ով", payDay: "Վճարումը՝ կանխիկ կամ բանկային փոխանցումով։", others: "Այլ տուրեր", notFound: "Այս տուրը չգտնվեց։", seeAll: "Դիտել բոլոր տուրերը",
       waMsg: "Բարև, ինձ հետաքրքրում է՝ {t}", withX: "Լրացուցիչ վայրերով", readMore: "Կարդալ ավելին ↓", readLess: "Փակել ↑", incH: "Ինչ է ներառված", inc: "Ներառված է", exc: "Ներառված չէ", more: "Ավելին տուրի մասին" }
   };
-  var id = new URLSearchParams(location.search).get("id") || "";
+  var id = IT.qp("id") || "";
   if (id === "t2") id = "t1"; // the old "Florence tour 2" is now part of the Florence tour
   var adults = 2, kids = 0, pics = [], cur = 0;
   function t() { return S[IT.state.lang]; }
@@ -1136,12 +1135,11 @@ body.bk-open { overflow: hidden; }
   });
   document.addEventListener("click", function (e) { if (e.target.closest("[data-lang]") && !root.hidden) { if (!API) s.msg = T().errSetup; tidy(); render(); } });
   document.addEventListener("it-cur", function () { if (!root.hidden) render(); });
-  var qid = new URLSearchParams(location.search).get("id");
+  var qid = IT.qp("id");
   if (location.hash === "#book") setTimeout(function () { open(BOOKABLE[qid] ? qid : "t1"); }, 0);
   var qb = new URLSearchParams(location.search).get("book");
   if (BOOKABLE[qb]) setTimeout(function () { open(qb); }, 0);
 })();
-</script>
 </script>
 <script src="newlook.js"></script>
 </body>

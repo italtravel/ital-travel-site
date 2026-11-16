@@ -3,14 +3,24 @@
    On the home page the footer is left alone (the home page points it at its own sections). */
 (function () {
   var onHome = /\/(index\.html)?$/.test(location.pathname);
+  // trip.html?id=t1 → florence-walking-tour.html, info.html?p=faq → faq.html (the pages' own addresses, see SLUG in core.js);
+  // other parts of the address (?lang=en, #book…) are kept
+  function ownPage(h) {
+    var m = /^(trip|info)\.html\?([^#]*)(#.*)?$/.exec(h); if (!m || !window.IT || !IT.slugOf) return h;
+    var q = new URLSearchParams(m[2]), p = m[1] === "info" ? q.get("p") : "", id = q.get("id") || "", slug = IT.slugOf(p, id);
+    if (!slug || (m[1] === "trip" && !id)) return h;
+    q.delete("p"); q.delete("id"); var s = q.toString();
+    return slug + ".html" + (s ? "?" + s : "") + (m[3] || "");
+  }
   function fix() {
     document.querySelectorAll("a[href]").forEach(function (a) {
-      if (onHome && a.closest("#site-foot")) return;
-      var h = a.getAttribute("href"), m;
+      var h = a.getAttribute("href"), m, n;
+      if (onHome && a.closest("#site-foot")) { n = ownPage(h); if (n !== h) a.setAttribute("href", n); return; }
       if (h === "index.html") a.setAttribute("href", "./");
       else if ((m = /^\.\/\?tours=([a-z]+)/.exec(h))) a.setAttribute("href", "./?city=" + m[1]);
-      else if (h.indexOf("page.html?") === 0) a.setAttribute("href", h.replace("page.html?", "info.html?"));
-      else if (h.indexOf("tour.html?") === 0) a.setAttribute("href", h.replace("tour.html?", "trip.html?"));
+      else if (h.indexOf("page.html?") === 0) a.setAttribute("href", ownPage(h.replace("page.html?", "info.html?")));
+      else if (h.indexOf("tour.html?") === 0) a.setAttribute("href", ownPage(h.replace("tour.html?", "trip.html?")));
+      else if ((n = ownPage(h)) !== h) a.setAttribute("href", n);
     });
   }
   // Floating buttons on every page, bottom right: the language (ՀԱՅ / EN) and WhatsApp.
