@@ -845,6 +845,8 @@ body.bk-open { overflow: hidden; }
     <div class="route" id="dt-route"></div>
     <div class="sim"><h2 id="dt-sim-h"></h2><div class="row" id="dt-sim"></div></div>
   </div>
+  <!-- the same footer as the page (copied from #site-foot when the window opens) -->
+  <footer class="site-foot" id="dt-foot"></footer>
 </div>
 
 <script src="config.js"></script>
@@ -1372,7 +1374,7 @@ body.bk-open { overflow: hidden; }
   function openTour(x, fromEl) {
     if (!x) return;
     last = document.activeElement; open = x; kids = 0; people = Math.min(x.max || 30, Math.max(x.fromPP ? 1 : 2, searchN));
-    drawTour();
+    drawTour(); dtFoot();
     var dt = $("dt"); dt.hidden = false; dt.scrollTop = 0; document.body.classList.add("lock");
     if (window.IT_TRACK) window.IT_TRACK("tour_open", x.id);
     var to = $("dt-pic").getBoundingClientRect(), from = fromEl && fromEl.getBoundingClientRect();
@@ -1396,6 +1398,11 @@ body.bk-open { overflow: hidden; }
     if (last && last.focus) last.focus({ preventScroll: true });
   }
   $("dt-back").addEventListener("click", closeTour);
+  // Footer at the bottom of the tour window: a copy of the page footer. Its links to this page (#tours, #team…) close the window first.
+  function dtFoot() { var s = $("site-foot"), d = $("dt-foot"); if (s && d) d.innerHTML = s.innerHTML; }
+  $("dt-foot").addEventListener("click", function (e) {
+    var a = e.target.closest("a"); if (a && (a.getAttribute("href") || "").charAt(0) === "#") closeTour();
+  });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && open) closeTour(); });
   $("dt-minus").addEventListener("click", function () { people = Math.max(open.fromPP ? 1 : 2, people - 1); drawTour(); });
   $("dt-plus").addEventListener("click", function () { if (people + kids < (open.max || 30)) people++; drawTour(); });
@@ -1575,7 +1582,7 @@ body.bk-open { overflow: hidden; }
   })();
 
   IT.init({
-    after: function () { IT.seo(IT.SEO_HOME[IT.state.lang]); drawCat(); fillSearch(); drawN(); drawFan(); drawBoxes(); drawTour(); drawOcc(); fixFoot(); },
+    after: function () { IT.seo(IT.SEO_HOME[IT.state.lang]); drawCat(); fillSearch(); drawN(); drawFan(); drawBoxes(); drawTour(); drawOcc(); fixFoot(); if (open) dtFoot(); },
     // Our team: round photos; each opens the person's own page
     guides: function (list) {
       var u = IT.t(), GC = ["var(--verde)", "var(--rosso)", "var(--verde-d)"];
