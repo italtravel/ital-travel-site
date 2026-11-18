@@ -23,8 +23,8 @@ a.brand small { color: var(--verde); }
 a.brand.light small { color: #A9CBB6; }
 
 /* Header: a floating rounded bar */
-.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: transparent; border: 0; padding-top: 12px; }
-.top .wrap { display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,.82); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: 20px; box-shadow: 0 0 0 1px var(--line), 0 18px 34px -26px rgba(20,32,25,.5); min-height: 64px; max-width: calc(1180px - 32px); width: calc(100% - var(--gl) - var(--gr)); padding: 6px 18px; }
+.top { position: relative; /* no box behind the menu, so it stays at the top instead of floating over the text */ z-index: 20; background: transparent; border: 0; padding-top: 12px; }
+.top .wrap { display: flex; align-items: center; gap: 14px; background: transparent; border-radius: 0; box-shadow: none; min-height: 64px; max-width: calc(1180px - 32px); width: calc(100% - var(--gl) - var(--gr)); padding: 6px 18px; }
 .back { color: var(--verde-d); font-weight: 500; }
 .back:hover { color: var(--ink); }
 .lang { box-shadow: 0 0 0 1px var(--line); }
