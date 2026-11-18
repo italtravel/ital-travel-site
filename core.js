@@ -775,7 +775,7 @@
     var q = new URLSearchParams(location.search), o = new URLSearchParams();
     if (!slug) SEO_KEEP.forEach(function (k) { if (q.get(k)) o.set(k, q.get(k)); });
     if (lang === "en") o.set("lang", "en");
-    var path = slug ? "/" + slug + ".html" : location.pathname.replace(/\/index\.html$/, "/"), s = o.toString().replace(/%2C/g, ",");
+    var path = slug ? "/" + slug : location.pathname.replace(/\/index\.html$/, "/"), s = o.toString().replace(/%2C/g, ",");
     return location.origin + path + (s ? "?" + s : "");
   }
   function headTag(sel, make) { var el = document.head.querySelector(sel); if (!el) { el = make(); document.head.appendChild(el); } return el; }

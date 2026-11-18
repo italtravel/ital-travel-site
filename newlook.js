@@ -10,7 +10,7 @@
     var q = new URLSearchParams(m[2]), p = m[1] === "info" ? q.get("p") : "", id = q.get("id") || "", slug = IT.slugOf(p, id);
     if (!slug || (m[1] === "trip" && !id)) return h;
     q.delete("p"); q.delete("id"); var s = q.toString();
-    return slug + ".html" + (s ? "?" + s : "") + (m[3] || "");
+    return slug + (s ? "?" + s : "") + (m[3] || "");
   }
   function fix() {
     document.querySelectorAll("a[href]").forEach(function (a) {
