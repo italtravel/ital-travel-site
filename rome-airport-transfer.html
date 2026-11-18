@@ -898,12 +898,14 @@ body.bk-open { overflow: hidden; }
     tidy();
     s.msg = API ? "" : T().errSetup;
     lastFocus = document.activeElement; root.hidden = false; document.body.classList.add("bk-open"); render();
+    IT.hist.opened("bk", function () { close("back"); }); // the browser's Back button closes the booking window
     document.getElementById("bk-panel").scrollTop = 0;
     document.getElementById("bk-x").focus();
     track("book_open", s.tour);
     loadAvailability();
   }
-  function close() { root.hidden = true; document.body.classList.remove("bk-open"); if (lastFocus) lastFocus.focus(); }
+  // how: "back" = closed by the browser's Back button (see IT.hist in core.js)
+  function close(how) { if (root.hidden) return; if (how !== "back") IT.hist.closed("bk"); root.hidden = true; document.body.classList.remove("bk-open"); if (lastFocus) lastFocus.focus(); }
 
   function renderSteps() {
     var t = T();

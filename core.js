@@ -736,6 +736,31 @@
     "p:faq": "faq", "p:infobook": "booking-info", "p:manage": "manage-booking", "p:terms": "terms",
     "p:privacy": "privacy-policy", "p:cookies": "cookie-policy", "p:team/gaya": "team-gaya", "p:team/feliks": "team-feliks"
   };
+  /* Windows that open over the page (tour window, booking, About us) get their own step in the browser history,
+     so the phone/browser Back button closes the window instead of leaving the site.
+     hist.opened(key, closeFn) when a window opens; hist.closed(key) when the page closes it itself (✕, Esc). */
+  var hist = (function () {
+    var stack = [], skip = 0;
+    window.addEventListener("popstate", function () {
+      if (skip) { skip--; return; }
+      var top = stack.pop(); if (top) top.close();
+    });
+    return {
+      opened: function (key, close) {
+        if (stack.some(function (w) { return w.key === key; })) return; // already open (e.g. one tour to another)
+        stack.push({ key: key, close: close });
+        try { history.pushState({ itWin: key }, "", location.href); } catch (e) {}
+      },
+      closed: function (key) {
+        var i = -1; stack.forEach(function (w, k) { if (w.key === key) i = k; });
+        if (i < 0) return;
+        var n = stack.length - i; stack.splice(i, n); skip += n;
+        try { history.go(-n); } catch (e) { skip -= n; }
+      },
+      // closed by a link that goes somewhere else on the page: just forget it (an extra Back press then does nothing)
+      forget: function (key) { stack = stack.filter(function (w) { return w.key !== key; }); }
+    };
+  })();
   function qp(k) { var v = new URLSearchParams(location.search).get(k); return v != null ? v : document.documentElement.getAttribute("data-" + k); }
   // The page's own address name (without .html) for a tour id, or for an info page p (+ id); "" if it has none
   function slugOf(p, id) { return (p ? SLUG["p:" + p + (id ? "/" + id : "")] : SLUG[id]) || ""; }
@@ -1026,7 +1051,7 @@
     UI: UI, CITY: CITY, PLACES: PLACES, TOURS: TOURS, GUIDES: GUIDES, state: state,
     // Instagram feed for the homepage: the JSON feed address from behold.so (e.g. "https://feeds.behold.so/AbC123"). Empty = show our own photos.
     IG_FEED: "https://feeds.behold.so/6U4JQewC2XuDlVz49SFL",    consent: consent,
-    seo: seo, seoTour: seoTour, SEO_HOME: SEO_HOME, pageUrl: pageUrl, SLUG: SLUG, slugOf: slugOf, qp: qp,
+    seo: seo, seoTour: seoTour, SEO_HOME: SEO_HOME, pageUrl: pageUrl, SLUG: SLUG, slugOf: slugOf, qp: qp, hist: hist,
     t: t, esc: esc, money: money, eur: eur, priceInfo: priceInfo, priceFor: priceFor, tourPrice: tourPrice, fromPrice: fromPrice, kindLabel: kindLabel, cityLabel: cityLabel, count: count, setAdults: setAdults, TAGS: TAGS, INCL: INCL, tipGroups: tipGroups, LONG: LONG, MAP: MAP, LANGS: LANGS, langLabel: langLabel, ICON: ICON, highlights: highlights, WA: WA, COMPANY: COMPANY,
     L: function (x) { return x[state.lang]; },
     init: function (templates) { tpl = templates || {}; renderAll(); }

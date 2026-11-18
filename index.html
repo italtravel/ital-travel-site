@@ -1418,6 +1418,7 @@ body.bk-open { overflow: hidden; }
     last = document.activeElement; open = x; kids = 0; people = Math.min(x.max || 30, Math.max(x.fromPP ? 1 : 2, searchN));
     drawTour(); dtFoot();
     var dt = $("dt"); dt.hidden = false; dt.scrollTop = 0; document.body.classList.add("lock");
+    IT.hist.opened("dt", function () { closeTour("back"); }); // the browser's Back button closes the window
     if (window.IT_TRACK) window.IT_TRACK("tour_open", x.id);
     var to = $("dt-pic").getBoundingClientRect(), from = fromEl && fromEl.getBoundingClientRect();
     if (reduce || !from || !from.width) { requestAnimationFrame(function () { dt.classList.add("show"); }); $("dt-back").focus({ preventScroll: true }); return; }
@@ -1433,13 +1434,16 @@ body.bk-open { overflow: hidden; }
     a.onfinish = function () { $("dt-pic").style.visibility = ""; fly.remove(); };
     $("dt-back").focus({ preventScroll: true });
   }
-  function closeTour() {
+  // how: "back" = closed by the browser's Back button, "link" = a link on the page, nothing = ✕ or Esc
+  function closeTour(how) {
+    if (!open) return;
+    if (how === "link") IT.hist.forget("dt"); else if (how !== "back") IT.hist.closed("dt");
     open = null; $("dt-vid").pause(); var dt = $("dt"); dt.classList.remove("show");
     setTimeout(function () { dt.hidden = true; }, reduce ? 0 : 320);
     document.body.classList.remove("lock");
     if (last && last.focus) last.focus({ preventScroll: true });
   }
-  $("dt-back").addEventListener("click", closeTour);
+  $("dt-back").addEventListener("click", function () { closeTour(); });
   // "Tours in Italy" text above the footer: Armenian is written in the page, English comes from here (links get ?lang=en)
   var TI_HY = null, TI_EN = '<h2 id="ti-h">Tours in Italy in Armenian</h2>' +
     "<p>Ital Travel organises tours in Italy in Armenian, for travellers from Armenia and from all over the world. Choose your tour in Italy, the city and the day, and we'll show you Italy in your own language.</p><ul>" +
@@ -1456,7 +1460,7 @@ body.bk-open { overflow: hidden; }
   // Footer at the bottom of the tour window: a copy of the page footer. Its links to this page (#tours, #team…) close the window first.
   function dtFoot() { var s = $("site-foot"), d = $("dt-foot"); if (s && d) d.innerHTML = s.innerHTML; }
   $("dt-foot").addEventListener("click", function (e) {
-    var a = e.target.closest("a"); if (a && (a.getAttribute("href") || "").charAt(0) === "#") closeTour();
+    var a = e.target.closest("a"); if (a && (a.getAttribute("href") || "").charAt(0) === "#") closeTour("link");
   });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && open) closeTour(); });
   $("dt-minus").addEventListener("click", function () { people = Math.max(open.fromPP ? 1 : 2, people - 1); drawTour(); });
@@ -1492,9 +1496,11 @@ body.bk-open { overflow: hidden; }
     void ab.offsetWidth; setTimeout(function () { ab.classList.add("show"); }, 20);
     $("ab-x").focus({ preventScroll: true });
     if (window.IT_TRACK) window.IT_TRACK("about_open");
+    IT.hist.opened("ab", function () { closeAbout("back"); });
   }
-  function closeAbout() {
+  function closeAbout(how) {
     var ab = $("ab"); if (ab.hidden) return;
+    if (how === "link") IT.hist.forget("ab"); else if (how !== "back") IT.hist.closed("ab");
     ab.classList.remove("show");
     setTimeout(function () { ab.hidden = true; if (!open) document.body.classList.remove("lock"); }, reduce ? 0 : 350);
     if (abLast) abLast.focus({ preventScroll: true });
@@ -1502,7 +1508,7 @@ body.bk-open { overflow: hidden; }
   document.addEventListener("click", function (e) { if (e.target.closest("[data-about]")) { e.preventDefault(); openAbout(); } });
   $("ab").addEventListener("click", function (e) {
     if (e.target === $("ab") || e.target.closest("#ab-x")) { closeAbout(); return; }
-    if (e.target.closest("a")) closeAbout(); // a link inside (e.g. "See the tours") closes the window first
+    if (e.target.closest("a")) closeAbout("link"); // a link inside (e.g. "See the tours") closes the window first
   });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeAbout(); });
   if (location.hash === "#about") setTimeout(openAbout, 300);
@@ -1840,12 +1846,14 @@ body.bk-open { overflow: hidden; }
     tidy();
     s.msg = API ? "" : T().errSetup;
     lastFocus = document.activeElement; root.hidden = false; document.body.classList.add("bk-open"); render();
+    IT.hist.opened("bk", function () { close("back"); }); // the browser's Back button closes the booking window
     document.getElementById("bk-panel").scrollTop = 0;
     document.getElementById("bk-x").focus();
     track("book_open", s.tour);
     loadAvailability();
   }
-  function close() { root.hidden = true; document.body.classList.remove("bk-open"); if (lastFocus) lastFocus.focus(); }
+  // how: "back" = closed by the browser's Back button (see IT.hist in core.js)
+  function close(how) { if (root.hidden) return; if (how !== "back") IT.hist.closed("bk"); root.hidden = true; document.body.classList.remove("bk-open"); if (lastFocus) lastFocus.focus(); }
 
   function renderSteps() {
     var t = T();
