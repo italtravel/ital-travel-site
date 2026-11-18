@@ -215,6 +215,7 @@ button { background: none; border: 0; padding: 0; cursor: pointer; }
 .tag-sell { background: var(--rosso); } .tag-best { background: #B8860B; } .tag-rated { background: var(--verde); } .tag-fun { background: #2F6FB3; }
 .boxes { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: 18px; }
 /* Tour box: photo on top, then the tour's facts (hours, people, what's included, price) */
+a.bx { text-decoration: none; }
 .bx { position: relative; display: flex; flex-direction: column; border-radius: 22px; overflow: hidden; text-align: left; color: var(--ink); background: #fff; box-shadow: 0 0 0 1px rgba(20,32,25,.06), 0 20px 34px -26px rgba(20,32,25,.6); animation: boxIn .6s var(--e) both; transition: transform .4s var(--e), box-shadow .4s; }
 .bx:hover { transform: translateY(-4px); box-shadow: 0 0 0 1px rgba(20,32,25,.06), 0 28px 40px -26px rgba(20,32,25,.6); }
 .bx .ph { position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden; background: var(--line); }
@@ -1073,7 +1074,7 @@ body.bk-open { overflow: hidden; }
     if (act === "tours") scrollToEl("tours");
     else if (act.indexOf("city:") === 0) { showCity(act.slice(5)); openTours(); }
     else if (act.indexOf("group:") === 0) { showCity(act.slice(6)); openTours(); }
-    else if (act.indexOf("tour:") === 0) openTour(byId(act.slice(5)), null);
+    else if (act.indexOf("tour:") === 0) goTour(byId(act.slice(5)));
   });
   function scrollToEl(id) { $(id).scrollIntoView({ behavior: reduce ? "auto" : "smooth" }); }
 
@@ -1214,14 +1215,14 @@ body.bk-open { overflow: hidden; }
       var L = IT.L(x), b = FILTERS.filter(function (f) { return inF(f, x); })[0], hl = IT.highlights(x);
       var inc = ((IT.INCL[x.id] || {})[lang] || {}).inc || [];
       var who = x.max ? e.upTo.replace("{n}", x.max) : x.fromPP ? e.from1 : e.from2;
-      return '<button type="button" class="bx" data-id="' + x.id + '" style="animation-delay:' + (.12 + Math.min(i * .08, .6)).toFixed(2) + 's">' +
+      return '<a class="bx" href="' + esc(tourHref(x)) + '" data-id="' + x.id + '" style="animation-delay:' + (.12 + Math.min(i * .08, .6)).toFixed(2) + 's">' +
         '<span class="ph"><img src="' + esc(pic(x)) + '" alt="" loading="lazy" decoding="async" style="object-position:' + (IT.POS[x.id] || "50% 50%") + '">' +
         '<span class="ar" aria-hidden="true">→</span>' + (b ? '<span class="tag tag-' + b.k + '">' + esc(b[lang]) + "</span>" : "") +
         "<i>" + esc(IT.cityLabel(x)) + "</i></span>" +
         '<span class="bi"><b>' + esc(L.t) + "</b>" +
         '<span class="facts"><span>' + IT.ICON.dur + esc(hl[0].v) + "</span><span>" + PEOPLE_ICON + esc(who) + "</span></span>" +
         (inc.length ? "<ul>" + inc.slice(0, 2).map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>" : "") +
-        '<span class="pz">' + boxPrice(x, n) + "</span></span></button>";
+        '<span class="pz">' + boxPrice(x, n) + "</span></span></a>";
     }).join("");
   }
   // Heading over the tour boxes: "Discover our Rome tours", "Discover our top tours"… (the name in dusty red italics)
@@ -1256,7 +1257,14 @@ body.bk-open { overflow: hidden; }
     if (x.prices || x.from) return "<b>" + esc(u.from + " " + IT.money(IT.fromPrice(x))) + "</b><small>" + esc(x.fromPP ? u.per : "") + "</small>";
     return "<b>" + esc(u.onReq) + "</b><small></small>";
   }
-  $("boxes").addEventListener("click", function (e) { var b = e.target.closest(".bx"); if (b) openTour(byId(b.dataset.id), b.querySelector(".ph") || b); });
+  // A tour opens its own page (florence-walking-tour.html…), in the language chosen here. The people count from the search bar goes along.
+  function tourHref(x) {
+    var s = IT.slugOf("", x.id), q = [];
+    if (IT.state.lang === "en") q.push("lang=en");
+    if (searchN && searchN !== 2) q.push("n=" + searchN);
+    return (s ? s + ".html" : "trip.html?id=" + x.id) + (q.length ? (s ? "?" : "&") + q.join("&") : "");
+  }
+  function goTour(x) { if (x) location.href = tourHref(x); }
 
   /* ---- Tour details page, with the box photo growing into the big photo ---- */
   function card(x) {

@@ -478,7 +478,8 @@ body.bk-open { overflow: hidden; }
   };
   var id = IT.qp("id") || "";
   if (id === "t2") id = "t1"; // the old "Florence tour 2" is now part of the Florence tour
-  var adults = 2, kids = 0, pics = [], cur = 0;
+  // ?n=4 from the home page search bar: start with that many adults
+  var adults = Math.min(30, Math.max(1, parseInt(new URLSearchParams(location.search).get("n"), 10) || 2)), kids = 0, pics = [], cur = 0;
   function t() { return S[IT.state.lang]; }
   // Long description: the first paragraph is shown, the rest opens with "Read more"
   var longOpen = false;
