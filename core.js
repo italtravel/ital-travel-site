@@ -110,8 +110,8 @@
       ckText: "Ձեր համաձայնությամբ մենք հաշվում ենք այցելությունները և տեսնում, թե ինչպես է օգտագործվում կայքը (Microsoft Clarity), ինչպես նաև հիշում ենք, թե որ գործընկերն է ձեզ ուղարկել։ Ոչ մի գովազդ։",
       ckAll: "Ընդունել", ckNec: "Միայն անհրաժեշտը", ckMore: "Cookie-ների քաղաքականություն", fCookiePol: "Cookie-ների քաղաքականություն", fCookies: "Cookie-ների կարգավորումներ",
       igTag: "Instagram-ում", igH: "Թարմ կադրեր Իտալիայից", igFollow: "Հետևել @ital_travel_", igBio: "Հայալեզու տուրեր Իտալիայում · Ֆլորենցիա · Հռոմ · Տոսկանա · Վենետիկ", igOpen: "Բացել Instagram-ում",
-      sLoc: "Վայրը", sType: "Տեսակը", sDate: "Ամսաթիվը", sPeople: "Մասնակիցներ", sGo: "Որոնել",
-      sAnyLoc: "Բոլոր վայրերը", sAnyType: "Բոլոր տեսակները", sTours: "Տուրեր", sExp: "Փորձառություններ", sTr: "Տրանսֆերներ",
+      sLoc: "Ուղղությունը", sType: "Տեսակը", sDate: "Ամսաթիվը", sPeople: "Մասնակիցներ", sGo: "Որոնել",
+      sAnyLoc: "Բոլոր քաղաքները", sAnyType: "Բոլոր տեսակները", sTours: "Տուրեր", sExp: "Փորձառություններ", sTr: "Տրանսֆերներ",
       sNone: "Ձեր որոնմանը համապատասխան առաջարկ չգտնվեց։", sReset: "Ցույց տալ բոլորը",
       grpH: "Տուրեր մեծ խմբերի համար",
       grpP: "Ճամփորդո՞ւմ եք 10 և ավելի հոգով՝ ընտանիքով, ընկերներով, դպրոցական, եկեղեցական կամ աշխատանքային խմբով։ Պատմեք ձեր խմբի մասին, և մենք կկազմենք օրվա ծրագիրը և կուղարկենք առաջարկ։",
@@ -172,7 +172,7 @@
             G("Extra destinations (additional payment)", ["San Miniato church (Saint Minas)", "Piazzale Michelangelo, with a wide view of the city"],
               ["Extra payment: +€10 for 2 or 3 people, +€20 for 4 people, +€10 per person from 5 people. Adds about 1 hour.", "Taxi to the extra destinations is available: €20–30 per car for 3–4 people."])],
         n: ["A walking tour. No museum interiors are planned."] },
-      hy: { t: "Մշակութային զբոսատուր Ֆլորենցիայով", d: "Բացահայտեք Ֆլորենցիան հայախոս գիդի ուղեկցությամբ՝ քաղաքի գլխավոր և թաքնված անկյունները։",
+      hy: { t: "Քաղաքային տուր Ֆլորենցիայում", d: "Բացահայտեք Ֆլորենցիան հայախոս գիդի ուղեկցությամբ՝ քաղաքի գլխավոր և թաքնված անկյունները։",
         g: [G("", ["Սանտա Մարիա Նովելլա (Santa Maria Novella)", "Սանտա Մարիա Նովելլա դեղատուն (Officina Santa Maria Novella)", "Դուոմո՝ Սանտա Մարիա դել Ֆիորե", "Հանրապետության հրապարակ (Piazza della Repubblica)", "Դանթեի տուն (Casa di Dante)", "Վայրի խոզուկ (Porcellino)", "Սինյորիայի հրապարակ (Piazza della Signoria)", "Ուֆֆիցի պատկերասրահ (Galleria degli Uffizi)", "Հին կամուրջ (Ponte Vecchio)", "Պիտտի դղյակ (Palazzo Pitti)"]),
             G("Լրացուցիչ վայրեր (հավելյալ վճարով)", ["San Miniato / Սուրբ Մինաս եկեղեցի", "Միքելանջելոյի հրապարակ (հիասքանչ տեսարան քաղաքի վրա)"],
               ["Հավելյալ վճար՝ +10 եվրո 2 կամ 3 անձի համար, +20 եվրո 4 անձի համար, +10 եվրո յուրաքանչյուր անձի համար՝ 5 անձից սկսած։ Տուրը երկարում է մոտ 1 ժամով։", "Լրացուցիչ վայրեր հասնելու համար հասանելի է տաքսի՝ 20–30 եվրո մեկ մեքենա, 3–4 անձ։"])],
@@ -657,30 +657,36 @@
     { id: "gaya", en: "Gaya Ayvazyan", hy: "Գայա Այվազյան", photo: "img/gaya.jpg", pos: "60% 51%", zoom: 3.2,
       roleHy: "Ital Travel-ի համահիմնադիր | Զբոսավար և մշակութային պատմությունների բացահայտող",
       roleEn: "Co-founder of Ital Travel | Guide and storyteller of cultural history",
-      bioHy: "### Ծանոթացե՛ք Գայայի հետ․ երբ պատմությունը կենդանանում է\n" +
-        "*Որոշ զբոսավարներ պատմում են պատմությունը։ Գայան օգնում է ձեզ տեսնել, զգալ և վերաիմաստավորել այն։*\n" +
-        "Գայայի համար պատմությունը պարզապես տարեթվերի, անունների և հուշարձանների հավաքածու չէ։ Այն կենդանի աշխարհ է, որտեղ յուրաքանչյուր մանրուք իր նշանակությունն ունի։ Նա կարողանում է անցյալը կապել ներկայի հետ, բացահայտել առաջին հայացքից աննկատ դետալները և սովորական զբոսանքը վերածել հետաքրքիր ու հիշարժան ճանապարհորդության։\n" +
-        "Որպես *Ital Travel-ի համահիմնադիր*՝ Գայան համատեղում է իր երկարամյա փորձը, մշակույթի հանդեպ սերն ու պատմություններ ներկայացնելու յուրահատուկ տաղանդը։\n" +
-        "Լեզվաբանական կրթությունն ու մասնագիտական փորձը նրան սովորեցրել են բառի իրական ուժը։ Նրա յուրաքանչյուր պատմություն մտածված է այնպես, որ դուք ոչ թե պարզապես լսեք պատմական փաստերը, այլ կարողանաք պատկերացնել իրադարձությունները, վերլուծել դրանք և հասկանալ դրանց նշանակությունը։\n" +
-        "Նրա մասնագիտական ճանապարհը սկսվել է հայրենիքում, որտեղ տարիներ շարունակ ուսումնասիրել և այցելուներին ներկայացրել է սեփական երկրի պատմությունն ու մշակութային ժառանգությունը։ Այսօր Գայան իր գիտելիքներն ու փորձը կիրառում է Իտալիայում՝ ճանապարհորդներին առաջարկելով բացահայտել երկիրը նոր տեսանկյունից։\n" +
-        "*Գայայի հետ սովորական զբոսանքներ չեն լինում։*\n" +
-        "Աննշան թվացող մանրուքը կարող է դառնալ հետաքրքիր բացահայտում, իսկ ծանոթ փողոցը՝ պատմական իրադարձությունների վկան։ Նրա շրջագայությունների ընթացքում դուք ոչ միայն ծանոթանում եք տեսարժան վայրերին, այլև սովորում եք նկատել այն, ինչի կողքով շատերն անտարբեր անցնում են։\n" +
-        "*Գայան պարզապես ցույց չի տալիս՝ ինչին նայել։ Նա սովորեցնում է՝ ինչպես տեսնել։*\n" +
-        "Նրա համոզմամբ՝ ճանապարհորդության իրական արժեքը չի չափվում այցելած վայրերի քանակով, այլ այն գիտելիքներով, զգացողություններով և նոր հայացքներով, որոնք ձեռք եք բերում ճանապարհին։\n" +
-        "*Գայայի առաքելությունն է, որ յուրաքանչյուր շրջագայությունից վերադառնաք ոչ միայն գեղեցիկ լուսանկարներով, այլև նոր գիտելիքներով, անմոռանալի տպավորություններով և պատմություններով, որոնք ձեզ հետ կմնան երկար տարիներ։*\n" +
-        "Քայլե՛ք Գայայի հետ։ Տեսե՛ք ավելին, քան տեսանելի է առաջին հայացքից։",
-      bioEn: "### Meet Gaya: where history comes alive\n" +
-        "*Some guides tell history. Gaya helps you see it, feel it and understand it in a new way.*\n" +
-        "For Gaya, history is not just a collection of dates, names and monuments. It is a living world where every detail has its meaning. She connects the past with the present, reveals details that are easy to miss at first glance, and turns an ordinary walk into an interesting and memorable journey.\n" +
-        "As *co-founder of Ital Travel*, Gaya brings together many years of experience, a love of culture and a rare talent for telling stories.\n" +
-        "Her background in linguistics and her professional experience have taught her the real power of words. Each of her stories is built so that you don't just hear historical facts, but can picture the events, think them through and understand what they mean.\n" +
-        "Her career began in her homeland, where for years she studied and presented her own country's history and cultural heritage to visitors. Today Gaya brings that knowledge and experience to Italy, inviting travellers to discover the country from a new angle.\n" +
-        "*With Gaya, there is no such thing as an ordinary walk.*\n" +
-        "A detail that seems small can become a fascinating discovery, and a familiar street a witness to history. On her tours you don't only see the sights, you learn to notice what most people walk past without a second look.\n" +
-        "*Gaya doesn't just show you what to look at. She teaches you how to see.*\n" +
-        "She believes the real value of a journey is not measured by the number of places visited, but by the knowledge, feelings and new perspectives you gain along the way.\n" +
-        "*Gaya's mission is for you to come back from every tour not only with beautiful photos, but with new knowledge, unforgettable impressions and stories that stay with you for years.*\n" +
-        "Walk with Gaya. See more than meets the eye." },
+      bioHy: "### Ծանոթանանք, ես Գայան եմ։\n" +
+        "Ձեր զբոսավարը աշխարհի ամենագեղեցիկ երկրում՝ Իտալիայում։\n" +
+        "*Ո՞րն է իմ առաքելությունը։*\n" +
+        "Պատմել, ուղղեկցել, ցուցադրել, ներկայացնել, իսկ միգուցե ավելին։\n" +
+        "Ինձ համար պատմությունը պարզապես տարեթվեր, անուններ և հուշարձաններ չեն։ Պատմությունը ներկայացնելն ինձ համար անցյալը կապելն է ներկայի հետ, իսկ տեսարժան վայրերը ցուցադրելիս՝ բացահայտել իմաստը և սովորական զբոսանքը վերածել հետաքրքիր ու հիշարժան ճանապարհորդության։\n" +
+        "*Ես ցույց չեմ տալիս՝ ինչին նայել, ես փորձում եմ բացատրել՝ ինչպես տեսնել։*\n" +
+        "Լեզվաբանական կրթությունն ու մասնագիտական փորձն ինձ սովորեցրել են բառի իրական ուժը։ Յուրաքանչյուր զբոսանք մտածված է այնպես, որ դուք ոչ թե պարզապես լսեք պատմական փաստերը, այլ կարողանաք պատկերացնել իրադարձությունները, վերլուծել դրանք և հասկանալ դրանց նշանակությունը, և ամենակարևորը՝ վայելել զբոսանքի ամեն մի պահը։\n" +
+        "Երկար տարիներ աշխատելով Հայաստանի տուրիզմի ոլորտում՝ ներկայացրել եմ մեր հայրենիքը՝ Հայաստանը, տեսել, թե ինչպես են հարյուրավոր օտարերկրացիներ սիրահարվել մեր չքնաղ երկրին և մշակույթին։\n" +
+        "Իսկ այսօր սիրով օգնում եմ իմ հայրենակիցներին բացահայտել Իտալիան, տեսնել Իտալիայի և Հայաստանի դարավոր կապերը։\n" +
+        "*Ես ձեր ուղղեկցորդն եմ, զբոսավարը, նոր ընկերը օտար երկրում և այն կամուրջը, որը կապում է Հայաստանն ու Իտալիան։*\n" +
+        "Համոզված եմ՝ ճանապարհորդության իրական արժեքը չի չափվում այցելած վայրերի քանակով կամ գիտելիքներով, այլ զգացողություններով և նոր հայացքներով, որոնք ձեռք եք բերում ճանապարհին։\n" +
+        "Երազում եմ, որ յուրաքանչյուր շրջագայությունից վերադառնաք ոչ միայն գեղեցիկ լուսանկարներով, այլև նոր գիտելիքներով, անմոռանալի տպավորություններով և պատմություններով, որոնք ձեզ հետ կմնան երկար տարիներ։\n" +
+        "Ես կօգնեմ ձեզ տեսնել ավելին, քան տեսանելի է առաջին հայացքից։\n" +
+        "*Գնանք միասին։*\n" +
+        "Ital Travel-ի համահիմնադիր՝ Գայանե Այվազյան",
+      bioEn: "### Let's meet: I'm Gaya\n" +
+        "Your guide in the most beautiful country in the world, Italy.\n" +
+        "*What is my mission?*\n" +
+        "To tell, to guide, to show, to present, and maybe even more.\n" +
+        "For me, history is not just dates, names and monuments. Telling history means connecting the past with the present; showing the sights means revealing their meaning and turning an ordinary walk into an interesting and memorable journey.\n" +
+        "*I don't show you what to look at; I try to explain how to see.*\n" +
+        "My background in linguistics and my professional experience have taught me the real power of words. Every walk is designed so that you don't just hear historical facts, but can picture the events, think them through and understand what they mean, and most importantly, enjoy every moment of the walk.\n" +
+        "For many years I worked in tourism in Armenia, presenting our homeland, and I saw hundreds of visitors from abroad fall in love with our beautiful country and its culture.\n" +
+        "Today I'm happy to help my fellow Armenians discover Italy and see the centuries-old ties between Italy and Armenia.\n" +
+        "*I'm your companion, your guide, a new friend in a foreign country, and the bridge that connects Armenia and Italy.*\n" +
+        "I believe the real value of a journey isn't measured by the number of places visited or facts learned, but by the feelings and new perspectives you gain along the way.\n" +
+        "My dream is that you come back from every tour not only with beautiful photos, but with new knowledge, unforgettable impressions and stories that stay with you for years.\n" +
+        "I'll help you see more than meets the eye at first glance.\n" +
+        "*Let's go together.*\n" +
+        "Co-founder of Ital Travel, Gayane Ayvazyan" },
     { id: "feliks", en: "Feliks Yeghiazaryan", hy: "Ֆելիքս Եղիազարյան", photo: "img/feliks.jpg", pos: "62% 24%", zoom: 1.5,
       roleHy: "Ital Travel-ի զբոսավար | Սոցիալական մեդիայի մենեջեր | Կայուն զարգացման մասնագետ",
       roleEn: "Ital Travel guide | Social media manager | Sustainability specialist",
