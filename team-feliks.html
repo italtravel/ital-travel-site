@@ -114,6 +114,19 @@ main { padding-block: 22px 70px; display: grid; gap: 26px; min-height: 60vh; ali
 .fine { font-size: .82rem; color: var(--muted); text-align: center; }
 .perks { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
 .perks li { display: flex; gap: 10px; } .perks li::before { content: "✦"; color: var(--coral); }
+/* Italy trip page */
+.trip-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 20px; align-items: start; margin-top: 26px; }
+@media (max-width: 800px) { .trip-grid { grid-template-columns: 1fr; } }
+.trip-grid h2, .days h2, .card h2 { font-size: 1.35rem; }
+.days { margin: 34px 0 26px; display: grid; gap: 16px; }
+.days ol { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.day { max-width: none; align-content: start; gap: 8px; }
+.day .dn { font-weight: 700; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--verde-d, #3A5F4A); }
+.day h3 { font-size: 1.15rem; margin: 0; }
+.day p { margin: 0; color: var(--muted); }
+.day .dl { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 4px; }
+.day .dl a { color: var(--verde-d, #3A5F4A); font-weight: 600; text-decoration: none; }
+.day .dl a:hover { text-decoration: underline; }
 .two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: start; }
 @media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
 
@@ -447,6 +460,53 @@ main { padding-block: 22px 70px; display: grid; gap: 26px; min-height: 60vh; ali
       }
     }
   };
+  // Italy trip page (p=italy, address italtravel.am/italy-tour). Days: [title, text, [[link, label]…]]
+  var ITALY = {
+    hy: {
+      kind: "Իտալիա տուր 7 օր", title: "Իտալիա տուր Հայաստանից՝ 7 օր",
+      seo: "Իտալիա տուր Հայաստանից՝ 7 օր | Հռոմ, Ֆլորենցիա, Տոսկանա, Վենետիկ | Ital Travel",
+      lead: "Իտալիա տուր 7 օրով՝ Հռոմ, Վատիկան, Ֆլորենցիա, Տոսկանա և Վենետիկ, տուրերով հայերենով։ Մենք կազմակերպում ենք տուրերը, տրանսֆերները և քաղաքների միջև տեղափոխությունները և օգնում ենք ընտրել հյուրանոցները, իսկ դուք պարզապես վայելում եք Իտալիան։",
+      incH: "Ինչ է ներառված",
+      inc: ["Տուրեր հայերենով Հռոմում, Վատիկանում, Ֆլորենցիայում, Տոսկանայում և Վենետիկում", "Տրանսֆեր օդանավակայանից և քաղաքների միջև տեղափոխությունների կազմակերպում", "Օգնություն հյուրանոցներ ընտրելու և ամրագրելու հարցում", "Ծրագիր՝ ձեր ամսաթվերին, խմբին և հետաքրքրություններին համապատասխան", "Կապ մեզ հետ WhatsApp-ով ամբողջ ճամփորդության ընթացքում"],
+      exc: "Ավիատոմսերը ներառված չեն. դրանք գնում եք ինքներդ, իսկ մենք կօգնենք ընտրել հարմար ամսաթվերն ու քաղաքները։",
+      priceH: "Գինը", price: "Գինը կախված է ամսաթվերից, խմբի չափից և ընտրած հյուրանոցներից։ Գրեք մեզ ձեր ամսաթվերը, և մենք կուղարկենք ձեր Իտալիա տուրի առաջարկը։ Մինչև 14 տարեկան երեխաները տուրերին մասնակցում են անվճար։",
+      ask: "Ստանալ առաջարկ WhatsApp-ով", wa: "Բարև, ինձ հետաքրքրում է Իտալիա տուր 7 օր (Հռոմ, Ֆլորենցիա, Տոսկանա, Վենետիկ)։ Մեր ամսաթվերը և մարդկանց քանակը՝ ",
+      planH: "Ծրագիրը՝ օր առ օր", day: "Օր",
+      days: [
+        ["Հռոմ. ժամանում", "Ժամանում Հռոմ։ Մեր վարորդը կդիմավորի ձեզ օդանավակայանում և կտեղափոխի հյուրանոց։ Երեկոյան՝ առաջին զբոսանքը Հավերժական քաղաքում։", [["rome-airport-transfer", "Տրանսֆեր Հռոմի օդանավակայանից"]]],
+        ["Հռոմ", "Քաղաքային տուր Հռոմում՝ Կոլիզեում, Տրևիի շատրվան, Պանթեոն, Իսպանական աստիճաններ և Հռոմի պատմության ամենահետաքրքիր էջերը։", [["rome-walking-tour", "Զբոսատուր Հռոմում"]]],
+        ["Վատիկան", "Սուրբ Պետրոսի հրապարակ և տաճար, Վատիկանի թանգարաններ և Սիքստինյան կապելլա՝ Միքելանջելոյի գլուխգործոցներով։", [["vatican-museums-tour", "Տուր Վատիկանում՝ թանգարաններով"]]],
+        ["Ֆլորենցիա", "Առավոտյան գնացքով Ֆլորենցիա (մոտ 1,5 ժամ)։ Քաղաքային տուր Վերածննդի բնօրրանում՝ Դուոմո, Սինյորիայի հրապարակ, Պոնտե Վեկիո։", [["florence-walking-tour", "Քաղաքային տուր Ֆլորենցիայում"]]],
+        ["Տոսկանա", "Մեկ օր Տոսկանայի բլուրներում՝ Սիենա, Սան Ջիմինյանո և Կյանտիի գինիների համտես։", [["siena-san-gimignano-chianti-tour", "Սիենա, Սան Ջիմինյանո և Կյանտի"]]],
+        ["Ֆլորենցիա → Վենետիկ", "Առավոտյան խոհարարական դաս՝ թարմ պաստա և տիրամիսու, կամ զբոսանք 1960-ականների Fiat 500 կաբրիոլետով։ Կեսօրից հետո գնացքով Վենետիկ (մոտ 2 ժամ)։", [["florence-cooking-class", "Խոհարարական դաս"], ["florence-fiat-500-tour", "Fiat 500 տուր"]]],
+        ["Վենետիկ և Սուրբ Ղազար", "Զբոսանք Վենետիկի ջրանցքներով և կամուրջներով, այնուհետև այց Սուրբ Ղազար կղզի՝ Մխիթարյանների հայկական վանք։ Մեկնում։", [["venice-walking-tour", "Զբոսանք Վենետիկում"], ["san-lazzaro-armenian-island-venice", "Սուրբ Ղազար կղզի"]]]
+      ],
+      changeH: "Կազմեք ձեր Իտալիա տուրը",
+      change: ["5, 7 կամ 10 օր՝ ըստ ձեր ժամանակի", "Ավելացրեք Պիզա և Լուկկա, Չինկվե Տերե կամ Վալ դ'Օրչա", "Խմբային կամ անհատական տուրեր՝ ընտանիքի, ընկերների կամ մեծ խմբի համար", "Մեկնում ցանկացած քաղաքից՝ Հայաստանից, Եվրոպայից կամ աշխարհի ցանկացած երկրից"]
+    },
+    en: {
+      kind: "Italy trip · 7 days", title: "Italy tour from Armenia: 7 days",
+      seo: "Italy tour, 7 days: Rome, Florence, Tuscany, Venice in Armenian | Ital Travel",
+      lead: "A 7-day Italy trip through Rome, the Vatican, Florence, Tuscany and Venice, with tours in Armenian. We arrange the tours, transfers and travel between cities and help you choose hotels, so you can simply enjoy Italy.",
+      incH: "What's included",
+      inc: ["Tours in Armenian in Rome, the Vatican, Florence, Tuscany and Venice", "Airport transfer and travel between cities arranged for you", "Help choosing and booking hotels", "A plan made around your dates, group and interests", "WhatsApp contact with us during the whole trip"],
+      exc: "Flights are not included: you book them yourself, and we'll help you pick the best dates and cities.",
+      priceH: "Price", price: "The price depends on your dates, group size and hotels. Send us your dates and we'll send you an offer for your Italy trip. Children under 14 join the tours for free.",
+      ask: "Get an offer on WhatsApp", wa: "Hello! I'm interested in the 7-day Italy tour (Rome, Florence, Tuscany, Venice). Our dates and number of people: ",
+      planH: "Day by day", day: "Day",
+      days: [
+        ["Rome: arrival", "Arrive in Rome. Our driver meets you at the airport and takes you to your hotel. In the evening, your first walk in the Eternal City.", [["rome-airport-transfer", "Rome airport transfer"]]],
+        ["Rome", "A city tour of Rome: the Colosseum, the Trevi Fountain, the Pantheon, the Spanish Steps and the best stories of Rome's history.", [["rome-walking-tour", "Rome walking tour"]]],
+        ["The Vatican", "St Peter's Square and Basilica, the Vatican Museums and the Sistine Chapel with Michelangelo's masterpieces.", [["vatican-museums-tour", "Vatican tour with the museums"]]],
+        ["Florence", "Morning train to Florence (about 1.5 hours). A city tour of the cradle of the Renaissance: the Duomo, Piazza della Signoria, Ponte Vecchio.", [["florence-walking-tour", "Florence city tour"]]],
+        ["Tuscany", "A day in the Tuscan hills: Siena, San Gimignano and a Chianti wine tasting.", [["siena-san-gimignano-chianti-tour", "Siena, San Gimignano & Chianti"]]],
+        ["Florence → Venice", "A morning cooking class with fresh pasta and tiramisu, or a ride in a 1960s Fiat 500 cabrio. In the afternoon, the train to Venice (about 2 hours).", [["florence-cooking-class", "Cooking class"], ["florence-fiat-500-tour", "Fiat 500 tour"]]],
+        ["Venice and San Lazzaro", "A walk along Venice's canals and bridges, then a visit to San Lazzaro island and its Armenian Mekhitarist monastery. Departure.", [["venice-walking-tour", "A walk in Venice"], ["san-lazzaro-armenian-island-venice", "San Lazzaro island"]]]
+      ],
+      changeH: "Make it your own",
+      change: ["5, 7 or 10 days, as long as you have", "Add Pisa & Lucca, Cinque Terre or Val d'Orcia", "Group or private tours, for families, friends or large groups", "Travel from anywhere: Armenia, Europe or any other country"]
+    }
+  };
   function legal(u, title, doc) {
     var L = LEGAL[IT.state.lang], d = L[doc], c = IT.COMPANY[IT.state.lang];
     return head("", title, d.lead) + '<div class="legal"><p class="upd">' + esc(d.upd || L.upd) + "</p>" +
@@ -586,6 +646,21 @@ main { padding-block: 22px 70px; display: grid; gap: 26px; min-height: 60vh; ali
       }).join("") + '<a class="pc" href="info.html?p=blog&amp;id=tips"><img src="img/blog-tips.jpg" alt="" loading="lazy">' +
         "<span><b>" + esc(u.tipsT) + "</b><small>" + esc(u.tipsP) + "</small><i>" + esc(u.readMore) + " →</i></span></a></div>";
     },
+    // Italy trip, 7 days: a day-by-day plan made of our tours (for people searching "Իտալիա տուր"); price on request
+    italy: function () {
+      var hy = IT.state.lang === "hy", L = hy ? "" : "?lang=en", T = ITALY[hy ? "hy" : "en"];
+      var wa = IT.WA + "?text=" + encodeURIComponent(T.wa);
+      return head(T.kind, T.title, T.lead).replace("<h1>", '<h1 data-seo-title="' + esc(T.seo) + '">') +
+        '<div class="trip-grid"><div class="card"><h2>' + esc(T.incH) + '</h2><ul class="perks">' + T.inc.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>" +
+        '<p class="fine">' + esc(T.exc) + "</p></div>" +
+        '<div class="card"><h2>' + esc(T.priceH) + "</h2><p>" + esc(T.price) + '</p><a class="btn btn-wa" href="' + wa + '" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>' + esc(T.ask) + "</a></div></div>" +
+        '<section class="days"><h2>' + esc(T.planH) + "</h2><ol>" + T.days.map(function (d, i) {
+          return '<li class="card day"><span class="dn">' + esc(T.day) + " " + (i + 1) + '</span><h3>' + esc(d[0]) + "</h3><p>" + esc(d[1]) + "</p>" +
+            (d[2] ? '<p class="dl">' + d[2].map(function (x) { return '<a href="' + x[0] + L + '">' + esc(x[1]) + " →</a>"; }).join("") + "</p>" : "") + "</li>";
+        }).join("") + "</ol></section>" +
+        '<div class="card"><h2>' + esc(T.changeH) + '</h2><ul class="perks">' + T.change.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>" +
+        '<a class="btn btn-wa" href="' + wa + '" target="_blank" rel="noopener" style="justify-self:start"><svg><use href="#i-wa"/></svg>' + esc(T.ask) + "</a></div>";
+    },
     infobook: function (u) { return head("", u.bookT, u.bookP) + '<div class="card"><p class="soon">' + esc(u.soonT) + "</p></div>"; },
     terms: function (u) { return legal(u, u.termsT, "terms"); },
     privacy: function (u) { return legal(u, u.privacyT, "privacy"); },
@@ -649,7 +724,8 @@ main { padding-block: 22px 70px; display: grid; gap: 26px; min-height: 60vh; ali
     // Title and description for Google: the page heading, and its first lines of text
     var h = page.querySelector("h1"), lead = page.querySelector(".lead, .post p, .legal p, .faq p, main p"), hy = IT.state.lang === "hy";
     var d = (lead ? lead.textContent.trim() : "") || IT.SEO_HOME[IT.state.lang].desc;
-    IT.seo({ title: (h ? h.textContent.trim() + " | " : "") + (hy ? "Իտալիա տուր հայերենով | Ital Travel" : "Tours in Italy in Armenian | Ital Travel"),
+    var own = page.querySelector("[data-seo-title]"); // a page can set its own full Google title
+    IT.seo({ title: own ? own.getAttribute("data-seo-title") : (h ? h.textContent.trim() + " | " : "") + (hy ? "Իտալիա տուր հայերենով | Ital Travel" : "Tours in Italy in Armenian | Ital Travel"),
              desc: d.length > 160 ? d.slice(0, 157).replace(/\s+\S*$/, "") + "…" : d });
     updateMan();
   }

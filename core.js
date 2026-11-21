@@ -738,7 +738,7 @@
     t10: "san-gimignano-chianti-half-day-tour", t11: "val-d-orcia-tour", t12: "pisa-lucca-tour", t13: "cinque-terre-pisa-tour",
     t14: "cinque-terre-tour", t3: "rome-walking-tour", t7: "vatican-tour", t19: "vatican-museums-tour", t17: "rome-vatican-tour",
     t4: "venice-walking-tour", t8: "san-lazzaro-armenian-island-venice", tr1: "rome-airport-transfer",
-    "p:blog": "blog", "p:blog/gelato": "blog-gelato", "p:blog/coffee": "blog-coffee", "p:blog/tips": "blog-italy-travel-tips",
+    "p:italy": "italy-tour", "p:blog": "blog", "p:blog/gelato": "blog-gelato", "p:blog/coffee": "blog-coffee", "p:blog/tips": "blog-italy-travel-tips",
     "p:faq": "faq", "p:infobook": "booking-info", "p:manage": "manage-booking", "p:terms": "terms",
     "p:privacy": "privacy-policy", "p:cookies": "cookie-policy", "p:team/gaya": "team-gaya", "p:team/feliks": "team-feliks"
   };
