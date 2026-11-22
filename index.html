@@ -150,6 +150,20 @@ button { background: none; border: 0; padding: 0; cursor: pointer; }
 .ti-box li.ti-pk::before { display: none; }
 .ti-pk-pics { flex: none; display: grid; grid-template-columns: repeat(2, clamp(64px, 9vw, 88px)); grid-auto-rows: clamp(64px, 9vw, 88px); gap: 6px; }
 .ti-pk-pics img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+/* Wide and short: as wide as the tour boxes above; heading and text on the left, the list (with the trip photos) on the right */
+.ti-box { max-width: none; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); column-gap: clamp(24px, 4vw, 56px); row-gap: 12px; align-content: start; }
+.ti-box > h2, .ti-box > p { grid-column: 1; }
+.ti-box > ul { grid-column: 2; grid-row: 1 / span 4; align-self: center; }
+.ti-pk-pics { grid-template-columns: repeat(2, clamp(84px, 9vw, 120px)); grid-auto-rows: clamp(70px, 7.5vw, 100px); }
+@media (max-width: 860px) {
+  .ti-box { grid-template-columns: 1fr; }
+  .ti-box > ul { grid-column: 1; grid-row: auto; }
+  .ti-pk-pics { grid-template-columns: repeat(2, 84px); grid-auto-rows: 72px; }
+}
+@media (max-width: 560px) {
+  .ti-box li.ti-pk { flex-direction: column; align-items: stretch; gap: 10px; }
+  .ti-pk-pics { width: 100%; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 74px; }
+}
 .pill { display: inline-flex; align-items: center; min-height: 42px; padding: 8px 18px; border-radius: 99px; border: 1px solid var(--ink); text-decoration: none; font-size: .93rem; transition: background .2s, color .2s; }
 .pill:hover { background: var(--ink); color: #fff; }
 .row { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 54px) / 4); gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 6px; }
