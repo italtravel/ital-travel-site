@@ -145,24 +145,23 @@ button { background: none; border: 0; padding: 0; cursor: pointer; }
 .ti-box b { color: var(--ink); font-weight: 600; }
 .ti-box a { color: var(--verde-d, #3A5F4A); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(78,125,99,.35); }
 .ti-box a:hover { text-decoration-color: currentColor; }
-/* the 7-day trip line: a small 2×2 photo collage before the text */
-.ti-box li.ti-pk { display: flex; align-items: center; gap: 18px; padding-left: 0; margin-bottom: 4px; }
+/* the package «Իտալիան հայերեն»: a one-line heading, 4 photos in a row (Rome, Florence, Tuscany, Venice), 2 lines of text and "Read more" */
+.ti-box li.ti-pk { display: grid; gap: 10px; padding-left: 0; margin-bottom: 8px; }
 .ti-box li.ti-pk::before { display: none; }
-.ti-pk-pics { flex: none; display: grid; grid-template-columns: repeat(2, clamp(64px, 9vw, 88px)); grid-auto-rows: clamp(64px, 9vw, 88px); gap: 6px; }
+.ti-pk-pics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: clamp(72px, 8vw, 116px); gap: 6px; text-decoration: none; }
+.ti-box a.pk-h { font-family: var(--serif); font-weight: 500; font-size: min(1.5rem, max(1rem, 1.05rem + .6vw), 4.7vw); line-height: 1.25; color: var(--ink); text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ti-box a.pk-h:hover { color: var(--verde-d, #3A5F4A); }
+.pk-d { margin: 0; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; }
+.pk-d.open { display: block; }
+.pk-more { justify-self: start; border: 0; background: none; padding: 0; font: inherit; font-weight: 600; color: var(--rosso, #8A4A4D); cursor: pointer; }
 .ti-pk-pics img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
 /* Wide and short: as wide as the tour boxes above; heading and text on the left, the list (with the trip photos) on the right */
 .ti-box { max-width: none; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); column-gap: clamp(24px, 4vw, 56px); row-gap: 12px; align-content: start; }
 .ti-box > h2, .ti-box > p { grid-column: 1; }
 .ti-box > ul { grid-column: 2; grid-row: 1 / span 4; align-self: center; }
-.ti-pk-pics { grid-template-columns: repeat(2, clamp(84px, 9vw, 120px)); grid-auto-rows: clamp(70px, 7.5vw, 100px); }
 @media (max-width: 860px) {
   .ti-box { grid-template-columns: 1fr; }
   .ti-box > ul { grid-column: 1; grid-row: auto; }
-  .ti-pk-pics { grid-template-columns: repeat(2, 84px); grid-auto-rows: 72px; }
-}
-@media (max-width: 560px) {
-  .ti-box li.ti-pk { flex-direction: column; align-items: stretch; gap: 10px; }
-  .ti-pk-pics { width: 100%; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 74px; }
 }
 .pill { display: inline-flex; align-items: center; min-height: 42px; padding: 8px 18px; border-radius: 99px; border: 1px solid var(--ink); text-decoration: none; font-size: .93rem; transition: background .2s, color .2s; }
 .pill:hover { background: var(--ink); color: #fff; }
@@ -804,7 +803,7 @@ body.bk-open { overflow: hidden; }
       <h2 id="ti-h">Տուրեր դեպի Իտալիա՝ հայերենով</h2>
       <p>Ital Travel-ը կազմակերպում է տուրեր Իտալիայում հայերենով՝ ճանապարհորդների համար Հայաստանից և աշխարհի տարբեր երկրներից։ Ընտրեք ձեր Իտալիա տուրը՝ քաղաքը և օրը, իսկ մենք Իտալիան ձեզ կներկայացնենք ձեր լեզվով։</p>
       <ul>
-        <li class="ti-pk"><a class="ti-pk-pics" href="italy-tour" aria-hidden="true" tabindex="-1"><img src="img/t/rome-7071.jpg" alt=""><img src="img/fl-golden-hour.jpg" alt=""><img src="img/t/tu-cypress-road.jpg" alt=""><img src="img/t/venice.jpg" alt=""></a><span><b>Իտալիա տուր 7 օր՝</b> <a href="italy-tour">Հռոմ, Վատիկան, Ֆլորենցիա, Տոսկանա և Վենետիկ մեկ ճամփորդությամբ</a></span></li>
+        <li class="ti-pk"><a class="pk-h" href="italy-tour">Տուր փաթեթ «Իտալիան հայերեն»</a><a class="ti-pk-pics" href="italy-tour" aria-hidden="true" tabindex="-1"><img src="img/t/rome-7071.jpg" alt=""><img src="img/fl-golden-hour.jpg" alt=""><img src="img/t/tu-cypress-road.jpg" alt=""><img src="img/t/venice.jpg" alt=""></a><p class="pk-d" id="pk-d">7 օր Իտալիայում՝ Հռոմ, Վատիկան, Ֆլորենցիա, Տոսկանա և Վենետիկ, տուրերով հայերենով։ Մենք կազմակերպում ենք տուրերը, տրանսֆերը օդանավակայանից և քաղաքների միջև տեղափոխությունները, ինչպես նաև օգնում ենք ընտրել հյուրանոցները։ Ծրագրում՝ Կոլիզեում և Հռոմի պատմական կենտրոն, Վատիկանի թանգարաններ, Ֆլորենցիա՝ Վերածննդի բնօրրան, Տոսկանայի բլուրներ և գինիներ, Վենետիկ և Սուրբ Ղազար կղզի։ Ծրագիրը կազմում ենք ձեր ամսաթվերով, իսկ ավիատոմսերը գնում եք ինքներդ։ <a href="italy-tour">Դիտել ծրագիրը →</a></p><button type="button" class="pk-more" data-pk-more aria-expanded="false">Կարդալ ավելին ↓</button></li>
         <li><b>Տուրեր Ֆլորենցիայում՝</b> <a href="florence-walking-tour">քաղաքային տուր</a>, <a href="florence-cooking-class">խոհարարական դաս</a>, <a href="florence-fiat-500-tour">Fiat 500 կաբրիոլետով տուր</a></li>
         <li><b>Տուրեր Տոսկանայում՝</b> <a href="siena-san-gimignano-chianti-tour">Սիենա, Սան Ջիմինյանո և Կյանտի</a>, <a href="val-d-orcia-tour">Վալ դ'Օրչա</a>, <a href="pisa-lucca-tour">Պիզա և Լուկկա</a>, <a href="cinque-terre-tour">Չինկվե Տերե</a></li>
         <li><b>Տուրեր Հռոմում և Վատիկանում՝</b> <a href="rome-walking-tour">զբոսատուր Հռոմում</a>, <a href="vatican-museums-tour">տուր Վատիկանում՝ թանգարաններով</a>, <a href="rome-vatican-tour">Հռոմ և Վատիկան</a></li>
@@ -1499,12 +1498,19 @@ body.bk-open { overflow: hidden; }
   // "Tours in Italy" text above the footer: Armenian is written in the page, English comes from here (links get ?lang=en)
   var TI_HY = null, TI_EN = '<h2 id="ti-h">Tours in Italy in Armenian</h2>' +
     "<p>Ital Travel organises tours in Italy in Armenian, for travellers from Armenia and from all over the world. Choose your tour in Italy, the city and the day, and we'll show you Italy in your own language.</p><ul>" +
-    '<li class="ti-pk"><a class=\"ti-pk-pics\" href=\"italy-tour\" aria-hidden=\"true\" tabindex=\"-1\"><img src=\"img/t/rome-7071.jpg\" alt=\"\"><img src=\"img/fl-golden-hour.jpg\" alt=\"\"><img src=\"img/t/tu-cypress-road.jpg\" alt=\"\"><img src=\"img/t/venice.jpg\" alt=\"\"></a><span><b>Italy trip, 7 days:</b> <a href="italy-tour">Rome, the Vatican, Florence, Tuscany and Venice in one trip</a></span></li>' +
+    '<li class=\"ti-pk\"><a class=\"pk-h\" href=\"italy-tour\">Package tour «Italy in Armenian»</a><a class=\"ti-pk-pics\" href=\"italy-tour\" aria-hidden=\"true\" tabindex=\"-1\"><img src=\"img/t/rome-7071.jpg\" alt=\"\"><img src=\"img/fl-golden-hour.jpg\" alt=\"\"><img src=\"img/t/tu-cypress-road.jpg\" alt=\"\"><img src=\"img/t/venice.jpg\" alt=\"\"></a><p class=\"pk-d\" id=\"pk-d\">7 days in Italy: Rome, the Vatican, Florence, Tuscany and Venice, with tours in Armenian. We arrange the tours, the airport transfer and travel between cities, and help you choose hotels. On the plan: the Colosseum and historic Rome, the Vatican Museums, Florence, the cradle of the Renaissance, the Tuscan hills and wines, Venice and San Lazzaro island. We plan it around your dates; you book the flights yourself. <a href=\"italy-tour\">See the plan →</a></p><button type=\"button\" class=\"pk-more\" data-pk-more aria-expanded=\"false\">Read more ↓</button></li>' +
     '<li><b>Tours in Florence:</b> <a href="florence-walking-tour">cultural walking tour</a>, <a href="florence-cooking-class">cooking class</a>, <a href="florence-fiat-500-tour">Fiat 500 cabrio tour</a></li>' +
     '<li><b>Tours in Tuscany:</b> <a href="siena-san-gimignano-chianti-tour">Siena, San Gimignano &amp; Chianti</a>, <a href="val-d-orcia-tour">Val d\'Orcia</a>, <a href="pisa-lucca-tour">Pisa &amp; Lucca</a>, <a href="cinque-terre-tour">Cinque Terre</a></li>' +
     '<li><b>Tours in Rome and the Vatican:</b> <a href="rome-walking-tour">Rome walking tour</a>, <a href="vatican-museums-tour">Vatican tour with the museums</a>, <a href="rome-vatican-tour">Rome and the Vatican</a></li>' +
     '<li><b>Tours in Venice:</b> <a href="venice-walking-tour">a walk in Venice</a>, <a href="san-lazzaro-armenian-island-venice">San Lazzaro island</a></li></ul>' +
     "<p>Children under 14 go free. Book your tour online or write to us on WhatsApp, and we'll help you choose your tour in Italy.</p>";
+  // Package «Իտալիան հայերեն»: "Read more" opens the full description, "Show less" closes it
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-pk-more]"); if (!b) return;
+    var d = $("pk-d"), on = !d.classList.contains("open"), en = IT.state.lang === "en";
+    d.classList.toggle("open", on); b.setAttribute("aria-expanded", String(on));
+    b.textContent = on ? (en ? "Show less ↑" : "Փակել ↑") : (en ? "Read more ↓" : "Կարդալ ավելին ↓");
+  });
   function drawTI() {
     var b = $("ti-box"); if (!b) return; if (TI_HY === null) TI_HY = b.innerHTML;
     var en = IT.state.lang === "en"; b.innerHTML = en ? TI_EN : TI_HY;
