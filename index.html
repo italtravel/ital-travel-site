@@ -146,10 +146,10 @@ button { background: none; border: 0; padding: 0; cursor: pointer; }
 .ti-box a { color: var(--verde-d, #3A5F4A); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(78,125,99,.35); }
 .ti-box a:hover { text-decoration-color: currentColor; }
 /* the 7-day trip line: a small 2×2 photo collage before the text */
-.ti-box li.ti-pk { display: flex; align-items: center; gap: 14px; padding-left: 0; margin-bottom: 4px; }
+.ti-box li.ti-pk { display: flex; align-items: center; gap: 18px; padding-left: 0; margin-bottom: 4px; }
 .ti-box li.ti-pk::before { display: none; }
-.ti-pk-pics { flex: none; display: grid; grid-template-columns: repeat(2, 48px); grid-auto-rows: 48px; gap: 4px; }
-.ti-pk-pics img { width: 100%; height: 100%; object-fit: cover; border-radius: 9px; }
+.ti-pk-pics { flex: none; display: grid; grid-template-columns: repeat(2, clamp(64px, 9vw, 88px)); grid-auto-rows: clamp(64px, 9vw, 88px); gap: 6px; }
+.ti-pk-pics img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
 .pill { display: inline-flex; align-items: center; min-height: 42px; padding: 8px 18px; border-radius: 99px; border: 1px solid var(--ink); text-decoration: none; font-size: .93rem; transition: background .2s, color .2s; }
 .pill:hover { background: var(--ink); color: #fff; }
 .row { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 54px) / 4); gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 6px; }
@@ -826,7 +826,7 @@ body.bk-open { overflow: hidden; }
       <h2 id="ti-h">Տուրեր դեպի Իտալիա՝ հայերենով</h2>
       <p>Ital Travel-ը կազմակերպում է տուրեր Իտալիայում հայերենով՝ ճանապարհորդների համար Հայաստանից և աշխարհի տարբեր երկրներից։ Ընտրեք ձեր Իտալիա տուրը՝ քաղաքը և օրը, իսկ մենք Իտալիան ձեզ կներկայացնենք ձեր լեզվով։</p>
       <ul>
-        <li class="ti-pk"><a class="ti-pk-pics" href="italy-tour" aria-hidden="true" tabindex="-1"><img src="img/t/rome-7071.jpg" alt="" loading="lazy"><img src="img/fl-golden-hour.jpg" alt="" loading="lazy"><img src="img/t/tu-cypress-road.jpg" alt="" loading="lazy"><img src="img/t/venice.jpg" alt="" loading="lazy"></a><span><b>Իտալիա տուր 7 օր՝</b> <a href="italy-tour">Հռոմ, Վատիկան, Ֆլորենցիա, Տոսկանա և Վենետիկ մեկ ճամփորդությամբ</a></span></li>
+        <li class="ti-pk"><a class="ti-pk-pics" href="italy-tour" aria-hidden="true" tabindex="-1"><img src="img/t/rome-7071.jpg" alt=""><img src="img/fl-golden-hour.jpg" alt=""><img src="img/t/tu-cypress-road.jpg" alt=""><img src="img/t/venice.jpg" alt=""></a><span><b>Իտալիա տուր 7 օր՝</b> <a href="italy-tour">Հռոմ, Վատիկան, Ֆլորենցիա, Տոսկանա և Վենետիկ մեկ ճամփորդությամբ</a></span></li>
         <li><b>Տուրեր Ֆլորենցիայում՝</b> <a href="florence-walking-tour">քաղաքային տուր</a>, <a href="florence-cooking-class">խոհարարական դաս</a>, <a href="florence-fiat-500-tour">Fiat 500 կաբրիոլետով տուր</a></li>
         <li><b>Տուրեր Տոսկանայում՝</b> <a href="siena-san-gimignano-chianti-tour">Սիենա, Սան Ջիմինյանո և Կյանտի</a>, <a href="val-d-orcia-tour">Վալ դ'Օրչա</a>, <a href="pisa-lucca-tour">Պիզա և Լուկկա</a>, <a href="cinque-terre-tour">Չինկվե Տերե</a></li>
         <li><b>Տուրեր Հռոմում և Վատիկանում՝</b> <a href="rome-walking-tour">զբոսատուր Հռոմում</a>, <a href="vatican-museums-tour">տուր Վատիկանում՝ թանգարաններով</a>, <a href="rome-vatican-tour">Հռոմ և Վատիկան</a></li>
@@ -1485,7 +1485,7 @@ body.bk-open { overflow: hidden; }
   // "Tours in Italy" text above the footer: Armenian is written in the page, English comes from here (links get ?lang=en)
   var TI_HY = null, TI_EN = '<h2 id="ti-h">Tours in Italy in Armenian</h2>' +
     "<p>Ital Travel organises tours in Italy in Armenian, for travellers from Armenia and from all over the world. Choose your tour in Italy, the city and the day, and we'll show you Italy in your own language.</p><ul>" +
-    '<li class="ti-pk"><a class=\"ti-pk-pics\" href=\"italy-tour\" aria-hidden=\"true\" tabindex=\"-1\"><img src=\"img/t/rome-7071.jpg\" alt=\"\" loading=\"lazy\"><img src=\"img/fl-golden-hour.jpg\" alt=\"\" loading=\"lazy\"><img src=\"img/t/tu-cypress-road.jpg\" alt=\"\" loading=\"lazy\"><img src=\"img/t/venice.jpg\" alt=\"\" loading=\"lazy\"></a><span><b>Italy trip, 7 days:</b> <a href="italy-tour">Rome, the Vatican, Florence, Tuscany and Venice in one trip</a></span></li>' +
+    '<li class="ti-pk"><a class=\"ti-pk-pics\" href=\"italy-tour\" aria-hidden=\"true\" tabindex=\"-1\"><img src=\"img/t/rome-7071.jpg\" alt=\"\"><img src=\"img/fl-golden-hour.jpg\" alt=\"\"><img src=\"img/t/tu-cypress-road.jpg\" alt=\"\"><img src=\"img/t/venice.jpg\" alt=\"\"></a><span><b>Italy trip, 7 days:</b> <a href="italy-tour">Rome, the Vatican, Florence, Tuscany and Venice in one trip</a></span></li>' +
     '<li><b>Tours in Florence:</b> <a href="florence-walking-tour">cultural walking tour</a>, <a href="florence-cooking-class">cooking class</a>, <a href="florence-fiat-500-tour">Fiat 500 cabrio tour</a></li>' +
     '<li><b>Tours in Tuscany:</b> <a href="siena-san-gimignano-chianti-tour">Siena, San Gimignano &amp; Chianti</a>, <a href="val-d-orcia-tour">Val d\'Orcia</a>, <a href="pisa-lucca-tour">Pisa &amp; Lucca</a>, <a href="cinque-terre-tour">Cinque Terre</a></li>' +
     '<li><b>Tours in Rome and the Vatican:</b> <a href="rome-walking-tour">Rome walking tour</a>, <a href="vatican-museums-tour">Vatican tour with the museums</a>, <a href="rome-vatican-tour">Rome and the Vatican</a></li>' +
