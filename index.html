@@ -136,17 +136,6 @@ button { background: none; border: 0; padding: 0; cursor: pointer; }
 .sec { padding-block: clamp(46px, 7vw, 80px) clamp(40px, 6vw, 70px); }
 .sec-h { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 22px; }
 .sec-h h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.7rem, 1.35rem + 1.4vw, 2.5rem); line-height: 1.1; }
-/* 7-day Italy trip card: small 2×2 photo collage + text */
-.pk-box { max-width: 920px; margin-inline: auto; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(16px, 3vw, 30px); align-items: center; background: #fff; border-radius: 26px; padding: clamp(14px, 2.4vw, 22px); color: var(--ink); text-decoration: none; box-shadow: 0 0 0 1px var(--line), 0 24px 44px -38px rgba(20,32,25,.6); transition: transform .3s var(--e), box-shadow .3s; }
-.pk-box:hover { transform: translateY(-3px); box-shadow: 0 0 0 1px var(--line), 0 30px 50px -36px rgba(20,32,25,.65); }
-.pk-pics { display: grid; grid-template-columns: repeat(2, clamp(78px, 11vw, 110px)); grid-auto-rows: clamp(78px, 11vw, 110px); gap: 6px; }
-.pk-pics img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; }
-.pk-t { display: grid; gap: 6px; }
-.pk-t small { font-weight: 600; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--verde-d, #3A5F4A); }
-.pk-t b { font-family: var(--serif); font-weight: 500; font-size: clamp(1.25rem, 1.05rem + .9vw, 1.75rem); line-height: 1.2; }
-.pk-t span { color: var(--muted); }
-.pk-t i { font-style: normal; font-weight: 600; color: var(--rosso, #8A4A4D); margin-top: 4px; }
-@media (max-width: 560px) { .pk-box { grid-template-columns: 1fr; } .pk-pics { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 70px; } }
 /* "Tours in Italy" text above the footer: a white card, links to the tour pages */
 .ti-box { max-width: 920px; margin-inline: auto; background: #fff; border-radius: 26px; padding: clamp(24px, 4vw, 44px); box-shadow: 0 0 0 1px var(--line), 0 24px 44px -38px rgba(20,32,25,.6); display: grid; gap: 14px; color: var(--muted); line-height: 1.6; }
 .ti-box h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.5rem, 1.25rem + 1vw, 2.1rem); line-height: 1.15; color: var(--ink); }
@@ -156,6 +145,11 @@ button { background: none; border: 0; padding: 0; cursor: pointer; }
 .ti-box b { color: var(--ink); font-weight: 600; }
 .ti-box a { color: var(--verde-d, #3A5F4A); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(78,125,99,.35); }
 .ti-box a:hover { text-decoration-color: currentColor; }
+/* the 7-day trip line: a small 2×2 photo collage before the text */
+.ti-box li.ti-pk { display: flex; align-items: center; gap: 14px; padding-left: 0; margin-bottom: 4px; }
+.ti-box li.ti-pk::before { display: none; }
+.ti-pk-pics { flex: none; display: grid; grid-template-columns: repeat(2, 48px); grid-auto-rows: 48px; gap: 4px; }
+.ti-pk-pics img { width: 100%; height: 100%; object-fit: cover; border-radius: 9px; }
 .pill { display: inline-flex; align-items: center; min-height: 42px; padding: 8px 18px; border-radius: 99px; border: 1px solid var(--ink); text-decoration: none; font-size: .93rem; transition: background .2s, color .2s; }
 .pill:hover { background: var(--ink); color: #fff; }
 .row { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 54px) / 4); gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 6px; }
@@ -789,14 +783,6 @@ body.bk-open { overflow: hidden; }
     <div class="boxes" id="boxes" aria-live="polite"></div>
   </section>
 
-  <!-- The 7-day Italy trip (italy-tour): a small 4-photo collage and a short text. Armenian here, English in PK_EN. -->
-  <section class="sec pk" id="italy-trip" style="padding-top:0">
-    <a class="pk-box" href="italy-tour" id="pk-box">
-      <span class="pk-pics" aria-hidden="true"><img src="img/t/rome-7071.jpg" alt="" loading="lazy" style="object-position:50% 60%"><img src="img/fl-golden-hour.jpg" alt="" loading="lazy" style="object-position:60% 55%"><img src="img/t/tu-cypress-road.jpg" alt="" loading="lazy" style="object-position:50% 60%"><img src="img/t/venice.jpg" alt="" loading="lazy" style="object-position:50% 60%"></span>
-      <span class="pk-t" id="pk-t"><small>Իտալիա տուր 7 օր</small><b>Հռոմ, Վատիկան, Ֆլորենցիա, Տոսկանա և Վենետիկ՝ մեկ ճամփորդությամբ</b><span>Տուրեր հայերենով, տրանսֆերներ և օգնություն հյուրանոցների հարցում։ Ծրագիրը կազմում ենք ձեր ամսաթվերով։</span><i>Դիտել ծրագիրը →</i></span>
-    </a>
-  </section>
-
   <!-- From the old home page: school trips, events, special occasions -->
   <section class="sec" id="occasions">
     <div class="sec-h"><div><h2 data-t="moreServ"></h2></div><div class="arw"><button type="button" id="o-prev" aria-label="Previous">←</button><button type="button" id="o-next" aria-label="Next">→</button></div></div>
@@ -840,7 +826,7 @@ body.bk-open { overflow: hidden; }
       <h2 id="ti-h">Տուրեր դեպի Իտալիա՝ հայերենով</h2>
       <p>Ital Travel-ը կազմակերպում է տուրեր Իտալիայում հայերենով՝ ճանապարհորդների համար Հայաստանից և աշխարհի տարբեր երկրներից։ Ընտրեք ձեր Իտալիա տուրը՝ քաղաքը և օրը, իսկ մենք Իտալիան ձեզ կներկայացնենք ձեր լեզվով։</p>
       <ul>
-        <li><b>Իտալիա տուր 7 օր՝</b> <a href="italy-tour">Հռոմ, Վատիկան, Ֆլորենցիա, Տոսկանա և Վենետիկ մեկ ճամփորդությամբ</a></li>
+        <li class="ti-pk"><a class="ti-pk-pics" href="italy-tour" aria-hidden="true" tabindex="-1"><img src="img/t/rome-7071.jpg" alt="" loading="lazy"><img src="img/fl-golden-hour.jpg" alt="" loading="lazy"><img src="img/t/tu-cypress-road.jpg" alt="" loading="lazy"><img src="img/t/venice.jpg" alt="" loading="lazy"></a><span><b>Իտալիա տուր 7 օր՝</b> <a href="italy-tour">Հռոմ, Վատիկան, Ֆլորենցիա, Տոսկանա և Վենետիկ մեկ ճամփորդությամբ</a></span></li>
         <li><b>Տուրեր Ֆլորենցիայում՝</b> <a href="florence-walking-tour">քաղաքային տուր</a>, <a href="florence-cooking-class">խոհարարական դաս</a>, <a href="florence-fiat-500-tour">Fiat 500 կաբրիոլետով տուր</a></li>
         <li><b>Տուրեր Տոսկանայում՝</b> <a href="siena-san-gimignano-chianti-tour">Սիենա, Սան Ջիմինյանո և Կյանտի</a>, <a href="val-d-orcia-tour">Վալ դ'Օրչա</a>, <a href="pisa-lucca-tour">Պիզա և Լուկկա</a>, <a href="cinque-terre-tour">Չինկվե Տերե</a></li>
         <li><b>Տուրեր Հռոմում և Վատիկանում՝</b> <a href="rome-walking-tour">զբոսատուր Հռոմում</a>, <a href="vatican-museums-tour">տուր Վատիկանում՝ թանգարաններով</a>, <a href="rome-vatican-tour">Հռոմ և Վատիկան</a></li>
@@ -1499,18 +1485,12 @@ body.bk-open { overflow: hidden; }
   // "Tours in Italy" text above the footer: Armenian is written in the page, English comes from here (links get ?lang=en)
   var TI_HY = null, TI_EN = '<h2 id="ti-h">Tours in Italy in Armenian</h2>' +
     "<p>Ital Travel organises tours in Italy in Armenian, for travellers from Armenia and from all over the world. Choose your tour in Italy, the city and the day, and we'll show you Italy in your own language.</p><ul>" +
-    '<li><b>Italy trip, 7 days:</b> <a href="italy-tour">Rome, the Vatican, Florence, Tuscany and Venice in one trip</a></li>' +
+    '<li class="ti-pk"><a class=\"ti-pk-pics\" href=\"italy-tour\" aria-hidden=\"true\" tabindex=\"-1\"><img src=\"img/t/rome-7071.jpg\" alt=\"\" loading=\"lazy\"><img src=\"img/fl-golden-hour.jpg\" alt=\"\" loading=\"lazy\"><img src=\"img/t/tu-cypress-road.jpg\" alt=\"\" loading=\"lazy\"><img src=\"img/t/venice.jpg\" alt=\"\" loading=\"lazy\"></a><span><b>Italy trip, 7 days:</b> <a href="italy-tour">Rome, the Vatican, Florence, Tuscany and Venice in one trip</a></span></li>' +
     '<li><b>Tours in Florence:</b> <a href="florence-walking-tour">cultural walking tour</a>, <a href="florence-cooking-class">cooking class</a>, <a href="florence-fiat-500-tour">Fiat 500 cabrio tour</a></li>' +
     '<li><b>Tours in Tuscany:</b> <a href="siena-san-gimignano-chianti-tour">Siena, San Gimignano &amp; Chianti</a>, <a href="val-d-orcia-tour">Val d\'Orcia</a>, <a href="pisa-lucca-tour">Pisa &amp; Lucca</a>, <a href="cinque-terre-tour">Cinque Terre</a></li>' +
     '<li><b>Tours in Rome and the Vatican:</b> <a href="rome-walking-tour">Rome walking tour</a>, <a href="vatican-museums-tour">Vatican tour with the museums</a>, <a href="rome-vatican-tour">Rome and the Vatican</a></li>' +
     '<li><b>Tours in Venice:</b> <a href="venice-walking-tour">a walk in Venice</a>, <a href="san-lazzaro-armenian-island-venice">San Lazzaro island</a></li></ul>' +
     "<p>Children under 14 go free. Book your tour online or write to us on WhatsApp, and we'll help you choose your tour in Italy.</p>";
-  // 7-day Italy trip card: the English text (Armenian is written in the page)
-  var PK_HY = null, PK_EN = "<small>Italy trip · 7 days</small><b>Rome, the Vatican, Florence, Tuscany and Venice in one trip</b><span>Tours in Armenian, transfers and help with hotels. We plan it around your dates.</span><i>See the plan →</i>";
-  function drawPK() {
-    var t = $("pk-t"), a = $("pk-box"); if (!t) return; if (PK_HY === null) PK_HY = t.innerHTML;
-    var en = IT.state.lang === "en"; t.innerHTML = en ? PK_EN : PK_HY; a.setAttribute("href", "italy-tour" + (en ? "?lang=en" : ""));
-  }
   function drawTI() {
     var b = $("ti-box"); if (!b) return; if (TI_HY === null) TI_HY = b.innerHTML;
     var en = IT.state.lang === "en"; b.innerHTML = en ? TI_EN : TI_HY;
@@ -1702,7 +1682,7 @@ body.bk-open { overflow: hidden; }
   })();
 
   IT.init({
-    after: function () { viewSeo(); drawCat(); fillSearch(); drawN(); drawFan(); drawBoxes(); drawTour(); drawOcc(); fixFoot(); if (open) dtFoot(); drawTI(); drawPK(); },
+    after: function () { viewSeo(); drawCat(); fillSearch(); drawN(); drawFan(); drawBoxes(); drawTour(); drawOcc(); fixFoot(); if (open) dtFoot(); drawTI(); },
     // Our team: round photos; each opens the person's own page
     guides: function (list) {
       var u = IT.t(), GC = ["var(--verde)", "var(--rosso)", "var(--verde-d)"];
