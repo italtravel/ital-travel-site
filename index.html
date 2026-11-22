@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Տուրեր դեպի Իտալիա՝ հայերենով | Իտալիա տուր՝ Ֆլորենցիա, Հռոմ, Վենետիկ, Տոսկանա | Ital Travel</title>
+<title>Տուրեր Իտալիայում | Անհատական և խմբակային էքսկուրսիաներ – Ital Travel</title>
 <meta name="description" content="Տուրեր դեպի Իտալիա հայերենով՝ Ֆլորենցիա, Հռոմ, Վատիկան, Վենետիկ և Տոսկանա։ Իտալիա տուր Հայաստանից և աշխարհի տարբեր երկրներից՝ զբոսատուրեր, խոհարարական դասեր, գինու տուրեր և տրանսֆեր։ Ամրագրեք ձեր տուրը առցանց։">
 <link rel="alternate" hreflang="hy" href="https://italtravel.am/"><link rel="alternate" hreflang="en" href="https://italtravel.am/?lang=en"><link rel="alternate" hreflang="x-default" href="https://italtravel.am/">
 <link rel="canonical" href="https://italtravel.am/">
@@ -18,7 +18,7 @@
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <meta property="og:site_name" content="Ital Travel">
-<meta property="og:title" content="Տուրեր դեպի Իտալիա՝ հայերենով | Իտալիա տուր՝ Ֆլորենցիա, Հռոմ, Վենետիկ, Տոսկանա | Ital Travel">
+<meta property="og:title" content="Տուրեր Իտալիայում | Անհատական և խմբակային էքսկուրսիաներ – Ital Travel">
 <meta property="og:description" content="Տուրեր դեպի Իտալիա հայերենով՝ Ֆլորենցիա, Հռոմ, Վատիկան, Վենետիկ և Տոսկանա։ Իտալիա տուր Հայաստանից և աշխարհի տարբեր երկրներից՝ զբոսատուրեր, խոհարարական դասեր, գինու տուրեր և տրանսֆեր։ Ամրագրեք ձեր տուրը առցանց։">
 <meta property="og:image" content="https://italtravel.am/img/share.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,9 +86,10 @@ button { background: none; border: 0; padding: 0; cursor: pointer; }
 .ghost:hover { background: rgba(255,255,255,.14); }
 
 .title { position: absolute; z-index: 2; left: clamp(18px, 4vw, 52px); top: clamp(88px, 14vh, 130px); width: min(54%, 660px); }
-.title small { display: block; font-size: .95rem; letter-spacing: .04em; opacity: .92; margin-bottom: 6px; text-shadow: 0 1px 10px rgba(0,0,0,.35); }
-.title h1 { font-weight: 800; text-transform: uppercase; font-size: clamp(2rem, 1rem + 2.7vw, 3.8rem); line-height: 1.08; /* one size for every slide */ letter-spacing: 0; overflow-wrap: anywhere; color: rgba(255,255,255,.88); text-shadow: 0 6px 40px rgba(0,0,0,.25); }
-.title h1 span { display: inline-block; animation: rise .9s var(--e) both; }
+.title .h1-seo { margin: 0; font: inherit; font-weight: 500; text-transform: none; }
+.title small, .title .h1-seo { display: block; font-size: .95rem; letter-spacing: .04em; opacity: .92; margin-bottom: 6px; text-shadow: 0 1px 10px rgba(0,0,0,.35); }
+.title .big-t { font-weight: 800; text-transform: uppercase; font-size: clamp(2rem, 1rem + 2.7vw, 3.8rem); line-height: 1.08; /* one size for every slide */ letter-spacing: 0; overflow-wrap: anywhere; color: rgba(255,255,255,.88); text-shadow: 0 6px 40px rgba(0,0,0,.25); }
+.title .big-t span { display: inline-block; animation: rise .9s var(--e) both; }
 @keyframes rise { from { transform: translateY(-14px); } }
 .slides .sl.first { transition: none; }
 
@@ -771,7 +772,7 @@ body.bk-open { overflow: hidden; }
       <div class="sw" role="group" aria-label="Currency"><button type="button" data-cur="EUR" aria-pressed="true" title="Euro">€</button><button type="button" data-cur="AMD" aria-pressed="false" title="Armenian dram">֏</button><button type="button" data-cur="USD" aria-pressed="false" title="US dollar">$</button></div>
       <a class="ghost" href="info.html?p=partner" data-t="heroJoin"></a>
     </header>
-    <div class="title"><small data-t="tagline"></small><h1 id="big" aria-live="polite">Տուրեր Իտալիայում</h1><div class="cap" id="cap"></div></div>
+    <div class="title"><h1 class="h1-seo" data-t="h1seo">Տուրեր Իտալիայում հայախոս զբոսավարի հետ</h1><p class="big-t" id="big" aria-live="polite">Տուրեր Իտալիայում</p><div class="cap" id="cap"></div></div>
     <div class="orbit" aria-label="Places"><div class="ring" id="ring"></div><div class="ob-logo" aria-hidden="true"><b>Ital<span>·</span>Travel</b><i></i><small>տուրեր իտալիայում</small></div></div>
   </section>
 
@@ -804,7 +805,7 @@ body.bk-open { overflow: hidden; }
   <section class="sec ti" id="tours-italy" style="padding-top:0" aria-label="Տուրեր դեպի Իտալիա">
     <div class="ti-box" id="ti-box">
       <ul>
-        <li class="ti-pk"><a class="pk-h" href="italy-tour">Տուր փաթեթ «Իտալիան հայերեն»</a><a class="ti-pk-pics" href="italy-tour" aria-hidden="true" tabindex="-1"><img src="img/t/rome-7071.jpg" alt=""><img src="img/fl-golden-hour.jpg" alt=""><img src="img/t/tu-cypress-road.jpg" alt=""><img src="img/t/venice.jpg" alt=""></a><p class="pk-d" id="pk-d">7 օր Իտալիայում՝ Հռոմ, Վատիկան, Ֆլորենցիա, Տոսկանա և Վենետիկ, տուրերով հայերենով։ Մենք կազմակերպում ենք տուրերը, տրանսֆերը օդանավակայանից և քաղաքների միջև տեղափոխությունները, ինչպես նաև օգնում ենք ընտրել հյուրանոցները։ Ծրագրում՝ Կոլիզեում և Հռոմի պատմական կենտրոն, Վատիկանի թանգարաններ, Ֆլորենցիա՝ Վերածննդի բնօրրան, Տոսկանայի բլուրներ և գինիներ, Վենետիկ և Սուրբ Ղազար կղզի։ Ծրագիրը կազմում ենք ձեր ամսաթվերով, իսկ ավիատոմսերը գնում եք ինքներդ։ </p><a class="pk-more" href="italy-tour">Դիտել ծրագիրը →</a></li>
+        <li class="ti-pk"><a class="pk-h" href="turer-depi-italia">Տուր փաթեթ «Իտալիան հայերեն»</a><a class="ti-pk-pics" href="turer-depi-italia" aria-hidden="true" tabindex="-1"><img src="img/t/rome-7071.jpg" alt="Հռոմ, Կոլիզեում – turer italiayum, italia tur"><img src="img/fl-golden-hour.jpg" alt="Ֆլորենցիա – turer depi Italia, Florence tour"><img src="img/t/tu-cypress-road.jpg" alt="Տոսկանա – Tuscany tur, туры в Италию из Еревана"><img src="img/t/venice.jpg" alt="Վենետիկ – Venetik tur, italia tur paket"></a><p class="pk-d" id="pk-d">7 օր Իտալիայում՝ Հռոմ, Վատիկան, Ֆլորենցիա, Տոսկանա և Վենետիկ, տուրերով հայերենով։ Մենք կազմակերպում ենք տուրերը, տրանսֆերը օդանավակայանից և քաղաքների միջև տեղափոխությունները, ինչպես նաև օգնում ենք ընտրել հյուրանոցները։ Ծրագրում՝ Կոլիզեում և Հռոմի պատմական կենտրոն, Վատիկանի թանգարաններ, Ֆլորենցիա՝ Վերածննդի բնօրրան, Տոսկանայի բլուրներ և գինիներ, Վենետիկ և Սուրբ Ղազար կղզի։ Ծրագիրը կազմում ենք ձեր ամսաթվերով, իսկ ավիատոմսերը գնում եք ինքներդ։ </p><a class="pk-more" href="turer-depi-italia">Դիտել ծրագիրը →</a></li>
         <li><b>Տուրեր Ֆլորենցիայում՝</b> <a href="florence-walking-tour">քաղաքային տուր</a>, <a href="florence-cooking-class">խոհարարական դաս</a>, <a href="florence-fiat-500-tour">Fiat 500 կաբրիոլետով տուր</a></li>
         <li><b>Տուրեր Տոսկանայում՝</b> <a href="siena-san-gimignano-chianti-tour">Սիենա, Սան Ջիմինյանո և Կյանտի</a>, <a href="val-d-orcia-tour">Վալ դ'Օրչա</a>, <a href="pisa-lucca-tour">Պիզա և Լուկկա</a>, <a href="cinque-terre-tour">Չինկվե Տերե</a></li>
         <li><b>Տուրեր Հռոմում և Վատիկանում՝</b> <a href="rome-walking-tour">զբոսատուր Հռոմում</a>, <a href="vatican-museums-tour">տուր Վատիկանում՝ թանգարաններով</a>, <a href="rome-vatican-tour">Հռոմ և Վատիկան</a></li>
@@ -1230,9 +1231,11 @@ body.bk-open { overflow: hidden; }
   function viewSeo() {
     var k = viewKey(), hy = IT.state.lang === "hy";
     if (!k || !VIEW_SLUG[k] || !document.documentElement.hasAttribute("data-city") && !viewUrlSet) { IT.seo(IT.SEO_HOME[IT.state.lang]); return; }
-    var name = GROUPS[k] ? groupName(k) : k === "top" ? IT.t().top : k === "every" ? IT.t().allTours : hy ? "Տուրեր " + (CITY_IN[k] || cityName(k)) : cityName(k) + " tours";
-    IT.seo({ title: name + (hy ? " | Տուրեր դեպի Իտալիա՝ հայերենով | Ital Travel" : " | Tours in Italy in Armenian | Ital Travel"),
-             desc: GROUPS[k] ? GROUPS[k][hy ? "dhy" : "den"] : IT.SEO_HOME[IT.state.lang].desc });
+    // City sections: «Էքսկուրսիաներ և տուրեր Հռոմում հայերենով» and the city's own description (from CITIES)
+    var city =!GROUPS[k] && k !== "top" && k !== "every", cd = city ? CITIES.filter(function (c) { return c.c === k; })[0] : null;
+    var name = GROUPS[k] ? groupName(k) : k === "top" ? IT.t().top : k === "every" ? IT.t().allTours : hy ? "Էքսկուրսիաներ և տուրեր " + (CITY_IN[k] || cityName(k)) + " հայերենով" : "Tours in " + cityName(k) + " with an Armenian-speaking guide";
+    IT.seo({ title: name + (city ? " | Ital Travel" : hy ? " | Տուրեր դեպի Իտալիա՝ հայերենով | Ital Travel" : " | Tours in Italy in Armenian | Ital Travel"),
+             desc: GROUPS[k] ? GROUPS[k][hy ? "dhy" : "den"] : cd && cd[hy ? "hy" : "en"] ? cd[hy ? "hy" : "en"] + (hy ? " Էքսկուրսիաներ հայերենով, ամրագրեք առցանց։" : " Tours in Armenian, book online.") : IT.SEO_HOME[IT.state.lang].desc });
   }
   var viewUrlSet = false;
   function setViewUrl() {
@@ -1497,7 +1500,7 @@ body.bk-open { overflow: hidden; }
   $("dt-back").addEventListener("click", function () { closeTour(); });
   // "Tours in Italy" text above the footer: Armenian is written in the page, English comes from here (links get ?lang=en)
   var TI_HY = null, TI_EN = '<ul>' +
-    '<li class=\"ti-pk\"><a class=\"pk-h\" href=\"italy-tour\">Package tour «Italy in Armenian»</a><a class=\"ti-pk-pics\" href=\"italy-tour\" aria-hidden=\"true\" tabindex=\"-1\"><img src=\"img/t/rome-7071.jpg\" alt=\"\"><img src=\"img/fl-golden-hour.jpg\" alt=\"\"><img src=\"img/t/tu-cypress-road.jpg\" alt=\"\"><img src=\"img/t/venice.jpg\" alt=\"\"></a><p class=\"pk-d\" id=\"pk-d\">7 days in Italy: Rome, the Vatican, Florence, Tuscany and Venice, with tours in Armenian. We arrange the tours, the airport transfer and travel between cities, and help you choose hotels. On the plan: the Colosseum and historic Rome, the Vatican Museums, Florence, the cradle of the Renaissance, the Tuscan hills and wines, Venice and San Lazzaro island. We plan it around your dates; you book the flights yourself. </p><a class=\"pk-more\" href=\"italy-tour\">See the plan →</a></li>' +
+    '<li class=\"ti-pk\"><a class=\"pk-h\" href=\"turer-depi-italia\">Package tour «Italy in Armenian»</a><a class=\"ti-pk-pics\" href=\"turer-depi-italia\" aria-hidden=\"true\" tabindex=\"-1\"><img src=\"img/t/rome-7071.jpg\" alt=\"Հռոմ, Կոլիզեում – turer italiayum, italia tur\"><img src=\"img/fl-golden-hour.jpg\" alt=\"Ֆլորենցիա – turer depi Italia, Florence tour\"><img src=\"img/t/tu-cypress-road.jpg\" alt=\"Տոսկանա – Tuscany tur, туры в Италию из Еревана\"><img src=\"img/t/venice.jpg\" alt=\"Վենետիկ – Venetik tur, italia tur paket\"></a><p class=\"pk-d\" id=\"pk-d\">7 days in Italy: Rome, the Vatican, Florence, Tuscany and Venice, with tours in Armenian. We arrange the tours, the airport transfer and travel between cities, and help you choose hotels. On the plan: the Colosseum and historic Rome, the Vatican Museums, Florence, the cradle of the Renaissance, the Tuscan hills and wines, Venice and San Lazzaro island. We plan it around your dates; you book the flights yourself. </p><a class=\"pk-more\" href=\"turer-depi-italia\">See the plan →</a></li>' +
     '<li><b>Tours in Florence:</b> <a href="florence-walking-tour">cultural walking tour</a>, <a href="florence-cooking-class">cooking class</a>, <a href="florence-fiat-500-tour">Fiat 500 cabrio tour</a></li>' +
     '<li><b>Tours in Tuscany:</b> <a href="siena-san-gimignano-chianti-tour">Siena, San Gimignano &amp; Chianti</a>, <a href="val-d-orcia-tour">Val d\'Orcia</a>, <a href="pisa-lucca-tour">Pisa &amp; Lucca</a>, <a href="cinque-terre-tour">Cinque Terre</a></li>' +
     '<li><b>Tours in Rome and the Vatican:</b> <a href="rome-walking-tour">Rome walking tour</a>, <a href="vatican-museums-tour">Vatican tour with the museums</a>, <a href="rome-vatican-tour">Rome and the Vatican</a></li>' +
