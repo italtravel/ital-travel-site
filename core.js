@@ -5,7 +5,7 @@
 
   var UI = {
     en: {
-      tagline: "Italy, in your language", navTours: "Tours", navGuides: "Guides", navJoin: "For guides", navContact: "Contact", navBook: "Book a tour", menu: "Menu",
+      tagline: "Italy, in your language", navTours: "Tours", navGuides: "Guides", navBlog: "Blog", navJoin: "For guides", navContact: "Contact", navBook: "Book a tour", menu: "Menu",
       stamp: "Children under 14 go free", eyebrow: "Tuscany · Rome · Venice", h1a: "Discover Italy", h1b: "with Armenian‑speaking guides",
       lead: "Private and Group Tours, Events and Special Occasions, Transfers, Wine Tasting and Masterclasses",
       sv1: "Private and group tours", sv2: "Events and special occasions", sv3: "Transfers", sv4: "Wine tasting", sv5: "Masterclasses",
@@ -64,7 +64,7 @@
       fShort: { t3: "Rome walking tour", t7: "Vatican tour", t19: "Vatican + Museums", t17: "Rome & the Vatican", t1: "Florence tour", t15: "Florence by car", t16: "Fiat 500 tour", t9: "Siena & Chianti", t18: "Monteriggioni & Chianti", t10: "San Gimignano, half day", t11: "Val d'Orcia", t12: "Pisa & Lucca", t13: "Cinque Terre & Pisa", t14: "Cinque Terre", t6: "More Tuscany tours", t5: "Cooking class", t4: "Venice walk", t8: "San Lazzaro island", tr1: "Rome airport transfer" }
     },
     hy: {
-      tagline: "Իտալիա՝ ձեր լեզվով", navTours: "Տուրեր", navGuides: "Էքսկուրսավարներ", navJoin: "Էքսկուրսավարների համար", navContact: "Կապ", navBook: "Պատվիրել տուր", menu: "Մենյու",
+      tagline: "Իտալիա՝ ձեր լեզվով", navTours: "Տուրեր", navGuides: "Էքսկուրսավարներ", navBlog: "Բլոգ", navJoin: "Էքսկուրսավարների համար", navContact: "Կապ", navBook: "Պատվիրել տուր", menu: "Մենյու",
       stamp: "Մինչև 14 տարեկան երեխաները՝ անվճար", eyebrow: "Տոսկանա · Հռոմ · Վենետիկ", h1a: "Բացահայտեք Իտալիան", h1b: "հայախոս էքսկուրսավարների հետ",
       lead: "Անհատական և խմբային տուրեր, միջոցառումներ և հատուկ առիթներ, տրանսֆերներ, գինու համտես և վարպետության դասեր",
       sv1: "Անհատական և խմբային տուրեր", sv2: "Միջոցառումներ և հատուկ առիթներ", sv3: "Տրանսֆերներ", sv4: "Գինու համտես", sv5: "Վարպետության դասեր",

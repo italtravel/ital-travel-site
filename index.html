@@ -375,8 +375,8 @@ a.bx { text-decoration: none; }
 @keyframes abIn { from { opacity: 0; transform: translateY(26px); } }
 @media (max-width: 980px) {
   .nav { display: flex !important; }
-  .nav a:not(.nav-ab) { display: none; }
-  .nav-ab { padding: 6px 14px; border-radius: 99px; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.45); text-shadow: none; font-size: .9rem; backdrop-filter: blur(6px); }
+  .nav a:not(.nav-ab):not(.nav-blog) { display: none; }
+  .nav-ab, .nav-blog { padding: 6px 14px; border-radius: 99px; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.45); text-shadow: none; font-size: .9rem; backdrop-filter: blur(6px); }
 }
 @media (max-width: 560px) { /* narrow phones: the About us button goes on its own line under the language and currency */
   .top { flex-wrap: wrap; row-gap: 2px; column-gap: 8px; }
@@ -745,7 +745,7 @@ body.bk-open { overflow: hidden; }
     <div class="mist" aria-hidden="true"><i></i><i></i><i></i></div>
     <header class="top">
       <a class="brand light" href="./" aria-label="Ital Travel"><b>Ital<span>·</span>Travel</b><i></i><small>տուրեր իտալիայում</small></a>
-      <nav class="nav" aria-label="Main"><a href="#tours" data-t="navTours"></a><a href="#about" class="nav-ab" id="nav-ab" data-about aria-haspopup="dialog"></a><a href="#team" data-t="navGuides"></a><a href="#site-foot" data-t="navContact"></a></nav>
+      <nav class="nav" aria-label="Main"><a href="#tours" data-t="navTours"></a><a href="#about" class="nav-ab" id="nav-ab" data-about aria-haspopup="dialog"></a><a href="#team" data-t="navGuides"></a><a href="blog" data-t="navBlog" class="nav-blog"></a><a href="#site-foot" data-t="navContact"></a></nav>
       <div class="sw" role="group" aria-label="Language"><button type="button" data-lang="hy" aria-pressed="true">ՀԱՅ</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
       <div class="sw" role="group" aria-label="Currency"><button type="button" data-cur="EUR" aria-pressed="true" title="Euro">€</button><button type="button" data-cur="AMD" aria-pressed="false" title="Armenian dram">֏</button><button type="button" data-cur="USD" aria-pressed="false" title="US dollar">$</button></div>
       <a class="ghost" href="info.html?p=partner" data-t="heroJoin"></a>
