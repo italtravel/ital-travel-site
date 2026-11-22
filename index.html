@@ -1174,7 +1174,7 @@ body.bk-open { overflow: hidden; }
   fan.addEventListener("click", function (e) {
     var c = e.target.closest(".fc"); if (!c || fmoved) return;
     var i = +c.dataset.i;
-    if (i !== fcur) fgo(i);
+    if (i !== fcur) fgo(i); else setViewUrl(); // the card already in front (e.g. Top tours at the start) gets its address too
     openTours();
   });
   fan.addEventListener("keydown", function (e) {
