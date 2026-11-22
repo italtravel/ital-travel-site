@@ -1199,11 +1199,35 @@ body.bk-open { overflow: hidden; }
     return u.onReq;
   }
   function pic(x) { return IT.thumb(IT.IMG[x.id]); }
-  function showCity(c) {
-    shown = c;
+  /* Each section of tours has its own address: italtravel.am/tuscany-tours, /group-tours, /all-tours…
+     Choosing a section changes the address (and the Google title); opening that address shows the section.
+     The files (tuscany-tours.html…) are copies of this page made by tools/build-pages.ps1, with <html data-city="tuscany">. */
+  var VIEW_SLUG = { top: "top-tours", every: "all-tours", rome: "rome-tours", vatican: "vatican-tours", florence: "florence-tours",
+                    tuscany: "tuscany-tours", venice: "venice-tours", group: "group-tours", priv: "private-tours", tuscanyPriv: "private-tours-tuscany" };
+  function viewKey() {
+    var dc = document.documentElement.getAttribute("data-city");
+    if (dc && !viewUrlSet) return dc; // a section page, before anything is chosen
+    return shown === "every" && tfCity !== "all" ? tfCity : shown;
+  }
+  function viewSeo() {
+    var k = viewKey(), hy = IT.state.lang === "hy";
+    if (!k || !VIEW_SLUG[k] || !document.documentElement.hasAttribute("data-city") && !viewUrlSet) { IT.seo(IT.SEO_HOME[IT.state.lang]); return; }
+    var name = GROUPS[k] ? groupName(k) : k === "top" ? IT.t().top : k === "every" ? IT.t().allTours : hy ? "Տուրեր " + (CITY_IN[k] || cityName(k)) : cityName(k) + " tours";
+    IT.seo({ title: name + (hy ? " | Տուրեր դեպի Իտալիա՝ հայերենով | Ital Travel" : " | Tours in Italy in Armenian | Ital Travel"),
+             desc: GROUPS[k] ? GROUPS[k][hy ? "dhy" : "den"] : IT.SEO_HOME[IT.state.lang].desc });
+  }
+  var viewUrlSet = false;
+  function setViewUrl() {
+    var s = VIEW_SLUG[viewKey()]; if (!s) return;
+    try { history.replaceState(history.state, "", "/" + s + (IT.state.lang === "en" ? "?lang=en" : "") + location.hash); viewUrlSet = true; } catch (e) {}
+    viewSeo();
+  }
+  function showCity(c, quiet) {
+    shown = c; if (c !== "every") tfCity = "all";
     var fi = -1; CITIES.forEach(function (k, i) { if (k.c === c) fi = i; });
     if (fi >= 0 && fi !== fcur) { fcur = fi; placeFan(); }
     drawBoxes();
+    if (!quiet) setViewUrl();
   }
   function inF(f, x) { return f.ids.indexOf(x.id) >= 0; }
   function drawBoxes() {
@@ -1248,7 +1272,7 @@ body.bk-open { overflow: hidden; }
   $("tf").addEventListener("click", function (ev) {
     var b = ev.target.closest("[data-fc]"); if (!b) return;
     tfCity = b.dataset.fc;
-    drawBoxes();
+    drawBoxes(); setViewUrl();
   });
   var PEOPLE_ICON ='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 19c.6-3.2 3-5 6-5s5.4 1.8 6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M15.5 5.2a3 3 0 0 1 0 5.6M17.5 14.4c1.8.7 3 2.3 3.4 4.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
   // Price on the box: for tours with a price list, the total for the number of people chosen in the search bar
@@ -1522,13 +1546,13 @@ body.bk-open { overflow: hidden; }
   });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeAbout(); });
   if (location.hash === "#about") setTimeout(openAbout, 300);
-  var qCity = new URLSearchParams(location.search).get("city") || new URLSearchParams(location.search).get("tours"); // ?tours= is the old home page's address for a city
-  if (qCity && (IT.CITY[qCity] || qCity === "top" || qCity === "every")) setTimeout(function () { showCity(qCity); openTours(); }, 400);
+  var qCity = IT.qp("city") || new URLSearchParams(location.search).get("tours"); // ?tours= is the old home page's address for a city
+  if (qCity && (IT.CITY[qCity] || GROUPS[qCity] || qCity === "top" || qCity === "every")) setTimeout(function () { showCity(qCity); openTours(); }, 400);
   else {
     // First visit: when the 3D cards scroll into view, "Top tours" is in front and its tours rise in underneath (no jump in the page)
     var firstShow = function () {
       var s = $("city-tours"); if (s.classList.contains("open")) return;
-      showCity(CITIES[fcur].c); s.classList.add("open");
+      showCity(CITIES[fcur].c, true); s.classList.add("open");
     };
     if ("IntersectionObserver" in window) {
       var io = new IntersectionObserver(function (es) { if (es.some(function (e) { return e.isIntersecting; })) { io.disconnect(); firstShow(); } }, { threshold: .25 });
@@ -1653,7 +1677,7 @@ body.bk-open { overflow: hidden; }
   })();
 
   IT.init({
-    after: function () { IT.seo(IT.SEO_HOME[IT.state.lang]); drawCat(); fillSearch(); drawN(); drawFan(); drawBoxes(); drawTour(); drawOcc(); fixFoot(); if (open) dtFoot(); drawTI(); },
+    after: function () { viewSeo(); drawCat(); fillSearch(); drawN(); drawFan(); drawBoxes(); drawTour(); drawOcc(); fixFoot(); if (open) dtFoot(); drawTI(); },
     // Our team: round photos; each opens the person's own page
     guides: function (list) {
       var u = IT.t(), GC = ["var(--verde)", "var(--rosso)", "var(--verde-d)"];

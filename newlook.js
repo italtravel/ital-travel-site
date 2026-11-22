@@ -2,7 +2,8 @@
    index.html → ./, ./?tours=rome → ./?city=rome, page.html?… → info.html?…, tour.html?… → trip.html?…
    On the home page the footer is left alone (the home page points it at its own sections). */
 (function () {
-  var onHome = /\/(index\.html)?$/.test(location.pathname);
+  // the home page, or a copy of it for one section of tours (tuscany-tours…, marked <html data-city>)
+  var onHome = /\/(index\.html)?$/.test(location.pathname) || document.documentElement.hasAttribute("data-city");
   // trip.html?id=t1 → florence-walking-tour.html, info.html?p=faq → faq.html (the pages' own addresses, see SLUG in core.js);
   // other parts of the address (?lang=en, #book…) are kept
   function ownPage(h) {

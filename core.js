@@ -771,7 +771,7 @@
   // The page's own address name (without .html) for a tour id, or for an info page p (+ id); "" if it has none
   function slugOf(p, id) { return (p ? SLUG["p:" + p + (id ? "/" + id : "")] : SLUG[id]) || ""; }
   function pageUrl(lang) {
-    var p = qp("p"), id = qp("id"), onHome = /\/(index\.html)?$/.test(location.pathname), slug = onHome ? "" : slugOf(p, id);
+    var p = qp("p"), id = qp("id"), onHome = /\/(index\.html)?$/.test(location.pathname) || document.documentElement.hasAttribute("data-city"), slug = onHome ? "" : slugOf(p, id);
     var q = new URLSearchParams(location.search), o = new URLSearchParams();
     if (!slug) SEO_KEEP.forEach(function (k) { if (q.get(k)) o.set(k, q.get(k)); });
     if (lang === "en") o.set("lang", "en");
