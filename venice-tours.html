@@ -772,7 +772,7 @@ body.bk-open { overflow: hidden; }
       <div class="sw" role="group" aria-label="Currency"><button type="button" data-cur="EUR" aria-pressed="true" title="Euro">€</button><button type="button" data-cur="AMD" aria-pressed="false" title="Armenian dram">֏</button><button type="button" data-cur="USD" aria-pressed="false" title="US dollar">$</button></div>
       <a class="ghost" href="info.html?p=partner" data-t="heroJoin"></a>
     </header>
-    <div class="title"><h1 class="h1-seo" data-t="h1seo">Տուրեր Իտալիայում հայախոս զբոսավարի հետ</h1><p class="big-t" id="big" aria-live="polite">Տուրեր Իտալիայում</p><div class="cap" id="cap"></div></div>
+    <div class="title"><h1 class="h1-seo" data-t="h1seo">Էքսկուրսիաներ և տուրեր Վենետիկում հայերենով</h1><p class="big-t" id="big" aria-live="polite">Տուրեր Իտալիայում</p><div class="cap" id="cap"></div></div>
     <div class="orbit" aria-label="Places"><div class="ring" id="ring"></div><div class="ob-logo" aria-hidden="true"><b>Ital<span>·</span>Travel</b><i></i><small>տուրեր իտալիայում</small></div></div>
   </section>
 
@@ -792,12 +792,12 @@ body.bk-open { overflow: hidden; }
   </section>
 
   <!-- Third section: every tour of the city in front of the fan -->
-  <section class="sec" id="city-tours" style="padding-top:0">
-    <h2 class="ct-h" id="ct-h"></h2>
+  <section class="sec open" id="city-tours" style="padding-top:0">
+    <h2 class="ct-h" id="ct-h">Բացահայտեք մեր տուրերը <em>Վենետիկում</em></h2>
     <div class="tf" id="tf" hidden>
       <div class="tf-row"><span class="tf-l" id="tf-cl"></span><div class="chips" id="tf-city" role="group" aria-labelledby="tf-cl"></div></div>      <p class="tf-n" id="tf-n" aria-live="polite"></p>
     </div>
-    <div class="boxes" id="boxes" aria-live="polite"></div>
+    <div class="boxes" id="boxes" aria-live="polite"><a class="bx" href="venice-walking-tour" data-id="t4" style="animation-delay:0.12s"><span class="ph"><img src="img/t/venice.jpg" alt="" loading="lazy" decoding="async" style="object-position:50% 60%"><span class="ar" aria-hidden="true">→</span><i>Վենետիկ</i></span><span class="bi"><b>Զբոսանք Վենետիկում</b><span class="facts"><span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"></circle><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>Ըստ պայմանավորվածության</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="2"></circle><path d="M3 19c.6-3.2 3-5 6-5s5.4 1.8 6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path><path d="M15.5 5.2a3 3 0 0 1 0 5.6M17.5 14.4c1.8.7 3 2.3 3.4 4.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>2 անձից</span></span><ul><li>Հայախոս էքսկուրսավար</li><li>Զբոսանք Վենետիկի ամենահետաքրքիր անկյուններով</li></ul><span class="pz"><b>Գինը՝ հարցման դեպքում</b><small></small></span></span></a><a class="bx" href="san-lazzaro-armenian-island-venice" data-id="t8" style="animation-delay:0.20s"><span class="ph"><img src="img/t/sl-island.jpg" alt="" loading="lazy" decoding="async" style="object-position:50% 50%"><span class="ar" aria-hidden="true">→</span><i>Վենետիկ</i></span><span class="bi"><b>Սուրբ Ղազար կղզի</b><span class="facts"><span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"></circle><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>Ըստ պայմանավորվածության</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="2"></circle><path d="M3 19c.6-3.2 3-5 6-5s5.4 1.8 6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path><path d="M15.5 5.2a3 3 0 0 1 0 5.6M17.5 14.4c1.8.7 3 2.3 3.4 4.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>2 անձից</span></span><ul><li>Հայախոս էքսկուրսավար</li><li>Այց Սուրբ Ղազար կղզու հայկական վանք</li></ul><span class="pz"><b>Գինը՝ հարցման դեպքում</b><small></small></span></span></a></div>
   </section>
 
   <!-- Tours in Italy: a short text with the words people search for ("տուրեր Իտալիա", "Իտալիա տուր") and links to the tour pages.
@@ -1234,6 +1234,8 @@ body.bk-open { overflow: hidden; }
     // City sections: «Էքսկուրսիաներ և տուրեր Հռոմում հայերենով» and the city's own description (from CITIES)
     var city =!GROUPS[k] && k !== "top" && k !== "every", cd = city ? CITIES.filter(function (c) { return c.c === k; })[0] : null;
     var name = GROUPS[k] ? groupName(k) : k === "top" ? IT.t().top : k === "every" ? IT.t().allTours : hy ? "Էքսկուրսիաներ և տուրեր " + (CITY_IN[k] || cityName(k)) + " հայերենով" : "Tours in " + cityName(k) + " with an Armenian-speaking guide";
+    var h1 = document.querySelector(".h1-seo"); // a section page (rome-tours…) has its own heading
+    if (h1 && document.documentElement.hasAttribute("data-city")) h1.textContent = name;
     IT.seo({ title: name + (city ? " | Ital Travel" : hy ? " | Տուրեր դեպի Իտալիա՝ հայերենով | Ital Travel" : " | Tours in Italy in Armenian | Ital Travel"),
              desc: GROUPS[k] ? GROUPS[k][hy ? "dhy" : "den"] : cd && cd[hy ? "hy" : "en"] ? cd[hy ? "hy" : "en"] + (hy ? " Էքսկուրսիաներ հայերենով, ամրագրեք առցանց։" : " Tours in Armenian, book online.") : IT.SEO_HOME[IT.state.lang].desc });
   }

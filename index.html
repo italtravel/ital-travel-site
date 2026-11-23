@@ -1234,6 +1234,8 @@ body.bk-open { overflow: hidden; }
     // City sections: «Էքսկուրսիաներ և տուրեր Հռոմում հայերենով» and the city's own description (from CITIES)
     var city =!GROUPS[k] && k !== "top" && k !== "every", cd = city ? CITIES.filter(function (c) { return c.c === k; })[0] : null;
     var name = GROUPS[k] ? groupName(k) : k === "top" ? IT.t().top : k === "every" ? IT.t().allTours : hy ? "Էքսկուրսիաներ և տուրեր " + (CITY_IN[k] || cityName(k)) + " հայերենով" : "Tours in " + cityName(k) + " with an Armenian-speaking guide";
+    var h1 = document.querySelector(".h1-seo"); // a section page (rome-tours…) has its own heading
+    if (h1 && document.documentElement.hasAttribute("data-city")) h1.textContent = name;
     IT.seo({ title: name + (city ? " | Ital Travel" : hy ? " | Տուրեր դեպի Իտալիա՝ հայերենով | Ital Travel" : " | Tours in Italy in Armenian | Ital Travel"),
              desc: GROUPS[k] ? GROUPS[k][hy ? "dhy" : "den"] : cd && cd[hy ? "hy" : "en"] ? cd[hy ? "hy" : "en"] + (hy ? " Էքսկուրսիաներ հայերենով, ամրագրեք առցանց։" : " Tours in Armenian, book online.") : IT.SEO_HOME[IT.state.lang].desc });
   }
