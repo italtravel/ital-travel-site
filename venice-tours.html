@@ -988,7 +988,7 @@ body.bk-open { overflow: hidden; }
   var EXTRA = {
     hy: { aboutUs: "Մեր մասին", waUs: "Գրեք մեզ WhatsApp-ով", more: "Ավելին տուրի մասին", readMore: "Կարդալ ավելին ↓", readLess: "Փակել ↑", incH: "Ինչ է ներառված", seeTours: "Դիտել տուրերը →", write: "Գրել մեզ →", seeTransfer: "Տրանսֆեր Հռոմում →", seeClass: "Դիտել դասընթացը →", seeTuscany: "Տուրեր Տոսկանայում →", back: "← Վերադառնալ", details: "Մանրամասներ և լուսանկարներ", book: "Ամրագրել առցանց", ask: "Հարցնել WhatsApp-ով", route: "Երթուղի", similar: "Նմանատիպ տուրեր", hello: "Բարև, ինձ հետաքրքրում է՝ ",
       upTo: "մինչև {n} անձ", from1: "1 անձից", from2: "2 անձից", forN: "{n} անձի համար", minus: "Պակասեցնել", plus: "Ավելացնել",
-      stopsN: "{n} կանգառ", routesN: "{n} երթուղի", adultsL: "Մեծահասակներ (14+)", kidsL: "Երեխաներ", kidsFree: "մինչև 14՝ անվճար",
+      stopsN: "{n} կանգառ", routesN: "{n} երթուղի", adultsL: "Մեծահասակներ (14+)", kidsL: "Մինչև 14 տարեկան երեխաները անվճար", kidsFree: "",
       abText: ["Ital Travel-ը ներկայացնում է հայախոս էքսկուրսավարներին Իտալիայում։ Մենք առաջարկում ենք տուրեր, փորձառություններ և ծառայություններ Իտալիայի տարբեր մասերում։",
         "Մեր նպատակն է միավորել Հայաստանից և ամբողջ աշխարհից եկող հայ ճանապարհորդներին և օգնել նրանց բացահայտել, վայելել և ճանաչել Իտալիան իրենց մայրենի լեզվով։",
         "Մեր նպատակն է նաև միավորել Իտալիայում աշխատող հայ էքսկուրսավարներին և ծառայություններ մատուցողներին, ովքեր ցանկանում են աշխատել հայերի հետ։",
@@ -1373,7 +1373,7 @@ body.bk-open { overflow: hidden; }
     $("dt-price").innerHTML = x.prices ? esc(IT.money(IT.fromPrice(x))) + " <small>" + esc(x.fromPP ? u.per : u.for2) + "</small>" : esc(priceText(x));
     // Adults and children (children under 14 go free); both go on to the booking window
     var mx = x.max || 30;
-    $("dt-al").textContent = e.adultsL; $("dt-kl").innerHTML = esc(e.kidsL) + " <small>" + esc(e.kidsFree) + "</small>";
+    $("dt-al").textContent = e.adultsL; $("dt-kl").innerHTML = esc(e.kidsL) + (e.kidsFree ? " <small>" + esc(e.kidsFree) + "</small>" : "");
     $("dt-n").textContent = people; $("dt-k").textContent = kids;
     $("dt-minus").disabled = people <= (x.fromPP ? 1 : 2); $("dt-plus").disabled = people + kids >= mx;
     $("dt-kminus").disabled = kids <= 0; $("dt-kplus").disabled = people + kids >= mx;

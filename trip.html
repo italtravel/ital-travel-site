@@ -469,7 +469,7 @@ body.bk-open { overflow: hidden; }
       book: "Book this tour", ask: "Ask on WhatsApp", payDay: "Pay in cash or by bank transfer.", others: "Other tours", notFound: "We couldn't find this tour.", seeAll: "See all tours",
       waMsg: "Hello! I'm interested in: {t}", withX: "With the extra destinations", readMore: "Read more ↓", readLess: "Show less ↑", incH: "What's included", inc: "Included", exc: "Not included", more: "More about the tour" },
     hy: { back: "← Բոլոր տուրերը", home: "Վերադառնալ կայք", tours: "Տուրեր", dur: "Տևողությունը", hrs: "ժամ", photos: "{n} լուսանկար", about: "Տուրի մասին", plan: "Երթուղի", notes: "Լավ է իմանալ",
-      price: "Գինը", adults: "Մեծահասակներ (14+)", kidsL: "Երեխաներ", kidsSm: "մինչև 14՝ անվճար", kidsFree: "Մինչև 14 տարեկան երեխաները՝ անվճար", total: "Ընդամենը {n} մեծահասակի համար", onReq: "Գինը՝ հարցման դեպքում", onReqP: "Գրեք մեզ ձեր ամսաթվերը և խմբի չափը, և մենք կուղարկենք գինը։",
+      price: "Գինը", adults: "Մեծահասակներ (14+)", kidsL: "Մինչև 14 տարեկան երեխաները անվճար", kidsSm: "", kidsFree: "Մինչև 14 տարեկան երեխաները՝ անվճար", total: "Ընդամենը {n} մեծահասակի համար", onReq: "Գինը՝ հարցման դեպքում", onReqP: "Գրեք մեզ ձեր ամսաթվերը և խմբի չափը, և մենք կուղարկենք գինը։",
       book: "Ամրագրել այս տուրը", ask: "Հարցնել WhatsApp-ով", payDay: "Վճարումը՝ կանխիկ կամ բանկային փոխանցումով։", others: "Այլ տուրեր", notFound: "Այս տուրը չգտնվեց։", seeAll: "Դիտել բոլոր տուրերը",
       waMsg: "Բարև, ինձ հետաքրքրում է՝ {t}", withX: "Լրացուցիչ վայրերով", readMore: "Կարդալ ավելին ↓", readLess: "Փակել ↑", incH: "Ինչ է ներառված", inc: "Ներառված է", exc: "Ներառված չէ", more: "Ավելին տուրի մասին" }
   };
@@ -549,7 +549,7 @@ body.bk-open { overflow: hidden; }
     // Adults and children counters (children under 14 go free); both go on to the booking window
     var mx = x.max || 30;
     var steps = '<div class="stepper"><span>' + esc(u.adults) + '</span><div class="ctl"><button type="button" data-adj="-1" aria-label="−1"' + (adults <= 2 ? " disabled" : "") + '>−</button><output>' + adults + '</output><button type="button" data-adj="1" aria-label="+1"' + (adults + kids >= mx ? " disabled" : "") + '>+</button></div></div>' +
-      '<div class="stepper"><span>' + esc(u.kidsL) + "<small>" + esc(u.kidsSm) + '</small></span><div class="ctl"><button type="button" data-kadj="-1" aria-label="−1"' + (kids <= 0 ? " disabled" : "") + '>−</button><output>' + kids + '</output><button type="button" data-kadj="1" aria-label="+1"' + (adults + kids >= mx ? " disabled" : "") + '>+</button></div></div>';
+      '<div class="stepper"><span>' + esc(u.kidsL) + (u.kidsSm ? "<small>" + esc(u.kidsSm) + "</small>" : "") + '</span><div class="ctl"><button type="button" data-kadj="-1" aria-label="−1"' + (kids <= 0 ? " disabled" : "") + '>−</button><output>' + kids + '</output><button type="button" data-kadj="1" aria-label="+1"' + (adults + kids >= mx ? " disabled" : "") + '>+</button></div></div>';
     var pr, cn = IT.state.cur !== "EUR" ? '<p class="small">' + esc(IT.t().curNote) + "</p>" : "";
     if (x.prices) {
       var on = adults <= 2 ? 0 : adults === 3 ? 1 : adults === 4 ? 2 : 3;
