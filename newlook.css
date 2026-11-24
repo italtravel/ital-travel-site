@@ -76,3 +76,33 @@ a.brand.light small { color: #A9CBB6; }
 .site-foot a:hover, .site-foot .sf-ck:hover { color: #fff; }
 .site-foot .sf-bottom { border-top-color: rgba(255,255,255,.12); color: #A9C2B3; padding-block: 20px 26px; }
 @media (max-width: 560px) { .site-foot { border-radius: 22px; } .site-foot a.sf-badge { width: 112px; height: 112px; } }
+
+/* Computers: pages use the full screen width (same edges as the home page) */
+@media (min-width: 1000px) {
+  :root { --gl: max(24px, env(safe-area-inset-left, 0px)); --gr: max(24px, env(safe-area-inset-right, 0px)); }
+  .wrap { max-width: 2200px; padding-left: var(--gl); padding-right: var(--gr); }
+  .top .wrap { max-width: none; width: 100%; padding-left: calc(var(--gl) + 4px); padding-right: calc(var(--gr) + 4px); }
+  .site-foot { max-width: calc(2200px - var(--gl) - var(--gr)); }
+  .head, .card, .post, .legal, .faq { max-width: none; }
+  /* Tour pages */
+  .gallery { grid-template-rows: repeat(2, clamp(210px, 16vw, 320px)); }
+  .gallery.n1, .gallery.n2 { grid-template-rows: clamp(420px, 32vw, 640px); }
+  .layout { grid-template-columns: minmax(0, 1fr) clamp(340px, 26vw, 480px); }
+  .ogrid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+  /* Blog articles: the photo stays at the left while the text scrolls at the right */
+  .post:has(> .post-ph) { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); column-gap: clamp(24px, 2.6vw, 48px); align-content: start; }
+  .post > * { grid-column: 2; min-width: 0; }
+  .post:not(:has(> .post-ph)) > * { grid-column: 1; }
+  .post > .post-ph { grid-column: 1; grid-row: 1 / span 12; align-self: start; position: sticky; top: 20px; height: calc(100vh - 40px); max-height: 900px; }
+  .post-in { max-height: clamp(420px, 34vw, 600px); }
+  /* FAQ: questions in two columns */
+  .faq { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 18px; align-items: start; }
+  .faq .faq-h { grid-column: 1 / -1; }
+  /* Package page: the seven days as 4 + 3 boxes that fill the row */
+  .days ol { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .days ol > li { grid-column: span 3; }
+  .days ol > li:nth-child(n+5) { grid-column: span 4; }
+  .trip-pics img { height: clamp(220px, 20vw, 380px); }
+  .prof { grid-template-columns: minmax(0, clamp(380px, 34vw, 640px)) minmax(0, 1fr); }
+  .posts { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+}

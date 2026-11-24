@@ -753,13 +753,27 @@ body.bk-open { overflow: hidden; }
   #fan .fc[data-p="3"] { --x: 58cqw; }
   .boxes { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
   #ig-reels .reels > * { flex: 1 1 200px; width: auto; max-width: 320px; }
+  /* Other services, About us and the tour window use the full width too */
+  #ofan { --w: clamp(330px, 36vw, 780px); --x1: calc(46.7cqw - var(--w) * .386); container-type: inline-size; height: calc(var(--w) * .84 + 74px); }
+  #ofan .fc { aspect-ratio: 5 / 4.2; }
+  #ofan .fc[data-p="-1"] { --x: calc(var(--x1) * -1); }
+  #ofan .fc[data-p="1"] { --x: var(--x1); }
+  .ab-box { max-width: none; }
+  #about-us .ab-body { grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); align-items: stretch; gap: clamp(26px, 3.4vw, 60px); }
+  #about-us .ab-box .ab-ph { aspect-ratio: auto; min-height: 380px; }
+  #about-us .ab-body > .ab-t { align-content: center; font-size: 1.08rem; }
+  #about-us .ab-t .ab-t { font-size: inherit; }
+  .dt-in { max-width: 2200px; }
   /* Cities with only a few tours: the boxes share the row instead of leaving a hole at the right */
   .boxes:has(> :nth-child(3):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .boxes:has(> :nth-child(4):last-child), .boxes:has(> :nth-child(8):last-child) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .boxes:has(> :nth-child(6):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .boxes:has(> :nth-child(2):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 1180px; margin-inline: auto; }
   .boxes:has(> :only-child) { grid-template-columns: minmax(0, 560px); justify-content: center; }
   .boxes:has(> :nth-child(3):last-child) .ph, .boxes:has(> :nth-child(2):last-child) .ph { aspect-ratio: 16 / 10; }
 }
-@media (min-width: 1700px) { #fan { --x2: calc(46.3cqw - var(--w) * .29); } }
+@media (min-width: 1400px) { .boxes:has(> :nth-child(5):last-child) { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+@media (min-width: 1700px) { #fan { --x2: calc(46.3cqw - var(--w) * .29); } #ofan { --x1: calc(45.9cqw - var(--w) * .386); } }
 </style>
 <!-- Microsoft Clarity (visit statistics, heatmaps). It loads only after the visitor presses "Accept" in the cookie banner. -->
 <script type="text/javascript">
