@@ -738,7 +738,29 @@ body.bk-open { overflow: hidden; }
 .bk .sum dl { grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); }
 .bk .sum dd { overflow-wrap: anywhere; }
 .bk .tip-b { border-width: 1px; }
-.bk .tip-b[aria-pressed="true"], .bk .addon.on { border-color: var(--verde); }</style>
+.bk .tip-b[aria-pressed="true"], .bk .addon.on { border-color: var(--verde); }
+/* Computers: the page uses the full screen width; the city cards and the tour boxes reach both sides */
+@media (min-width: 1000px) {
+  :root { --gl: max(24px, env(safe-area-inset-left, 0px)); --gr: max(24px, env(safe-area-inset-right, 0px)); }
+  .wrap, .site-foot { max-width: 2200px; }
+  .site-foot .wrap { max-width: none; }
+  #fan { --w: clamp(300px, max(24vw, min(27vw, 52vh)), 600px); --x2: calc(46.9cqw - var(--w) * .29); --x1: calc(var(--x2) * .55); container-type: inline-size; height: calc(var(--w) * 1.367 + 74px); }
+  #fan .fc[data-p="-1"] { --x: calc(var(--x1) * -1); }
+  #fan .fc[data-p="1"] { --x: var(--x1); }
+  #fan .fc[data-p="-2"] { --x: calc(var(--x2) * -1); }
+  #fan .fc[data-p="2"] { --x: var(--x2); }
+  #fan .fc[data-p="-3"] { --x: -58cqw; }
+  #fan .fc[data-p="3"] { --x: 58cqw; }
+  .boxes { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
+  #ig-reels .reels > * { flex: 1 1 200px; width: auto; max-width: 320px; }
+  /* Cities with only a few tours: the boxes share the row instead of leaving a hole at the right */
+  .boxes:has(> :nth-child(3):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .boxes:has(> :nth-child(2):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 1180px; margin-inline: auto; }
+  .boxes:has(> :only-child) { grid-template-columns: minmax(0, 560px); justify-content: center; }
+  .boxes:has(> :nth-child(3):last-child) .ph, .boxes:has(> :nth-child(2):last-child) .ph { aspect-ratio: 16 / 10; }
+}
+@media (min-width: 1700px) { #fan { --x2: calc(46.3cqw - var(--w) * .29); } }
+</style>
 <!-- Microsoft Clarity (visit statistics, heatmaps). It loads only after the visitor presses "Accept" in the cookie banner. -->
 <script type="text/javascript">
   (function () {
