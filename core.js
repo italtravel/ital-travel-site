@@ -739,7 +739,7 @@
     t14: "cinque-terre-tour", t3: "rome-walking-tour", t7: "vatican-tour", t19: "vatican-museums-tour", t17: "rome-vatican-tour",
     t4: "venice-walking-tour", t8: "san-lazzaro-armenian-island-venice", tr1: "rome-airport-transfer",
     "p:italy": "turer-depi-italia", "p:blog": "blog", "p:blog/trains": "blog-italy-by-train", "p:blog/aperitivo": "blog-aperol-spritz", "p:blog/gelato": "blog-gelato", "p:blog/coffee": "blog-coffee", "p:blog/tips": "blog-italy-travel-tips",
-    "p:faq": "faq", "p:infobook": "booking-info", "p:manage": "manage-booking", "p:terms": "terms",
+    "p:faq": "faq", "p:manage": "manage-booking", "p:terms": "terms",
     "p:privacy": "privacy-policy", "p:cookies": "cookie-policy", "p:team/gaya": "team-gaya", "p:team/feliks": "team-feliks"
   };
   /* Windows that open over the page (tour window, booking, About us) get their own step in the browser history,
@@ -958,7 +958,7 @@
       '<p class="sf-info">' + esc(u.fWhere) + "<br>" + esc(u.am) + ' <a href="tel:+37499515169">+374 99 515169</a><br>' + esc(u.it) + ' <a href="tel:+393281770199">+39 328 177 0199</a><br>' +
       '<a href="mailto:' + esc(COMPANY.email) + '">' + esc(COMPANY.email) + '</a><br>Instagram <a href="' + IG + '" target="_blank" rel="noopener">@ital_travel_</a></p></div>' +
       "<div><h3>" + esc(u.fToursH) + "</h3><ul>" + chipList().map(function (c) { return li("./?tours=" + c.id + "#tours", c.label); }).join("") + "</ul></div>" +
-      "<div><h3>Ital Travel</h3><ul>" + li("./#team", u.fGuides) + pg("blog", "fBlog") + pg("infobook", "fBook") + pg("partner", "fPartner") + "</ul></div>" +
+      "<div><h3>Ital Travel</h3><ul>" + li("./#team", u.fGuides) + pg("blog", "fBlog") + pg("partner", "fPartner") + "</ul></div>" +
       "<div><h3>" + esc(u.fHelp) + "</h3><ul>" + pg("manage", "fManage") + pg("faq", "fFaq") + li(WA, u.fWa, true) + li(IG, "Instagram @ital_travel_", true) + "</ul></div></div>" +
       '<div class="wrap sf-bottom"><p>© ' + new Date().getFullYear() + " Ital Travel · " + esc(c.legal) + " · " + esc(c.reg) + " · " + esc(u.fRights) + "</p>" +
       '<p class="sf-links"><a href="page.html?p=privacy">' + esc(u.fPrivacy) + '</a> · <a href="page.html?p=cookies">' + esc(u.fCookiePol) + '</a> · <a href="page.html?p=terms">' + esc(u.fTerms) + '</a> · <a href="' + IG + '" target="_blank" rel="noopener">Instagram @ital_travel_</a> · <button type="button" class="sf-ck" data-consent-open>' + esc(u.fCookies) + "</button>" +

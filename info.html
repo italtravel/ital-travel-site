@@ -766,7 +766,6 @@ main { padding-block: 22px 70px; display: grid; gap: 26px; min-height: 60vh; ali
         '<div class="card"><h2>' + esc(T.changeH) + '</h2><ul class="perks">' + T.change.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>" +
         '<a class="btn btn-wa" href="' + wa + '" target="_blank" rel="noopener" style="justify-self:start"><svg><use href="#i-wa"/></svg>' + esc(T.ask) + "</a></div>";
     },
-    infobook: function (u) { return head("", u.bookT, u.bookP) + '<div class="card"><p class="soon">' + esc(u.soonT) + "</p></div>"; },
     terms: function (u) { return legal(u, u.termsT, "terms"); },
     privacy: function (u) { return legal(u, u.privacyT, "privacy"); },
     cookies: function (u) { return legal(u, u.cookiesT, "cookies"); },
