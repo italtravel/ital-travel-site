@@ -770,6 +770,15 @@
   function qp(k) { var v = new URLSearchParams(location.search).get(k); return v != null ? v : document.documentElement.getAttribute("data-" + k); }
   // The page's own address name (without .html) for a tour id, or for an info page p (+ id); "" if it has none
   function slugOf(p, id) { return (p ? SLUG["p:" + p + (id ? "/" + id : "")] : SLUG[id]) || ""; }
+  // Old addresses (trip.html?id=t1, info.html?p=faq) go straight to the page's own address (/florence-walking-tour, /faq),
+  // so Google sees one page instead of two copies. tools/build-pages.ps1 opens them with ?notrack=1, which stays put.
+  (function () {
+    if (!/\/(trip|info)\.html$/.test(location.pathname)) return;
+    var q = new URLSearchParams(location.search); if (q.has("notrack")) return;
+    var s = slugOf(/info\.html$/.test(location.pathname) ? q.get("p") : "", q.get("id")); if (!s) return;
+    q.delete("id"); q.delete("p"); var r = q.toString();
+    location.replace("/" + s + (r ? "?" + r : "") + location.hash);
+  })();
   function pageUrl(lang) {
     var p = qp("p"), id = qp("id"), onHome = /\/(index\.html)?$/.test(location.pathname) || document.documentElement.hasAttribute("data-city"), slug = onHome ? "" : slugOf(p, id);
     var q = new URLSearchParams(location.search), o = new URLSearchParams();
