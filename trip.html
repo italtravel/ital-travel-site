@@ -527,7 +527,7 @@ body.bk-open { overflow: hidden; }
         (i === Math.min(n, 5) - 1 && pics.length > 1 ? '<span class="more">' + esc(u.photos.replace("{n}", pics.length)) + "</span>" : "") + "</button>";
     }).join("") + "</div>";
     var facts = [IT.cityLabel(x)];
-    facts.push(x.prices || x.from ? (IT.t().from + " " + IT.money(IT.fromPrice(x)) + (x.fromPP ? " " + IT.t().per : "")) : u.onReq);
+    facts.push(x.flat ? IT.money(IT.fromPrice(x)) + " · " + IT.t().forGrp.replace("{n}", x.max || 6) : x.prices || x.from ? (IT.t().from + " " + IT.money(IT.fromPrice(x)) + (x.fromPP ? " " + IT.t().per : "")) : u.onReq);
     var hl = '<section class="hl" aria-label="' + esc(IT.t().highlights) + '">' + IT.highlights(x).map(function (o) {
       return '<div class="hl-' + o.k + '">' + IT.ICON[o.k] + "<span><b>" + esc(o.h) + "</b><small>" + esc(o.v) + "</small></span></div>";
     }).join("") + "</section>";
@@ -548,7 +548,7 @@ body.bk-open { overflow: hidden; }
     if (pins && !split) stops = '<div class="map-slot"></div>' + stops;
     // Adults and children counters (children under 14 go free); both go on to the booking window
     var mx = x.max || 30;
-    var steps = '<div class="stepper"><span>' + esc(u.adults) + '</span><div class="ctl"><button type="button" data-adj="-1" aria-label="−1"' + (adults <= 2 ? " disabled" : "") + '>−</button><output>' + adults + '</output><button type="button" data-adj="1" aria-label="+1"' + (adults + kids >= mx ? " disabled" : "") + '>+</button></div></div>' +
+    var steps = '<div class="stepper"><span>' + esc(u.adults) + '</span><div class="ctl"><button type="button" data-adj="-1" aria-label="−1"' + (adults <= (x.flat ? 1 : 2) ? " disabled" : "") + '>−</button><output>' + adults + '</output><button type="button" data-adj="1" aria-label="+1"' + (adults + kids >= mx ? " disabled" : "") + '>+</button></div></div>' +
       '<div class="stepper"><span>' + esc(u.kidsL) + (u.kidsSm ? "<small>" + esc(u.kidsSm) + "</small>" : "") + '</span><div class="ctl"><button type="button" data-kadj="-1" aria-label="−1"' + (kids <= 0 ? " disabled" : "") + '>−</button><output>' + kids + '</output><button type="button" data-kadj="1" aria-label="+1"' + (adults + kids >= mx ? " disabled" : "") + '>+</button></div></div>';
     var pr, cn = IT.state.cur !== "EUR" ? '<p class="small">' + esc(IT.t().curNote) + "</p>" : "";
     if (x.prices) {
@@ -697,7 +697,7 @@ body.bk-open { overflow: hidden; }
   document.addEventListener("click", function (e) {
     var el;
     if ((el = e.target.closest("[data-pic]"))) { openV(+el.dataset.pic); return; }
-    if ((el = e.target.closest("#page [data-adj]"))) { e.stopImmediatePropagation(); var m = tour().max || 30, d = +el.dataset.adj; if (d < 0 || adults + kids < m) adults = Math.max(2, adults + d); render(); return; }
+    if ((el = e.target.closest("#page [data-adj]"))) { e.stopImmediatePropagation(); var m = tour().max || 30, d = +el.dataset.adj; if (d < 0 || adults + kids < m) adults = Math.max(tour().flat ? 1 : 2, adults + d); render(); return; }
     if ((el = e.target.closest("#page [data-kadj]"))) { e.stopImmediatePropagation(); var m2 = tour().max || 30, d2 = +el.dataset.kadj; if (d2 < 0 || adults + kids < m2) kids = Math.max(0, kids + d2); render(); return; }
     // "Book" on this page: the booking window starts with these adults and children
     if (e.target.closest("#page [data-book]")) { IT.state.people = adults; IT.state.kids = kids; IT.state.fromSearch = true; }
@@ -719,7 +719,7 @@ body.bk-open { overflow: hidden; }
   //  Tours in the same group share their time slots (one guide): both Rome tours, both Venice tours.
   var BOOKABLE = {
     // Florence: option 2 (with the extra destinations) is sent to the Google Sheet as "t2", which has those prices.
-    t1:  { times: false, group: "florence-walk", min: 2, opt: "fx" },
+    t1:  { times: false, group: "florence-walk", min: 1, opt: "fx" },
     t5:  { times: ["10:00", "13:30", "17:00"], group: "florence-cooking", min: 1, opt: "g0" },
     t6:  { times: ["09:00"], group: "tuscany", min: 1, opt: "all" },
     t15: { times: ["09:00"], group: "florence-car", min: 1 },

@@ -451,7 +451,7 @@ td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
   var tip = $("tip");
   function showTip(e, html) { tip.innerHTML = html; tip.hidden = false; var x = e.clientX + 14, y = e.clientY - 10, w = tip.offsetWidth; if (x + w > innerWidth - 8) x = e.clientX - w - 14; tip.style.left = x + "px"; tip.style.top = y + "px"; }
   function hideTip() { tip.hidden = true; }
-  function autoPrice(p, n) { var f = p.length - 1, i = Math.max(0, n - 2); return i < f ? p[i] : p[f] * n; } // flat for 2, 3, 4… people, last = per person
+  function autoPrice(p, n) { if (p.length === 1) return p[0]; var f = p.length - 1, i = Math.max(0, n - 2); return i < f ? p[i] : p[f] * n; } // flat for 2, 3, 4… people, last = per person
   function niceMax(v) { if (v <= 4) return Math.max(1, Math.ceil(v)); var p = Math.pow(10, Math.floor(Math.log10(v))), n = v / p; return (n <= 1 ? 1 : n <= 2 ? 2 : n <= 5 ? 5 : 10) * p; }
   function columns(el, data, fmt, tipLabel) {
     if (!data.length || data.every(function (d) { return !d.value; })) { el.innerHTML = '<p class="empty">No data in this period yet.</p>'; return; }
