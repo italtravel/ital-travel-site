@@ -1249,7 +1249,7 @@ body.bk-open { overflow: hidden; }
   /* ---- Third section: every tour of the chosen city, as photo boxes ---- */
   function priceText(x) {
     var u = IT.t();
-    if (x.flat) return IT.money(IT.fromPrice(x)) + " " + u.forGrp.replace("{n}", x.max || 6);
+    if (x.flat) return (x.fromFlat ? u.from + " " : "") + IT.money(IT.fromPrice(x)) + " " + u.forGrp.replace("{n}", x.max || 6);
     if (x.prices && !x.fromPP) return IT.money(IT.fromPrice(x)) + " " + u.for2;
     if (x.prices || x.from) return u.from + " " + IT.money(IT.fromPrice(x)) + (x.fromPP ? " " + u.per : "");
     return u.onReq;
@@ -1338,7 +1338,7 @@ body.bk-open { overflow: hidden; }
   // Price on the box: for tours with a price list, the total for the number of people chosen in the search bar
   function boxPrice(x, n) {
     var u = IT.t(), e = X();
-    if (x.flat) return "<b>" + esc(IT.money(IT.fromPrice(x))) + "</b><small>" + esc(u.forGrp.replace("{n}", x.max || 6)) + "</small>";
+    if (x.flat) return "<b>" + esc((x.fromFlat ? u.from + " " : "") + IT.money(IT.fromPrice(x))) + "</b><small>" + esc(u.forGrp.replace("{n}", x.max || 6)) + "</small>";
     if (x.prices && !x.fromPP) { var m = Math.max(2, n); return "<b>" + esc(IT.money(IT.tourPrice(x, m))) + "</b><small>" + esc(e.forN.replace("{n}", m)) + "</small>"; }
     if (x.prices || x.from) return "<b>" + esc(u.from + " " + IT.money(IT.fromPrice(x))) + "</b><small>" + esc(x.fromPP ? u.per : "") + "</small>";
     return "<b>" + esc(u.onReq) + "</b><small></small>";
@@ -1408,7 +1408,7 @@ body.bk-open { overflow: hidden; }
     $("dt-city").textContent = IT.cityLabel(x);
     $("dt-name").textContent = L.t;
     $("dt-about").textContent = L.d;
-    $("dt-price").innerHTML = x.prices ? esc(IT.money(IT.fromPrice(x))) + " <small>" + esc(x.flat ? u.forGrp.replace("{n}", x.max || 6) : x.fromPP ? u.per : u.for2) + "</small>" : esc(priceText(x));
+    $("dt-price").innerHTML = x.prices ? esc((x.fromFlat ? u.from + " " : "") + IT.money(IT.fromPrice(x))) + " <small>" + esc(x.flat ? u.forGrp.replace("{n}", x.max || 6) : x.fromPP ? u.per : u.for2) + "</small>" : esc(priceText(x));
     // Adults and children (children under 14 go free); both go on to the booking window
     var mx = x.max || 30;
     $("dt-al").textContent = e.adultsL; $("dt-kl").innerHTML = esc(e.kidsL) + (e.kidsFree ? " <small>" + esc(e.kidsFree) + "</small>" : "");

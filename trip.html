@@ -527,7 +527,7 @@ body.bk-open { overflow: hidden; }
         (i === Math.min(n, 5) - 1 && pics.length > 1 ? '<span class="more">' + esc(u.photos.replace("{n}", pics.length)) + "</span>" : "") + "</button>";
     }).join("") + "</div>";
     var facts = [IT.cityLabel(x)];
-    facts.push(x.flat ? IT.money(IT.fromPrice(x)) + " · " + IT.t().forGrp.replace("{n}", x.max || 6) : x.prices || x.from ? (IT.t().from + " " + IT.money(IT.fromPrice(x)) + (x.fromPP ? " " + IT.t().per : "")) : u.onReq);
+    facts.push(x.flat ? (x.fromFlat ? IT.t().from + " " : "") + IT.money(IT.fromPrice(x)) + " · " + IT.t().forGrp.replace("{n}", x.max || 6) : x.prices || x.from ? (IT.t().from + " " + IT.money(IT.fromPrice(x)) + (x.fromPP ? " " + IT.t().per : "")) : u.onReq);
     var hl = '<section class="hl" aria-label="' + esc(IT.t().highlights) + '">' + IT.highlights(x).map(function (o) {
       return '<div class="hl-' + o.k + '">' + IT.ICON[o.k] + "<span><b>" + esc(o.h) + "</b><small>" + esc(o.v) + "</small></span></div>";
     }).join("") + "</section>";
