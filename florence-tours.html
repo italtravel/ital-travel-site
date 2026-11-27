@@ -775,20 +775,24 @@ body.bk-open { overflow: hidden; }
 @media (min-width: 1400px) { .boxes:has(> :nth-child(5):last-child) { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
 @media (min-width: 1700px) { #fan { --x2: calc(46.3cqw - var(--w) * .29); } #ofan { --x1: calc(45.9cqw - var(--w) * .386); } }
 </style>
-<!-- Microsoft Clarity (visit statistics, heatmaps). It loads only after the visitor presses "Accept" in the cookie banner. -->
+<!-- Microsoft Clarity (visit statistics, heatmaps) and Google Analytics. They load only after the visitor presses "Accept" in the cookie banner. -->
 <script type="text/javascript">
   (function () {
     function ok() { try { return localStorage.getItem("it-consent") === "all"; } catch (e) { return false; } }
     function load() {
-      if (window.clarity) return;
+      window["ga-disable-G-CQMYCZTL13"] = false; if (window.clarity) return;
       (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
           t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "zek1furodm");
+      // Google Analytics 4 (G-CQMYCZTL13), also only after "Accept"
+      window.dataLayer = window.dataLayer || []; window.gtag = function () { dataLayer.push(arguments); };
+      window["ga-disable-G-CQMYCZTL13"] = false; gtag("js", new Date()); gtag("config", "G-CQMYCZTL13");
+      var g = document.createElement("script"); g.async = true; g.src = "https://www.googletagmanager.com/gtag/js?id=G-CQMYCZTL13"; document.head.appendChild(g);
     }
     if (ok()) load();
-    document.addEventListener("it-consent", function () { if (ok()) load(); else if (window.clarity) window.clarity("consent", false); });
+    document.addEventListener("it-consent", function () { if (ok()) load(); else { if (window.clarity) window.clarity("consent", false); window["ga-disable-G-CQMYCZTL13"] = true; } });
   })();
 </script>
 </head>
